@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5651E1AFA100B09CD6CB88FA /* Pods_MagotakuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */; };
+		850B93A0240560530010CE87 /* SeniorUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B939F240560530010CE87 /* SeniorUser.swift */; };
+		850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */; };
+		850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		1A12F10324DD0A6DD32145AC /* Pods-MagotakuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.debug.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.debug.xcconfig"; sourceTree = "<group>"; };
+		850B939F240560530010CE87 /* SeniorUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUser.swift; sourceTree = "<group>"; };
+		850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
+		850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp1ViewController.xib; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -50,9 +56,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850B93A124057EF60010CE87 /* SignUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				850B93A224057F030010CE87 /* SignUp1 */,
+			);
+			path = SignUpVC;
+			sourceTree = "<group>";
+		};
+		850B93A224057F030010CE87 /* SignUp1 */ = {
+			isa = PBXGroup;
+			children = (
+				850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */,
+				850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */,
+			);
+			path = SignUp1;
+			sourceTree = "<group>";
+		};
 		858EC3FE2404F308008A93EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				850B93A124057EF60010CE87 /* SignUpVC */,
+				85A506B62404C89900A2F582 /* ViewController.swift */,
 				858EC3FF2404F30F008A93EC /* LoginVC */,
 			);
 			path = Controller;
@@ -71,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				858EC4052405047F008A93EC /* CustomTextFiled.swift */,
+				850B939F240560530010CE87 /* SeniorUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,7 +126,6 @@
 				858EC3FE2404F308008A93EC /* Controller */,
 				85A506B22404C89900A2F582 /* AppDelegate.swift */,
 				85A506B42404C89900A2F582 /* SceneDelegate.swift */,
-				85A506B62404C89900A2F582 /* ViewController.swift */,
 				85A506B82404C89900A2F582 /* Main.storyboard */,
 				85A506BB2404C89C00A2F582 /* Assets.xcassets */,
 				85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */,
@@ -191,6 +216,7 @@
 				85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
+				850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */,
 				85A506BA2404C89900A2F582 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,10 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */,
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
 				85A506B32404C89900A2F582 /* AppDelegate.swift in Sources */,
+				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
 				85A506B52404C89900A2F582 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

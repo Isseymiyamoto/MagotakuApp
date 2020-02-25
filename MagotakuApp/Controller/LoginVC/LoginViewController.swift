@@ -12,12 +12,21 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+
     let mailTF: CustomTextField! = CustomTextField()
     let passwordTF: CustomTextField! = CustomTextField()
+//    @IBOutlet weak var loginBtn: UIButton!
+    
     let loginBtn: UIButton! = UIButton(frame: CGRect(x: 32, y: UIScreen.main.bounds.size.height - 188, width: UIScreen.main.bounds.size.width - 64, height: 48))
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //safeAreaのbottomのheightを取得
+        let bottomMargin:CGFloat? = self.view.safeAreaInsets.bottom
+        print(bottomMargin!)
         
         //LoginBtnの配置
         self.loginBtn.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
@@ -27,8 +36,8 @@ class LoginViewController: UIViewController {
         self.view.addSubview(self.loginBtn)
         
         //TFの配置
-        self.mailTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 318, width: UIScreen.main.bounds.size.width - 64, height: 48)
-        self.passwordTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 268, width: UIScreen.main.bounds.size.width - 64, height: 48)
+        self.mailTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 318 , width: UIScreen.main.bounds.size.width - 64, height: 48)
+        self.passwordTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 268 , width: UIScreen.main.bounds.size.width - 64, height: 48)
         self.mailTF.placeholder = "メールアドレス"
         self.passwordTF.placeholder = "パスワード"
         self.mailTF.backgroundColor = UIColor.white
@@ -41,6 +50,9 @@ class LoginViewController: UIViewController {
         partCornerRadius(TF: passwordTF, corner1: .layerMinXMaxYCorner, corner2: .layerMaxXMaxYCorner)
         
     }
+    
+    
+    
     
     
     //引数、指定箇所のみ角丸にするメソッド
