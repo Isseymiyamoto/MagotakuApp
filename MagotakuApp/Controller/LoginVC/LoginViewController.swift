@@ -7,23 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-
-    
     let mailTF: CustomTextField! = CustomTextField()
     let passwordTF: CustomTextField! = CustomTextField()
-    let loginBtn: UIButton! = UIButton()
+    let loginBtn: UIButton! = UIButton(frame: CGRect(x: 32, y: UIScreen.main.bounds.size.height - 188, width: UIScreen.main.bounds.size.width - 64, height: 48))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //LoginBtnの配置
-        self.loginBtn.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 188, width: UIScreen.main.bounds.size.width - 64, height: 48)
         self.loginBtn.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
         self.loginBtn.layer.cornerRadius = 24.0
         self.loginBtn.setTitle("ログイン", for: .normal)
+        self.loginBtn.addTarget(self, action: #selector(pushLoginBtn), for: .touchUpInside)
         self.view.addSubview(self.loginBtn)
         
         //TFの配置
@@ -36,14 +36,9 @@ class LoginViewController: UIViewController {
         self.view.addSubview(self.mailTF)
         self.view.addSubview(self.passwordTF)
         
-        
         //TF、指定箇所のみCornerRadius適用
         partCornerRadius(TF: mailTF, corner1: .layerMinXMinYCorner, corner2: .layerMaxXMinYCorner)
         partCornerRadius(TF: passwordTF, corner1: .layerMinXMaxYCorner, corner2: .layerMaxXMaxYCorner)
-        
-        
-        
-        
         
     }
     
@@ -60,6 +55,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func backToFVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func pushLoginBtn(sender: UIButton){
+        print("LoginBtnが押されました")
     }
     
     
