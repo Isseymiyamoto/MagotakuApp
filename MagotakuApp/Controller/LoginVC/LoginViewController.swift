@@ -15,29 +15,22 @@ class LoginViewController: UIViewController {
 
     let mailTF: CustomTextField! = CustomTextField()
     let passwordTF: CustomTextField! = CustomTextField()
-//    @IBOutlet weak var loginBtn: UIButton!
-    
-    let loginBtn: UIButton! = UIButton(frame: CGRect(x: 32, y: UIScreen.main.bounds.size.height - 188, width: UIScreen.main.bounds.size.width - 64, height: 48))
-    
+    @IBOutlet weak var loginBtn: UIButton!
+    var bottomMargin:CGFloat? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //safeAreaのbottomのheightを取得
-        let bottomMargin:CGFloat? = self.view.safeAreaInsets.bottom
-        print(bottomMargin!)
         
+        print(bottomMargin!)
         //LoginBtnの配置
-        self.loginBtn.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
-        self.loginBtn.layer.cornerRadius = 24.0
-        self.loginBtn.setTitle("ログイン", for: .normal)
-        self.loginBtn.addTarget(self, action: #selector(pushLoginBtn), for: .touchUpInside)
-        self.view.addSubview(self.loginBtn)
+        loginBtn.layer.cornerRadius = 24.0
+
         
         //TFの配置
-        self.mailTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 318 , width: UIScreen.main.bounds.size.width - 64, height: 48)
-        self.passwordTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 268 , width: UIScreen.main.bounds.size.width - 64, height: 48)
+        self.mailTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 318 - bottomMargin! , width: UIScreen.main.bounds.size.width - 64, height: 48)
+        self.passwordTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 268 - bottomMargin! , width: UIScreen.main.bounds.size.width - 64, height: 48)
         self.mailTF.placeholder = "メールアドレス"
         self.passwordTF.placeholder = "パスワード"
         self.mailTF.backgroundColor = UIColor.white
@@ -50,9 +43,6 @@ class LoginViewController: UIViewController {
         partCornerRadius(TF: passwordTF, corner1: .layerMinXMaxYCorner, corner2: .layerMaxXMaxYCorner)
         
     }
-    
-    
-    
     
     
     //引数、指定箇所のみ角丸にするメソッド
@@ -69,9 +59,53 @@ class LoginViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func pushLoginBtn(sender: UIButton){
-        print("LoginBtnが押されました")
+    
+    @IBAction func tapLogin(_ sender: Any) {
+        guard let email = mailTF.text, let password = passwordTF.text else {
+            return
+        }
+        if email.isEmpty {
+            showErrorAlert(text: "メールアドレスを入力してください🙇‍♀️")
+            return
+        }
+        if password.isEmpty {
+            showErrorAlert(text: "パスワードを入力してください🙇‍♂️")
+            return
+        }
+        emailLogIn(email: email, password: password)
     }
+    
+    func emailLogIn(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print ("👿ログイン失敗")
+                self.logInErrorAlert(error)
+            } else {
+                print ("🌞ログイン成功")
+                //学生用のHomeに飛ばす
+            }
+        }
+    }
+    
+    func logInErrorAlert(_ error: Error){
+        if let errCode = AuthErrorCode(rawValue: error._code) {
+            var message = ""
+            switch errCode {
+                case .userNotFound:
+                    message = "アカウントが見つかりませんでした"
+                case .wrongPassword:
+                    message = "パスワードを確認してください"
+                case .userDisabled:
+                    message = "アカウントが無効になっています"
+                case .invalidEmail:
+                    message = "Eメールが無効な形式です"
+                default: message = "エラー: \(error.localizedDescription)"
+            }
+            showErrorAlert(text: message)
+        }
+    }
+    
+
     
     
    
