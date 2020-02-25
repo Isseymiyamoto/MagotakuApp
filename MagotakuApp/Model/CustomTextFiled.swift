@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTextField: UITextField {
     //paddingの設定
-    var padding = CGPoint(x: 20.0, y: 0.0)
+    var padding = CGPoint(x: 16.0, y: 0.0)
     
     init(){
         super.init(frame: .zero)
