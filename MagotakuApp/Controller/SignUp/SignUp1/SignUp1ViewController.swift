@@ -33,7 +33,9 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         self.title = "利用者情報"
         
         self.serviceLastName.delegate = self
-        self.serviceLastName.delegate = self
+        self.serviceFirstName.delegate = self
+        self.appLastName.delegate = self
+        self.appFirstName.delegate = self
         
         //　ナビゲーションバーの背景色
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 23/255, green: 35/255, blue: 57/255, alpha: 1)
@@ -44,8 +46,7 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         // 文字の色
             .foregroundColor: UIColor.white
         ]
-        
-        
+                
         //サービス利用者側のTFの配置
         self.serviceLastName.placeholder = "姓"
         self.serviceFirstName.placeholder = "名前"

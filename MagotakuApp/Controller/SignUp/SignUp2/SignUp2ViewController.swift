@@ -30,7 +30,11 @@ class SignUp2ViewController: UIViewController {
     @IBAction func tapMale(_ sender: Any) {
         //男性をタップした際の挙動
         if sexNum == 1 {
-            return
+            //男性側のbackgroundColor、文字色を元に戻す
+            maleBtn.backgroundColor = UIColor.white
+            maleBtn.setTitleColor(UIColor.black, for: .normal)
+            //sexNumをnilにする
+            sexNum = nil
         }else if sexNum == 2{
             //sexNumの数値を1にする
             sexNum = 1
@@ -62,7 +66,11 @@ class SignUp2ViewController: UIViewController {
             femaleBtn.backgroundColor = UIColor(red: 235/255, green: 86/255, blue: 105/255, alpha: 1)
             femaleBtn.setTitleColor(UIColor.white, for: .normal)
         }else if sexNum == 2{
-            return
+            //女性側のbackgroundColorと文字色を元に戻す
+            femaleBtn.backgroundColor = UIColor.white
+            femaleBtn.setTitleColor(UIColor.black, for: .normal)
+            //sexNumをnilに
+            sexNum = nil
         }else{
             //sexNumの数値を2にする
             sexNum = 2
@@ -76,7 +84,15 @@ class SignUp2ViewController: UIViewController {
     
     @IBAction func tapToNext(_ sender: Any) {
         //次のVCに遷移
-        //sexNumの値が0でなければ遷移
+        //sexNumの値がnilでなければ遷移
+        if sexNum != nil{
+            let vc = SignUp3ViewController()
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "性別を選択してください")
+        }
         
     }
     
