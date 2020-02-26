@@ -50,7 +50,6 @@ class ViewController: UIViewController {
     //ログインタップ時→ログイン画面に遷移
     @IBAction func tapLogin(_ sender: Any) {
         let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
         vc.bottomMargin = bottomM
         navigationController?.pushViewController(vc, animated: true)
     }

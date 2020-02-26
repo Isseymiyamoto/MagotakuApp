@@ -42,14 +42,26 @@
                     <state key="normal" title="次へ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="nextVC:" destination="-1" eventType="touchUpInside" id="JXI-QP-lj9"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サービス利用者とアプリ利用者が同じ場合もご記入ください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNw-0Z-twh">
+                    <rect key="frame" x="32" y="380" width="350" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yNw-0Z-twh" secondAttribute="trailing" constant="32" id="Aqb-fM-BCo"/>
                 <constraint firstItem="0Hf-Im-aPb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="CDt-84-0lb"/>
                 <constraint firstItem="0Hf-Im-aPb" firstAttribute="top" secondItem="r0C-An-5y3" secondAttribute="bottom" constant="96" id="F3F-t5-7og"/>
                 <constraint firstItem="9Bn-Ck-llI" firstAttribute="top" secondItem="0Hf-Im-aPb" secondAttribute="bottom" constant="80" id="Jjt-8a-tmF"/>
+                <constraint firstItem="yNw-0Z-twh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="NPC-n1-eYk"/>
                 <constraint firstItem="r0C-An-5y3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="QhA-0i-SrX"/>
+                <constraint firstItem="yNw-0Z-twh" firstAttribute="top" secondItem="9Bn-Ck-llI" secondAttribute="bottom" constant="8" id="SMh-bI-qya"/>
                 <constraint firstItem="r0C-An-5y3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Tyu-bB-jFJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r0C-An-5y3" secondAttribute="trailing" constant="32" id="YZR-dc-1Nn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Hf-Im-aPb" secondAttribute="trailing" constant="32" id="dTf-js-bk0"/>

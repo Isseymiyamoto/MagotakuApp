@@ -8,12 +8,15 @@
 
 import UIKit
 
-class SignUp2ViewController: UINavigationController {
+class SignUp2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // NavigationBαrのタイトル
+        self.title = "サービス利用者情報"
+        
+        
     }
 
 
