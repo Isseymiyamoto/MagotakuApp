@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
 
     let mailTF: CustomTextField! = CustomTextField()
@@ -23,10 +23,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         
+        self.mailTF.delegate = self
+        self.passwordTF.delegate = self
+        
         print(bottomMargin!)
         //LoginBtnの配置
         loginBtn.layer.cornerRadius = 24.0
-
         
         //TFの配置
         self.mailTF.frame = CGRect(x: 32, y: UIScreen.main.bounds.size.height - 318 - bottomMargin! , width: UIScreen.main.bounds.size.width - 64, height: 48)
@@ -38,10 +40,14 @@ class LoginViewController: UIViewController {
         self.view.addSubview(self.mailTF)
         self.view.addSubview(self.passwordTF)
         
+        
         //TF、指定箇所のみCornerRadius適用
         partCornerRadius(TF: mailTF, corner1: .layerMinXMinYCorner, corner2: .layerMaxXMinYCorner)
         partCornerRadius(TF: passwordTF, corner1: .layerMinXMaxYCorner, corner2: .layerMaxXMaxYCorner)
         
+        //キーボードの出現を感知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -56,7 +62,8 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func backToFVC(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -105,7 +112,32 @@ class LoginViewController: UIViewController {
         }
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else {
+                let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
+                self.view.frame.origin.y -= suggestionHeight
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide() {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     
     
    

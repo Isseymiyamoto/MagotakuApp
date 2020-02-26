@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = true
+        
         //ボタンの角調整
         signUpBtn.layer.cornerRadius = 24.0
         loginBtn.layer.cornerRadius = 24.0
@@ -29,13 +29,22 @@ class ViewController: UIViewController {
         //safeAreaのbottomのheightを取得
         bottomM = self.view.safeAreaInsets.bottom
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationbarを非表示にする
+        navigationController?.navigationBar.isHidden = true
     }
     
     //初回利用タップ時→新規登録画面に遷移
     @IBAction func tapSignUp(_ sender: Any) {
         let vc = SignUp1ViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     //ログインタップ時→ログイン画面に遷移
@@ -43,7 +52,7 @@ class ViewController: UIViewController {
         let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.bottomMargin = bottomM
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
