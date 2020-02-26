@@ -12,6 +12,9 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var serviceLabel: UILabel!
+    @IBOutlet weak var appLabel: UILabel!
+    
     //サービス利用者
     let serviceLastName: CustomTextField! = CustomTextField()
     let serviceFirstName: CustomTextField! = CustomTextField()
@@ -43,9 +46,7 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         ]
         
         
-        //TFの配置
-//        self.serviceLastName.frame = CGRect(x: 32, y: 192 , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
-//        self.serviceFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: 192 , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
+        //サービス利用者側のTFの配置
         self.serviceLastName.placeholder = "姓"
         self.serviceFirstName.placeholder = "名前"
         self.serviceLastName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
@@ -55,18 +56,30 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(self.serviceFirstName)
         self.view.addSubview(self.serviceLastName)
         
-        nextBtn.layer.cornerRadius = 24.0
+        //アプリ利用者側のTFの配置
+        self.appLastName.placeholder = "姓"
+        self.appFirstName.placeholder = "名前"
+        self.appLastName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
+        self.appFirstName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
+        self.appLastName.layer.cornerRadius = 6
+        self.appFirstName.layer.cornerRadius = 6
+        self.view.addSubview(self.appFirstName)
+        self.view.addSubview(self.appLastName)
+        //ボタンの角丸
+        nextBtn.layer.cornerRadius = 6
         
     }
     
     override func viewDidLayoutSubviews() {
         let NavH:CGFloat? = navigationController?.navigationBar.frame.size.height
         let topM:CGFloat? = self.view.safeAreaInsets.top
-        print(NavH!)
-        print(topM!)
+        let labelcgS:CGFloat? = self.serviceLabel.frame.origin.y
+        let labelcgA:CGFloat? = self.appLabel.frame.origin.y
         
-        self.serviceLastName.frame = CGRect(x: 32, y: 72 + topM! + NavH! , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
-        self.serviceFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: 72 + topM! + NavH! , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
+        self.serviceLastName.frame = CGRect(x: 32, y: labelcgS! + 40  , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
+        self.serviceFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: labelcgS! + 40 , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
+        self.appLastName.frame = CGRect(x: 32, y: labelcgA! + 40  , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
+        self.appFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: labelcgA! + 40 , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
     }
     
     override func viewWillAppear(_ animated: Bool) {
