@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
+class CustomTextField: UITextField{
     //paddingの設定
     var padding = CGPoint(x: 16.0, y: 0.0)
     
@@ -31,4 +31,5 @@ class CustomTextField: UITextField {
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
       return bounds.insetBy(dx: self.padding.x, dy: self.padding.y)
     }
+    
 }
