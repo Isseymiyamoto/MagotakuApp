@@ -71,8 +71,8 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        let NavH:CGFloat? = navigationController?.navigationBar.frame.size.height
-        let topM:CGFloat? = self.view.safeAreaInsets.top
+//        let NavH:CGFloat? = navigationController?.navigationBar.frame.size.height
+//        let topM:CGFloat? = self.view.safeAreaInsets.top
         let labelcgS:CGFloat? = self.serviceLabel.frame.origin.y
         let labelcgA:CGFloat? = self.appLabel.frame.origin.y
         
