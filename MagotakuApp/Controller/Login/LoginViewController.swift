@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.logInErrorAlert(error)
             } else {
                 print ("🌞ログイン成功")
-                //学生用のHomeに飛ばす
+                //シニア用のHomeに飛ばす
             }
         }
     }

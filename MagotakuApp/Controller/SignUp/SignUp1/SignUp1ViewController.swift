@@ -95,4 +95,14 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
+    
+    
+    
+    @IBAction func nextVC(_ sender: Any) {
+        let vc = SignUp2ViewController()
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
