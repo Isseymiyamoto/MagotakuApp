@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp1ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="nextBtn" destination="9Bn-Ck-llI" id="1W7-9X-sdx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,12 +24,35 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="氏名を入力(サービス利用者)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-Im-aPb">
+                    <rect key="frame" x="32" y="246" width="350" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bn-Ck-llI">
+                    <rect key="frame" x="32" y="388" width="350" height="48"/>
+                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="PQ0-1m-A3h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="次へ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="0Hf-Im-aPb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="CDt-84-0lb"/>
                 <constraint firstItem="r0C-An-5y3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="QhA-0i-SrX"/>
                 <constraint firstItem="r0C-An-5y3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Tyu-bB-jFJ"/>
+                <constraint firstItem="9Bn-Ck-llI" firstAttribute="top" secondItem="0Hf-Im-aPb" secondAttribute="bottom" constant="120" id="YUQ-aY-LYh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r0C-An-5y3" secondAttribute="trailing" constant="32" id="YZR-dc-1Nn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Hf-Im-aPb" secondAttribute="trailing" constant="32" id="dTf-js-bk0"/>
+                <constraint firstItem="9Bn-Ck-llI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="nqs-YX-HBV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Bn-Ck-llI" secondAttribute="trailing" constant="32" id="wF5-Xh-N27"/>
+                <constraint firstItem="0Hf-Im-aPb" firstAttribute="top" secondItem="r0C-An-5y3" secondAttribute="bottom" constant="120" id="xl0-nl-A6P"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="141" y="148"/>
