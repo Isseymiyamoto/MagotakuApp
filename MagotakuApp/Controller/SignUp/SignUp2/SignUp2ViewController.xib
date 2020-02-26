@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp2ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="femaleBtn" destination="Zmu-7f-xuO" id="cZ3-Gd-OF9"/>
+                <outlet property="maleBtn" destination="hGS-qx-kdm" id="wCk-0p-hlo"/>
+                <outlet property="nextBtn" destination="Q2E-3G-hug" id="0Ch-cM-r9A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,16 +21,68 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaD-az-0Qn">
-                    <rect key="frame" x="32" y="104" width="350" height="22"/>
+                    <rect key="frame" x="32" y="104" width="350" height="21.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2E-3G-hug">
+                    <rect key="frame" x="32" y="205.5" width="350" height="48"/>
+                    <color key="backgroundColor" red="0.43282985689999998" green="0.51179891820000001" blue="0.86670392750000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="96l-j5-Wlx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="次へ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapToNext:" destination="-1" eventType="touchUpInside" id="jHH-Db-4RW"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-pY-LRU">
+                    <rect key="frame" x="32" y="147.5" width="350" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGS-qx-kdm">
+                            <rect key="frame" x="0.0" y="0.0" width="134" height="48"/>
+                            <color key="backgroundColor" red="0.9100421071" green="0.91717243189999997" blue="0.94118046759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="男性">
+                                <color key="titleColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="tapMale:" destination="-1" eventType="touchUpInside" id="pRe-2f-0UH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmu-7f-xuO">
+                            <rect key="frame" x="216" y="0.0" width="134" height="48"/>
+                            <color key="backgroundColor" red="0.9100421071" green="0.91717243189999997" blue="0.94118046759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="女性">
+                                <color key="titleColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="tapFemale:" destination="-1" eventType="touchUpInside" id="5iz-2i-LhP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Gc9-4Y-abX"/>
+                        <constraint firstItem="Zmu-7f-xuO" firstAttribute="leading" secondItem="hGS-qx-kdm" secondAttribute="trailing" constant="16" id="eo6-D2-qdg"/>
+                        <constraint firstItem="Zmu-7f-xuO" firstAttribute="width" secondItem="hGS-qx-kdm" secondAttribute="width" id="gDw-8x-Mcb"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="Q2E-3G-hug" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="1Mc-iM-4Xz"/>
                 <constraint firstItem="DaD-az-0Qn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="1bH-d6-aUe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eoC-pY-LRU" secondAttribute="trailing" constant="32" id="2wo-Sm-SvY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DaD-az-0Qn" secondAttribute="trailing" constant="32" id="HBy-Sk-0fQ"/>
+                <constraint firstItem="eoC-pY-LRU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="LOz-pl-HD2"/>
+                <constraint firstItem="Q2E-3G-hug" firstAttribute="top" secondItem="DaD-az-0Qn" secondAttribute="bottom" constant="80" id="WnV-wL-m0v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q2E-3G-hug" secondAttribute="trailing" constant="32" id="c53-AQ-QAE"/>
+                <constraint firstItem="eoC-pY-LRU" firstAttribute="top" secondItem="DaD-az-0Qn" secondAttribute="bottom" constant="22" id="cGa-Vb-QZ2"/>
                 <constraint firstItem="DaD-az-0Qn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="vfq-Tg-pTe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
