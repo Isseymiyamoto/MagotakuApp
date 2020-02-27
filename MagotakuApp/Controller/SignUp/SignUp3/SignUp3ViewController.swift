@@ -78,6 +78,7 @@ class SignUp3ViewController: UIViewController{
  
     @IBAction func tapToNext(_ sender: Any) {
         if birthdateTF.text != nil{
+            print(birthdateTF.text!)
             let vc = SignUp4ViewController()
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem

@@ -22,10 +22,9 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
     let appLastName: CustomTextField! = CustomTextField()
     let appFirstName: CustomTextField! = CustomTextField()
     
-    
-    
-    
     @IBOutlet weak var nextBtn: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp7ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="mailLabel" destination="9RZ-OQ-gDK" id="PNa-Ct-cPu"/>
+                <outlet property="nextBtn" destination="4JR-nh-pNt" id="8Wm-NV-Jex"/>
+                <outlet property="passwordLabel" destination="5D4-SV-dCS" id="dJr-UD-KVB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +19,46 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RZ-OQ-gDK">
+                    <rect key="frame" x="32" y="104" width="350" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5D4-SV-dCS">
+                    <rect key="frame" x="32" y="222" width="350" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-nh-pNt">
+                    <rect key="frame" x="32" y="324" width="350" height="48"/>
+                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="TaD-Uh-RtX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="次へ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="nextVC:" destination="-1" eventType="touchUpInside" id="24f-Jo-Dmt"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5D4-SV-dCS" secondAttribute="trailing" constant="32" id="3Ph-ow-b3Z"/>
+                <constraint firstItem="4JR-nh-pNt" firstAttribute="top" secondItem="5D4-SV-dCS" secondAttribute="bottom" constant="80" id="3l7-jf-2p0"/>
+                <constraint firstItem="5D4-SV-dCS" firstAttribute="top" secondItem="9RZ-OQ-gDK" secondAttribute="bottom" constant="96" id="DPD-gd-ocf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9RZ-OQ-gDK" secondAttribute="trailing" constant="32" id="MGb-ag-dhQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4JR-nh-pNt" secondAttribute="trailing" constant="32" id="SJQ-z4-IgH"/>
+                <constraint firstItem="5D4-SV-dCS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="Vh6-zk-5uU"/>
+                <constraint firstItem="4JR-nh-pNt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="g0e-BD-6Rl"/>
+                <constraint firstItem="9RZ-OQ-gDK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="jVo-5i-QLv"/>
+                <constraint firstItem="9RZ-OQ-gDK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="ntK-TR-1nA"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="141" y="135"/>
         </view>
