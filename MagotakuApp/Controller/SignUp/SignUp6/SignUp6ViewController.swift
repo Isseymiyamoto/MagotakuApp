@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class SignUp6ViewController: UIViewController {
+class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var photoLabel: UILabel!
     //プロフィール写真が入るImageView
@@ -33,6 +34,21 @@ class SignUp6ViewController: UIViewController {
         
         //タップイベントがブロックされないようにする
         profileImage.isUserInteractionEnabled = true
+        
+        
+        //photoライブラリの使用許可
+        PHPhotoLibrary.requestAuthorization{(status) in
+            switch(status){
+            case .authorized:
+                print("許可されています")
+            case .denied:
+                print("拒否されました")
+            case .notDetermined:
+                print("notDetermined")
+            case .restricted:
+                print("制限されています")
+            }
+        }
          
     }
     
@@ -60,20 +76,68 @@ class SignUp6ViewController: UIViewController {
         let alert = UIAlertController(title: "写真", message: "サービス利用者のお顔がわかる写真をアップロードしてください", preferredStyle: .actionSheet)
         //ボタン1
         alert.addAction(UIAlertAction(title: "カメラで撮影", style: .default, handler: { (action) in
-            <#code#>
+            self.openCaemra()
         }))
-        alert.addAction(UIAlertAction(title: "カメラで撮影", style: .default, handler: nil))
         //ボタン２
-        alert.addAction(UIAlertAction(title: "アルバムから選択", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "アルバムから選択", style: .default, handler: {(action) in
+            self.openAlbum()
+        }))
         //ボタン３
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: {(action: UIAlertAction) in
             alert.dismiss(animated: true, completion: nil)
         }))
         //アクションシートを表示する
         self.present(alert, animated: true, completion: nil)
-        
-        print("タップジェスチャーが押されT年")
     }
    
+    
+    //カメラを使用するためのメソッド
+    func openCaemra(){
+        let sourceType = UIImagePickerController.SourceType.camera
+        //カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            //変数化
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+            present(cameraPicker, animated: true, completion: nil)
+        }else{
+            print("エラー")
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //アルバムを使用するためのメソッド
+    func openAlbum(){
+        let sourceType = UIImagePickerController.SourceType.photoLibrary
+        //カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            //変数化
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+            present(cameraPicker, animated: true, completion: nil)
+        }else{
+            print("エラー")
+            
+        }
+    }
+    
+    //撮影が完了した時に呼ばれる(アルバムから写真が選択された時に呼ばれる場所)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.editedImage] as? UIImage{
+            profileImage.image = pickedImage
+            
+            //写真の保存
+            UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
    
+    
 }
