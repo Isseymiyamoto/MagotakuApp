@@ -95,7 +95,7 @@ class SignUp3ViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         topBorder.backgroundColor = UIColor.lightGray
         keyboardAccessory.addSubview(topBorder)
         
-        let completeBtn = UIButton(frame: CGRect(x: keyboardAccessory.bounds.size.width - 48, y: 0, width: 48, height: keyboardAccessory.bounds.size.height - 0.5 * 2))
+        let completeBtn = UIButton(frame: CGRect(x: keyboardAccessory.bounds.size.width - 60, y: 0, width: 48, height: keyboardAccessory.bounds.size.height - 0.5 * 2))
         completeBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
         completeBtn.setTitle("完了", for: .normal)
         completeBtn.setTitleColor(UIColor.blue, for: .normal)
