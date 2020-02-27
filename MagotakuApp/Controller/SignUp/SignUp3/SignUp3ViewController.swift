@@ -11,6 +11,8 @@ import UIKit
 class SignUp3ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var nextBtn: UIButton!
+    
     //生年月日が入力されるTF
     let birthdateTF: CustomTextField! = CustomTextField()
     
@@ -37,6 +39,8 @@ class SignUp3ViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         birthdateTF.inputView = pickerView
         
         self.view.addSubview(birthdateTF)
+        
+        nextBtn.layer.cornerRadius = 6.0
         
         setKeyboardAccessory()
     }
