@@ -12,6 +12,7 @@ class SignUp6ViewController: UIViewController {
     
     @IBOutlet weak var photoLabel: UILabel!
     let profileImage: UIImageView! = UIImageView()
+    let tapRec: UITapGestureRecognizer! = UITapGestureRecognizer()
     
 
     override func viewDidLoad() {
@@ -32,14 +33,9 @@ class SignUp6ViewController: UIViewController {
         //プロファイルイメージ用のUIImageViewを用意
         profileImage.frame = CGRect(x: UIScreen.main.bounds.size.width / 4, y: photoLoc! + 38, width: UIScreen.main.bounds.size.width / 2, height: UIScreen.main.bounds.size.width / 2)
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        
-        
-        
-    
-        
-        
     }
 
+    
     
     
 
