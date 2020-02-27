@@ -41,8 +41,6 @@ class SignUp6ViewController: UIViewController {
         let screenWidth = UIScreen.main.bounds.size.width
         //プロファイルイメージ用のUIImageViewを用意
         profileImage.frame = CGRect(x: screenWidth / 6, y: photoLoc! + 38, width: screenWidth * 2 / 3, height: screenWidth * 2 / 3)
-        //タップゲスチャーの配置
-//        profileImage.addGestureRecognizer(tapRec)
         
         //次へボタンの配置
         nextBtn.frame = CGRect(x: 32, y: screenWidth * 2 / 3  + photoLoc! + 54, width: screenWidth - 64, height: 48)
@@ -61,6 +59,9 @@ class SignUp6ViewController: UIViewController {
     @IBAction func open(_ sender: Any) {
         let alert = UIAlertController(title: "写真", message: "サービス利用者のお顔がわかる写真をアップロードしてください", preferredStyle: .actionSheet)
         //ボタン1
+        alert.addAction(UIAlertAction(title: "カメラで撮影", style: .default, handler: { (action) in
+            <#code#>
+        }))
         alert.addAction(UIAlertAction(title: "カメラで撮影", style: .default, handler: nil))
         //ボタン２
         alert.addAction(UIAlertAction(title: "アルバムから選択", style: .default, handler: nil))
@@ -73,27 +74,6 @@ class SignUp6ViewController: UIViewController {
         
         print("タップジェスチャーが押されT年")
     }
-    
-//    @objc func open(){
-//        //アクションシートを作る
-//        let alert = UIAlertController(title: "タイトル", message: "メッセージ", preferredStyle: .actionSheet)
-//        //ボタン1
-//        alert.addAction(UIAlertAction(title: "カメラで撮影", style: .default, handler: nil))
-//        //ボタン２
-//        alert.addAction(UIAlertAction(title: "アルバムから選択", style: .default, handler: nil))
-//        //ボタン３
-//        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: {(action: UIAlertAction) in
-//            alert.dismiss(animated: true, completion: nil)
-//        }))
-//        //アクションシートを表示する
-//        self.present(alert, animated: true, completion: nil)
-//
-//        print("タップジェスチャーが押されT年")
-//    }
-    
-    
-    
-
    
    
 }
