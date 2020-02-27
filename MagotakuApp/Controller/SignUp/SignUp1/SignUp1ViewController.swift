@@ -48,24 +48,13 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         ]
                 
         //サービス利用者側のTFの配置
-        self.serviceLastName.placeholder = "姓"
-        self.serviceFirstName.placeholder = "名前"
-        self.serviceLastName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
-        self.serviceFirstName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
-        self.serviceLastName.layer.cornerRadius = 6
-        self.serviceFirstName.layer.cornerRadius = 6
-        self.view.addSubview(self.serviceFirstName)
-        self.view.addSubview(self.serviceLastName)
+        prepareTF(TF: serviceLastName, placeholder: "姓")
+        prepareTF(TF: serviceFirstName, placeholder: "名前")
         
         //アプリ利用者側のTFの配置
-        self.appLastName.placeholder = "姓"
-        self.appFirstName.placeholder = "名前"
-        self.appLastName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
-        self.appFirstName.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
-        self.appLastName.layer.cornerRadius = 6
-        self.appFirstName.layer.cornerRadius = 6
-        self.view.addSubview(self.appFirstName)
-        self.view.addSubview(self.appLastName)
+        prepareTF(TF: appLastName, placeholder: "姓")
+        prepareTF(TF: appFirstName, placeholder: "名前")
+
         //ボタンの角丸
         nextBtn.layer.cornerRadius = 6
         
@@ -77,15 +66,30 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
         let labelcgS:CGFloat? = self.serviceLabel.frame.origin.y
         let labelcgA:CGFloat? = self.appLabel.frame.origin.y
         
-        self.serviceLastName.frame = CGRect(x: 32, y: labelcgS! + 40  , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
-        self.serviceFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: labelcgS! + 40 , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
-        self.appLastName.frame = CGRect(x: 32, y: labelcgA! + 40  , width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
-        self.appFirstName.frame = CGRect(x: 48 + (UIScreen.main.bounds.size.width - 80) / 2 , y: labelcgA! + 40 , width: (UIScreen.main.bounds.size.width - 80) / 2, height: 48)
+        setTF(TF: serviceLastName, x: 32, y: labelcgS! + 40)
+        setTF(TF: serviceFirstName, x: 48 + (UIScreen.main.bounds.size.width - 80) / 2, y: labelcgS! + 40)
+        setTF(TF: appLastName, x: 32, y: labelcgA! + 40)
+        setTF(TF: appFirstName, x: 48 + (UIScreen.main.bounds.size.width - 80) / 2, y: labelcgA! + 40)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
     }
+    
+    //TFの準備
+    func prepareTF(TF: UITextField, placeholder: String){
+        TF.placeholder = placeholder
+        TF.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 240/255, alpha: 1)
+        TF.layer.cornerRadius = 6.0
+        self.view.addSubview(TF)
+    }
+    
+    //TFの配置
+    func setTF(TF: UITextField, x: CGFloat, y: CGFloat){
+        TF.frame = CGRect(x: x, y: y, width: (UIScreen.main.bounds.size.width - 80) / 2 , height: 48)
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

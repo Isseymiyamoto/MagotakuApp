@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp3ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
                 <outlet property="birthLabel" destination="RtZ-T3-UBF" id="1Sz-H1-Boh"/>
+                <outlet property="nextBtn" destination="plK-bX-lrs" id="7mD-Oj-vvz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
