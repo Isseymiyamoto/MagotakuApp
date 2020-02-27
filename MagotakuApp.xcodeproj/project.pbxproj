@@ -21,6 +21,8 @@
 		850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93C224075DCA0010CE87 /* SignUp5ViewController.swift */; };
 		850B93C524075DCA0010CE87 /* SignUp5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93C324075DCA0010CE87 /* SignUp5ViewController.xib */; };
 		850B93C7240778730010CE87 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93C6240778730010CE87 /* PlaceholderTextView.swift */; };
+		850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93C924078C9B0010CE87 /* SignUp6ViewController.swift */; };
+		850B93CC24078C9B0010CE87 /* SignUp6ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93CA24078C9B0010CE87 /* SignUp6ViewController.xib */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -48,6 +50,8 @@
 		850B93C224075DCA0010CE87 /* SignUp5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp5ViewController.swift; sourceTree = "<group>"; };
 		850B93C324075DCA0010CE87 /* SignUp5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp5ViewController.xib; sourceTree = "<group>"; };
 		850B93C6240778730010CE87 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		850B93C924078C9B0010CE87 /* SignUp6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp6ViewController.swift; sourceTree = "<group>"; };
+		850B93CA24078C9B0010CE87 /* SignUp6ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp6ViewController.xib; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		850B93A124057EF60010CE87 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				850B93C824078C770010CE87 /* SignUp6 */,
 				850B93C124075DB00010CE87 /* SignUp5 */,
 				850B93BC2406F18E0010CE87 /* SignUp4 */,
 				850B93B72406AE2A0010CE87 /* SignUp3 */,
@@ -139,6 +144,15 @@
 				850B93C324075DCA0010CE87 /* SignUp5ViewController.xib */,
 			);
 			path = SignUp5;
+			sourceTree = "<group>";
+		};
+		850B93C824078C770010CE87 /* SignUp6 */ = {
+			isa = PBXGroup;
+			children = (
+				850B93C924078C9B0010CE87 /* SignUp6ViewController.swift */,
+				850B93CA24078C9B0010CE87 /* SignUp6ViewController.xib */,
+			);
+			path = SignUp6;
 			sourceTree = "<group>";
 		};
 		858EC3FE2404F308008A93EC /* Controller */ = {
@@ -290,6 +304,7 @@
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
 				850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */,
+				850B93CC24078C9B0010CE87 /* SignUp6ViewController.xib in Resources */,
 				850B93C02406F1A90010CE87 /* SignUp4ViewController.xib in Resources */,
 				85A506BA2404C89900A2F582 /* Main.storyboard in Resources */,
 			);
@@ -355,6 +370,7 @@
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
+				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,
 				850B93C7240778730010CE87 /* PlaceholderTextView.swift in Sources */,
 				85A506B52404C89900A2F582 /* SceneDelegate.swift in Sources */,
 			);
