@@ -31,6 +31,7 @@ class SeniorUser{
     var CharaHob: String?
     //サービス利用者プロフィール写真
     var imageName: String?
+    var userImage: UIImage?
     //緊急連絡先
     var emergencyPhoneNumber: String?
     //Timestamp

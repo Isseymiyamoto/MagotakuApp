@@ -32,14 +32,31 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-i4-SS9">
+                    <rect key="frame" x="32" y="599" width="350" height="48"/>
+                    <color key="backgroundColor" red="0.37853580710000001" green="0.46001398560000001" blue="0.82748854159999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Qmb-nj-wQf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="登録">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapToRegister:" destination="-1" eventType="touchUpInside" id="zUs-X1-CsK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="b1Z-i4-SS9" firstAttribute="top" secondItem="yeK-lp-MQI" secondAttribute="bottom" constant="64" id="G0G-8h-6FR"/>
                 <constraint firstItem="yeK-lp-MQI" firstAttribute="top" secondItem="JL2-Hk-NNC" secondAttribute="bottom" constant="60" id="GlE-Qt-sVh"/>
                 <constraint firstItem="yeK-lp-MQI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="KTg-ef-Xks"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b1Z-i4-SS9" secondAttribute="trailing" constant="32" id="MQW-1V-IMU"/>
                 <constraint firstItem="JL2-Hk-NNC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="RQV-rG-mse"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yeK-lp-MQI" secondAttribute="trailing" constant="32" id="kV8-5z-G9R"/>
                 <constraint firstItem="JL2-Hk-NNC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="lqn-Xn-uti"/>
+                <constraint firstItem="b1Z-i4-SS9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="uAb-ch-nbO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JL2-Hk-NNC" secondAttribute="trailing" constant="32" id="wfu-uw-Sk8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
