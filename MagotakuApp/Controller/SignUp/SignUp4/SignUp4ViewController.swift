@@ -76,10 +76,19 @@ class SignUp4ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapToNext(_ sender: Any) {
-        let vc = SignUp5ViewController()
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        navigationController?.pushViewController(vc, animated: true)
+        if addressNumTF.text!.isEmpty == false && address1TF.text!.isEmpty == false && address2TF.text!.isEmpty == false && phoneTF.text!.isEmpty == false{
+            let vc = SignUp5ViewController()
+            let lastVC = SignUp8ViewController()
+            lastVC.userInfo.addressNum = addressNumTF.text!
+            lastVC.userInfo.address = address1TF.text! + address2TF.text!
+            lastVC.userInfo.phoneNumber = phoneTF.text!
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "空欄箇所があります")
+        }
+        
     }
     
 

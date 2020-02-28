@@ -29,10 +29,17 @@ class SignUp5ViewController: UIViewController, UITextViewDelegate {
     }
 
     @IBAction func tapToNext(_ sender: Any) {
-        let vc = SignUp6ViewController()
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        navigationController?.pushViewController(vc, animated: true)
+        if hobbyTV.text!.isEmpty == false{
+            let vc = SignUp6ViewController()
+            let lastVC = SignUp8ViewController()
+            lastVC.userInfo.CharaHob = hobbyTV.text!
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "サービス利用者の趣味または性格を入力してください")
+        }
+        
     }
     
     

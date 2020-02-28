@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class SignUp8ViewController: UIViewController {
-
+    
+    let user = Auth.auth().currentUser
+    let userInfo = SeniorUser(id: "uid")
+    @IBOutlet weak var userImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(userInfo)
+        
+        
+        
+        //navigationBarのタイトル設定
         self.title = "登録情報確認"
     }
 

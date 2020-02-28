@@ -13,11 +13,7 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var photoLabel: UILabel!
     //プロフィール写真が入るImageView
-//    let profileImage: UIImageView! = UIImageView()
     @IBOutlet weak var profileImage: UIImageView!
-    
-    //ImageViewの上に載せるタップジェスチャーレコグナイザー
-//    let tapRec: UITapGestureRecognizer! = UITapGestureRecognizer(target: self, action: #selector(open))
     //次へボタン
     @IBOutlet weak var nextBtn: UIButton!
     
@@ -64,10 +60,13 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func tapToNext(_ sender: Any) {
-        let vc = SignUp7ViewController()
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        navigationController?.pushViewController(vc, animated: true)
+        if profileImage.image != nil{
+            let vc = SignUp7ViewController()
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
         
     }
     
@@ -132,6 +131,8 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.editedImage] as? UIImage{
             profileImage.image = pickedImage
+//            let lastVC = SignUp8ViewController()
+//            lastVC.userImage.image = pickedImage
             
             //写真の保存
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)

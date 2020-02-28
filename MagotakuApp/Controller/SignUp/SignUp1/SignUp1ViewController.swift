@@ -103,10 +103,19 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextVC(_ sender: Any) {
-        let vc = SignUp2ViewController()
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        navigationController?.pushViewController(vc, animated: true)
+        if serviceLastName.text!.isEmpty == false && serviceFirstName.text!.isEmpty == false && appLastName.text!.isEmpty == false && appFirstName.text!.isEmpty == false{
+            let vc = SignUp2ViewController()
+            let lastVC = SignUp8ViewController()
+            lastVC.userInfo.sName = serviceLastName.text! + " " + serviceFirstName.text!
+            lastVC.userInfo.aName = appLastName.text! + " " + appLastName.text!
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "空白箇所があります")
+        }
+        
+        
         
     }
 }

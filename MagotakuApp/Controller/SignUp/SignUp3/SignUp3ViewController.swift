@@ -77,12 +77,15 @@ class SignUp3ViewController: UIViewController{
     
  
     @IBAction func tapToNext(_ sender: Any) {
-        if birthdateTF.text != nil{
-            print(birthdateTF.text!)
+        if birthdateTF.text?.isEmpty == false{
             let vc = SignUp4ViewController()
+            let lastVC = SignUp8ViewController()
+            lastVC.userInfo.bornDate = birthdateTF.text!
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem
             navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "サービス利用者の生年月日を入力してください")
         }
     }
     
