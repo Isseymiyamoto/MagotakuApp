@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 
-class SignUp9ViewController: UIViewController{
+class SignUp8ViewController: UIViewController{
     
     //ログインしているユーザー情報の取得
     let user = Auth.auth().currentUser

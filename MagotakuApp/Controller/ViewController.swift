@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     //初回利用タップ時→新規登録画面に遷移
     @IBAction func tapSignUp(_ sender: Any) {
-        let vc = SignUp1ViewController()
+        let vc = SignUp0ViewController()
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)

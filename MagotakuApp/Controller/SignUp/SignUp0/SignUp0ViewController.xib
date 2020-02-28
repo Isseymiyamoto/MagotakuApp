@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp0ViewController" customModule="MagotakuApp" customModuleProvider="target">
+            <connections>
+                <outlet property="mailLabel" destination="yho-UF-Hs9" id="I5F-Ti-FKX"/>
+                <outlet property="nextBtn" destination="U2W-3Y-SDJ" id="th7-VX-c9E"/>
+                <outlet property="passwordLabel" destination="nuJ-4i-cI1" id="uig-b9-rWx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yho-UF-Hs9">
+                    <rect key="frame" x="32" y="104" width="350" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuJ-4i-cI1">
+                    <rect key="frame" x="32" y="222" width="350" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2W-3Y-SDJ">
+                    <rect key="frame" x="32" y="324" width="350" height="48"/>
+                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Bzg-9s-bt2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="アカウント登録">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapSignUpButton:" destination="-1" eventType="touchUpInside" id="PTw-7u-YnS"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次回ログイン時に使用します" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxc-Cg-1MN">
+                    <rect key="frame" x="32" y="380" width="350" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U2W-3Y-SDJ" secondAttribute="trailing" constant="32" id="1qe-UW-lcq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yho-UF-Hs9" secondAttribute="trailing" constant="32" id="2Ra-Rg-9pf"/>
+                <constraint firstItem="yho-UF-Hs9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="9Ge-Oe-Dnl"/>
+                <constraint firstItem="yho-UF-Hs9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="LoF-Cz-AeY"/>
+                <constraint firstItem="Yxc-Cg-1MN" firstAttribute="top" secondItem="U2W-3Y-SDJ" secondAttribute="bottom" constant="8" id="TTB-Vm-rEa"/>
+                <constraint firstItem="Yxc-Cg-1MN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Xuw-K3-Ljo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yxc-Cg-1MN" secondAttribute="trailing" constant="32" id="cOg-bV-9x5"/>
+                <constraint firstItem="U2W-3Y-SDJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="evi-g0-ax6"/>
+                <constraint firstItem="U2W-3Y-SDJ" firstAttribute="top" secondItem="nuJ-4i-cI1" secondAttribute="bottom" constant="80" id="lO1-eU-4od"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nuJ-4i-cI1" secondAttribute="trailing" constant="32" id="mgm-AM-QU2"/>
+                <constraint firstItem="nuJ-4i-cI1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="wqU-7Y-FN1"/>
+                <constraint firstItem="nuJ-4i-cI1" firstAttribute="top" secondItem="yho-UF-Hs9" secondAttribute="bottom" constant="96" id="x2C-9n-I68"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="141" y="154"/>
+        </view>
+    </objects>
+</document>

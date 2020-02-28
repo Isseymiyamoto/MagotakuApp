@@ -9,8 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp8ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
-                <outlet property="emergencyLable" destination="szF-47-ALx" id="HJm-Xi-oaA"/>
-                <outlet property="nextBtn" destination="yIk-dh-PAw" id="3Bu-zv-WBE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,39 +16,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緊急連絡先" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szF-47-ALx">
-                    <rect key="frame" x="32" y="104" width="350" height="22"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIk-dh-PAw">
-                    <rect key="frame" x="32" y="206" width="350" height="48"/>
-                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="ZZy-Un-lT3"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="次へ">
-                        <color key="titleColor" red="0.9100421071" green="0.91717243189999997" blue="0.94118046759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </state>
-                    <connections>
-                        <action selector="tapToNext:" destination="-1" eventType="touchUpInside" id="jdS-eA-p72"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="yIk-dh-PAw" firstAttribute="top" secondItem="szF-47-ALx" secondAttribute="bottom" constant="80" id="2Lv-oY-y8G"/>
-                <constraint firstItem="szF-47-ALx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="IMA-La-SmS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="szF-47-ALx" secondAttribute="trailing" constant="32" id="NPB-pX-TFM"/>
-                <constraint firstItem="yIk-dh-PAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="atP-8L-nHL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yIk-dh-PAw" secondAttribute="trailing" constant="32" id="rb0-vi-RSe"/>
-                <constraint firstItem="szF-47-ALx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="sW5-2c-rOZ"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="141" y="121"/>
+            <point key="canvasLocation" x="141" y="154"/>
         </view>
     </objects>
 </document>
