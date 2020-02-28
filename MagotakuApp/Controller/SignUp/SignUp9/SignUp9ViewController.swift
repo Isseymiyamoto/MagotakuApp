@@ -7,24 +7,47 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
-class SignUp9ViewController: UIViewController {
-
+class SignUp9ViewController: UIViewController{
+    
+    //ログインしているユーザー情報の取得
+    let user = Auth.auth().currentUser
+    
+    
+    let screenWidth = UIScreen.main.bounds.size.width
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //navigationBar用のタイトル
+        self.title = "登録内容確認"
+        
+        //tableViewのプロトコル設定
+//        tableView.delegate = self
+//        tableView.dataSource = self
+        
+        
+        
     }
 
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
