@@ -87,11 +87,11 @@ class SignUp2ViewController: UIViewController {
         //sexNumの値がnilでなければ遷移
         if sexNum != nil{
             let vc = SignUp3ViewController()
-            let lastVC = SignUp8ViewController()
+//            let lastVC = SignUp8ViewController()
             if sexNum == 1{
-                lastVC.userInfo.sex = "男性"
+                SeniorUser.shared.sex = "男性"
             }else{
-                lastVC.userInfo.sex = "女性"
+                SeniorUser.shared.sex = "女性"
             }
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem

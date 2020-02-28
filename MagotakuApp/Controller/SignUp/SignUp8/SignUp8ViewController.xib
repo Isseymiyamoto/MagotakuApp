@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp8ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="aNameLabel" destination="yeK-lp-MQI" id="Hdm-9N-YR5"/>
                 <outlet property="userImage" destination="JL2-Hk-NNC" id="ocN-lQ-T5x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,12 +19,29 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JL2-Hk-NNC">
-                    <rect key="frame" x="58" y="176" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JL2-Hk-NNC">
+                    <rect key="frame" x="32" y="104" width="350" height="350"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="EtY-2y-e81"/>
+                        <constraint firstAttribute="height" constant="350" id="UoM-j9-xvv"/>
+                    </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeK-lp-MQI">
+                    <rect key="frame" x="32" y="514" width="350" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="yeK-lp-MQI" firstAttribute="top" secondItem="JL2-Hk-NNC" secondAttribute="bottom" constant="60" id="GlE-Qt-sVh"/>
+                <constraint firstItem="yeK-lp-MQI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="KTg-ef-Xks"/>
+                <constraint firstItem="JL2-Hk-NNC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="RQV-rG-mse"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yeK-lp-MQI" secondAttribute="trailing" constant="32" id="kV8-5z-G9R"/>
+                <constraint firstItem="JL2-Hk-NNC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="lqn-Xn-uti"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JL2-Hk-NNC" secondAttribute="trailing" constant="32" id="wfu-uw-Sk8"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="141" y="154"/>
         </view>

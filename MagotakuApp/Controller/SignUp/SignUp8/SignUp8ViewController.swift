@@ -15,14 +15,29 @@ import FirebaseFirestore
 
 class SignUp8ViewController: UIViewController {
     
+    @IBOutlet weak var aNameLabel: UILabel!
     let user = Auth.auth().currentUser
-    let userInfo = SeniorUser(id: "uid")
+//    var userInfo = SeniorUser(id: "uid")
     @IBOutlet weak var userImage: UIImageView!
+    var getImage: UIImage!
+    
+    var sName:String?
+    var aName:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(userInfo)
+        print("出力じゃい")
+        print(SeniorUser.shared)
+        print(SeniorUser.shared.aName! as Any)
+        print(SeniorUser.shared.sName!)
+        print("でた？")
+        
+       
+        
+        
+        userImage.image = self.getImage
         
         
         

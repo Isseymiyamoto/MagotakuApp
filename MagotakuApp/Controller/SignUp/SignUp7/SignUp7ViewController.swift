@@ -39,10 +39,12 @@ class SignUp7ViewController: UIViewController {
     @IBAction func tapToNext(_ sender: Any) {
         if emergencyNum.text!.isEmpty == false{
             let vc = SignUp8ViewController()
-            vc.userInfo.emergencyPhoneNumber = emergencyNum.text!
+            SeniorUser.shared.emergencyPhoneNumber = emergencyNum.text!
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem
             navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "緊急連絡先を入力してください")
         }
     }
 
