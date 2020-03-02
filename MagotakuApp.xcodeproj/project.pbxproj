@@ -41,6 +41,8 @@
 		85A506BA2404C89900A2F582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506B82404C89900A2F582 /* Main.storyboard */; };
 		85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BB2404C89C00A2F582 /* Assets.xcassets */; };
 		85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */; };
+		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
+		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		85A506BB2404C89C00A2F582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A506BE2404C89C00A2F582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A506C02404C89C00A2F582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
+		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		9ACBFEF63BB3767F2202B9DB /* Pods-MagotakuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.release.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.release.xcconfig"; sourceTree = "<group>"; };
 		C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagotakuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -236,6 +240,8 @@
 				858EC4052405047F008A93EC /* CustomTextFiled.swift */,
 				850B939F240560530010CE87 /* SeniorUser.swift */,
 				850B93C6240778730010CE87 /* PlaceholderTextView.swift */,
+				85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */,
+				85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,11 +429,13 @@
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
 				850B93AD2405B06C0010CE87 /* UIViewController+.swift in Sources */,
 				850B93D5240823930010CE87 /* SignUp7ViewController.swift in Sources */,
+				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,
 				850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */,
 				850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */,
 				850B93B524068E4F0010CE87 /* SignUp2ViewController.swift in Sources */,
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
+				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
 				85A506B32404C89900A2F582 /* AppDelegate.swift in Sources */,
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,

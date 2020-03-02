@@ -11,7 +11,7 @@ import Firebase
 
 class SignUp2ViewController: UIViewController {
     
-    let user = Auth.auth().currentUser
+    
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var femaleBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
@@ -88,13 +88,14 @@ class SignUp2ViewController: UIViewController {
         //sexNumの値がnilでなければ遷移
         if sexNum != nil{
             let vc = SignUp3ViewController()
-            let uid = user?.uid
-            SeniorUser.shared.id = uid!
+
 //            let lastVC = SignUp8ViewController()
             if sexNum == 1{
-                SeniorUser.shared.sex = "男性"
+//                SeniorUser.shared.sex = "男性"
+                profile.sex = "男性"
             }else{
-                SeniorUser.shared.sex = "女性"
+//                SeniorUser.shared.sex = "女性"
+                profile.sex = "女性"
             }
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem

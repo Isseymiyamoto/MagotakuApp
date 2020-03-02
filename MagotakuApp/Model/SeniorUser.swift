@@ -10,37 +10,37 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class SeniorUser{
+class SeniorUser: Codable{
     //アカウントuid
     var id: String
     //サービス利用者名
-    var sName: String?
+    var sName: String = ""
     //アプリケーション使用者氏名
-    var aName: String?
+    var aName: String = ""
     //サービス利用者性別
-    var sex: String?
+    var sex: String = ""
     //サービス利用者誕生日
-    var bornDate: String?
+    var bornDate: String = ""
     //サービス利用者郵便番号
-    var addressNum: String?
+    var addressNum: String = ""
     //サービス利用者住所
-    var address: String?
+    var address: String = ""
     //サービス利用者電話
-    var phoneNumber: String?
+    var phoneNumber: String = ""
     //サービス利用者性格・趣味
-    var CharaHob: String?
+    var CharaHob: String = ""
     //サービス利用者プロフィール写真
-    var imageName: String?
-    var userImage: UIImage?
+    var imageName: String = ""
+//    var userImage: UIImage?
     //緊急連絡先
-    var emergencyPhoneNumber: String?
+    var emergencyPhoneNumber: String = ""
     //Timestamp
     var createdAt: Timestamp
     var updatedAt: Timestamp
     
-    static var shared = SeniorUser(id: "uid")
+//    static var shared = SeniorUser(id: "uid")
     
-    private init(id:String) {
+    init(id:String) {
         self.id = id
         self.createdAt = Timestamp()
         self.updatedAt = Timestamp()
