@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        print("テスト")
     }
     
     override func viewWillAppear(_ animated: Bool) {
