@@ -80,7 +80,8 @@ class SignUp3ViewController: UIViewController{
         if birthdateTF.text?.isEmpty == false{
             let vc = SignUp4ViewController()
 //            let lastVC = SignUp8ViewController()
-            SeniorUser.shared.bornDate = birthdateTF.text!
+//            SeniorUser.shared.bornDate = birthdateTF.text!
+            profile.bornDate = birthdateTF.text!
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem
             navigationController?.pushViewController(vc, animated: true)

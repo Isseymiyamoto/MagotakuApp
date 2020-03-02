@@ -32,7 +32,8 @@ class SignUp5ViewController: UIViewController, UITextViewDelegate {
         if hobbyTV.text!.isEmpty == false{
             let vc = SignUp6ViewController()
 //            let lastVC = SignUp8ViewController()
-            SeniorUser.shared.CharaHob = hobbyTV.text!
+            profile.CharaHob = hobbyTV.text!
+//            SeniorUser.shared.CharaHob = hobbyTV.text!
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem
             navigationController?.pushViewController(vc, animated: true)

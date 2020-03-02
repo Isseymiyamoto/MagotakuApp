@@ -105,8 +105,11 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextVC(_ sender: Any) {
         if serviceLastName.text!.isEmpty == false && serviceFirstName.text!.isEmpty == false && appLastName.text!.isEmpty == false && appFirstName.text!.isEmpty == false{
             let vc = SignUp2ViewController()
-            SeniorUser.shared.sName = serviceLastName.text! + " " + serviceFirstName.text!
-            SeniorUser.shared.aName = appLastName.text! + " " + appLastName.text!
+            
+            profile.sName = serviceLastName.text! + " " + serviceFirstName.text!
+            profile.aName = appLastName.text! + " " + appLastName.text!
+//            SeniorUser.shared.sName = serviceLastName.text! + " " + serviceFirstName.text!
+//            SeniorUser.shared.aName = appLastName.text! + " " + appLastName.text!
 //            let lastVC = SignUp8ViewController()
 //            lastVC.sName = serviceLastName.text! + " " + serviceFirstName.text!
 //            lastVC.aName = appLastName.text! + " " + appLastName.text!
