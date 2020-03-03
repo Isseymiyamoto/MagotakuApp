@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseStorage
 
 class SeniorUserCollection{
     //初回アクセスのタイミングでインスタンスを生成
@@ -26,7 +27,16 @@ class SeniorUserCollection{
     
     func addTask(_ seniorUser: SeniorUser) {
         seniorUserUseCase.addTask(seniorUser)
-        
+    }
+    
+    func saveImage(image: UIImage?, callback: @escaping ((String?) -> Void)) {
+        seniorUserUseCase.saveImage(image: image) { (imageName) in
+            guard let imageName = imageName else {
+                callback(nil)
+                return
+            }
+            callback(imageName)
+        }
     }
     
 }

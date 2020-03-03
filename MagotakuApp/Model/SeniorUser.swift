@@ -11,8 +11,10 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class SeniorUser: Codable{
-    //アカウントuid
+    //識別子
     var id: String
+    ////アカウントuid
+    var uid: String = ""
     //サービス利用者名
     var sName: String = ""
     //アプリケーション使用者氏名
