@@ -43,12 +43,12 @@
 		85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
-		85EC4DF9240E49C700FCDCD2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DF8240E49C700FCDCD2 /* MainNavigationController.swift */; };
-		85EC4DFB240E49E700FCDCD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFA240E49E700FCDCD2 /* MainTabBarController.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
 		85EC4E00240E4C7A00FCDCD2 /* ReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4DFE240E4C7A00FCDCD2 /* ReservationViewController.xib */; };
 		85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E03240E4CE200FCDCD2 /* ProfileViewController.swift */; };
 		85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */; };
+		85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */; };
+		85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,12 +90,12 @@
 		85A506C02404C89C00A2F582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
-		85EC4DF8240E49C700FCDCD2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		85EC4DFA240E49E700FCDCD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		85EC4DFE240E4C7A00FCDCD2 /* ReservationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationViewController.xib; sourceTree = "<group>"; };
 		85EC4E03240E4CE200FCDCD2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9ACBFEF63BB3767F2202B9DB /* Pods-MagotakuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.release.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.release.xcconfig"; sourceTree = "<group>"; };
 		C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagotakuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -229,9 +229,9 @@
 		858EC3FE2404F308008A93EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				85EC4E07240E4E5200FCDCD2 /* Settings */,
 				85EC4E01240E4C8F00FCDCD2 /* Profile */,
 				85EC4DFC240E4C5B00FCDCD2 /* Reservation */,
-				85EC4DF7240E49A700FCDCD2 /* Several */,
 				850B93E92409C0230010CE87 /* Home */,
 				850B93A124057EF60010CE87 /* SignUp */,
 				858EC3FF2404F30F008A93EC /* Login */,
@@ -296,15 +296,6 @@
 			path = MagotakuApp;
 			sourceTree = "<group>";
 		};
-		85EC4DF7240E49A700FCDCD2 /* Several */ = {
-			isa = PBXGroup;
-			children = (
-				85EC4DF8240E49C700FCDCD2 /* MainNavigationController.swift */,
-				85EC4DFA240E49E700FCDCD2 /* MainTabBarController.swift */,
-			);
-			path = Several;
-			sourceTree = "<group>";
-		};
 		85EC4DFC240E4C5B00FCDCD2 /* Reservation */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +320,15 @@
 				85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */,
 			);
 			path = Profile0;
+			sourceTree = "<group>";
+		};
+		85EC4E07240E4E5200FCDCD2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */,
+				85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		88DE865513E4F58882BDB1E1 /* Frameworks */ = {
@@ -479,11 +479,11 @@
 			files = (
 				850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */,
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
-				85EC4DFB240E49E700FCDCD2 /* MainTabBarController.swift in Sources */,
 				850B93AD2405B06C0010CE87 /* UIViewController+.swift in Sources */,
 				850B93D5240823930010CE87 /* SignUp7ViewController.swift in Sources */,
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
+				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,
 				850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */,
 				850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */,
@@ -495,10 +495,10 @@
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
+				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
 				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,
-				85EC4DF9240E49C700FCDCD2 /* MainNavigationController.swift in Sources */,
 				850B93C7240778730010CE87 /* PlaceholderTextView.swift in Sources */,
 				85A506B52404C89900A2F582 /* SceneDelegate.swift in Sources */,
 			);
