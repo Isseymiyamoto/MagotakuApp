@@ -49,6 +49,8 @@ class ViewController: UIViewController {
     @IBAction func tapLogin(_ sender: Any) {
         let vc = LoginViewController()
         vc.bottomMargin = bottomM
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -26,6 +26,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.mailTF.delegate = self
         self.passwordTF.delegate = self
         
+        self.passwordTF.isSecureTextEntry = true
+        
         print(bottomMargin!)
         //LoginBtnの配置
         loginBtn.layer.cornerRadius = 24.0
@@ -45,9 +47,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         partCornerRadius(TF: mailTF, corner1: .layerMinXMinYCorner, corner2: .layerMaxXMinYCorner)
         partCornerRadius(TF: passwordTF, corner1: .layerMinXMaxYCorner, corner2: .layerMaxXMaxYCorner)
         
+        //navigationBarの配置
+        // navigationBarのタイトル
+        self.title = "ログイン"
+        //　ナビゲーションバーの背景色
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 23/255, green: 35/255, blue: 57/255, alpha: 1)
+        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+        
         //キーボードの出現を感知
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     
@@ -61,10 +80,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func backToFVC(_ sender: Any) {
-//        dismiss(animated: true, completion: nil)
-        self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func backToFVC(_ sender: Any) {
+////        dismiss(animated: true, completion: nil)
+//        self.navigationController?.popViewController(animated: true)
+//    }
     
     
     @IBAction func tapLogin(_ sender: Any) {
