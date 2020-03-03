@@ -14,21 +14,20 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // 背景色
-        tabBar.barTintColor = UIColor.black
-        
+        tabBar.barTintColor = UIColor.white
         // アイテムの色
         tabBar.tintColor = UIColor.white
         
-        let firstViewController = MainNavigationController(rootViewController: HomeViewController())
-        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        let firstVC = MainNavigationController(rootViewController: HomeViewController())
+        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
         
-        let secondViewController = MainNavigationController(rootViewController: ReservationViewController())
-        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+        let secondVC = MainNavigationController(rootViewController: ReservationViewController())
+        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
         
-        let thirdViewController = MainNavigationController(rootViewController: ProfileViewController())
-        thirdViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+        let thirdVC = MainNavigationController(rootViewController: ProfileViewController())
+        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
         
-        self.viewControllers = [firstViewController, secondViewController, thirdViewController]
+        setViewControllers([firstVC, secondVC, thirdVC], animated: true)
         
         
     }

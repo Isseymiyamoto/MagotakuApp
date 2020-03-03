@@ -13,7 +13,8 @@ class ReservationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "予約一覧"
+       
     }
 
 

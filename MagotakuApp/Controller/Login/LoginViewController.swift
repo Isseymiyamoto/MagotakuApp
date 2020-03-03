@@ -79,13 +79,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         TF.layer.masksToBounds = true
     }
     
-    
-//    @IBAction func backToFVC(_ sender: Any) {
-////        dismiss(animated: true, completion: nil)
-//        self.navigationController?.popViewController(animated: true)
-//    }
-    
-    
     @IBAction func tapLogin(_ sender: Any) {
         guard let email = mailTF.text, let password = passwordTF.text else {
             return

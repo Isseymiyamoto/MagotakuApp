@@ -13,13 +13,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("a")
+        self.title = "ホーム"
+     
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.isHidden = true
+//    }
 
-
+    
 
 }

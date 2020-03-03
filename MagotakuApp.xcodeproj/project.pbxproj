@@ -31,6 +31,7 @@
 		850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93E62409456F0010CE87 /* SignUp8ViewController.xib */; };
 		850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93EA2409C0390010CE87 /* HomeViewController.swift */; };
 		850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93EB2409C0390010CE87 /* HomeViewController.xib */; };
+		8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD2D240E71FA000BF5BF /* TextView.swift */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -76,6 +77,7 @@
 		850B93E62409456F0010CE87 /* SignUp8ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp8ViewController.xib; sourceTree = "<group>"; };
 		850B93EA2409C0390010CE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		850B93EB2409C0390010CE87 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8560DD2D240E71FA000BF5BF /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				850B93C6240778730010CE87 /* PlaceholderTextView.swift */,
 				85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */,
 				85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */,
+				8560DD2D240E71FA000BF5BF /* TextView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
 				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
 				85A506B32404C89900A2F582 /* AppDelegate.swift in Sources */,
+				8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */,
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
