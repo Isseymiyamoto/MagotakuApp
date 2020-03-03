@@ -14,6 +14,7 @@ import FirebaseCore
 import FirebaseFirestore
 
 var profile = SeniorUserCollection.shared.createSeniorUser()
+var seniorImage: UIImage?
 
 class SignUp8ViewController: UIViewController {
     
@@ -26,7 +27,6 @@ class SignUp8ViewController: UIViewController {
     
     @IBOutlet weak var aNameLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
-    var getImage: UIImage!
     var sName:String?
     var aName:String?
     
@@ -34,11 +34,13 @@ class SignUp8ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("出力じゃい")
-        print("でた？")
+        //profileImageに値が渡されている場合、userImageに表示
+        if let seniorImage = seniorImage{
+            userImage.image = seniorImage
+        }
         
-//        userImage.image = SeniorUser.shared.userImage
-        profile.id = user!.uid
+        //profileのidに
+        profile.uid = user!.uid
         //navigationBarのタイトル設定
         self.title = "登録情報確認"
     }
@@ -48,7 +50,17 @@ class SignUp8ViewController: UIViewController {
     //登録処理
     @IBAction func tapToRegister(_ sender: Any) {
         //firebaseに値を保存
-        SeniorUserCollection.shared.addTask(profile)
+        //画像を保存 → profileのimageNmaeに値わたし
+        if seniorImage != nil{
+            SeniorUserCollection.shared.saveImage(image: seniorImage) { (imageName) in
+                guard let imageName = imageName else{
+                    return
+                }
+                profile.imageName = imageName
+                SeniorUserCollection.shared.addTask(profile)
+            }
+        }
+        
         //遷移先に飛ばす
         let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)

@@ -135,6 +135,7 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
 //            let lastVC = SignUp8ViewController()
 //            SeniorUser.shared.userImage = pickedImage
 //            profile.userImage = pickedImage
+            seniorImage = pickedImage 
             
             //写真の保存
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
