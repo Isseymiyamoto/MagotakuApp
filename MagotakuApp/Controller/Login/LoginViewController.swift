@@ -90,6 +90,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print ("🌞ログイン成功")
                 //シニア用のHomeに飛ばす
+                let vc = HomeViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
