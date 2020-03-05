@@ -32,6 +32,13 @@
 		850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93EA2409C0390010CE87 /* HomeViewController.swift */; };
 		850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93EB2409C0390010CE87 /* HomeViewController.xib */; };
 		8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD2D240E71FA000BF5BF /* TextView.swift */; };
+		8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD2F2410E7B1000BF5BF /* UIView+constraints.swift */; };
+		8560DD342410FD6D000BF5BF /* ReservationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */; };
+		8560DD352410FD6D000BF5BF /* ReservationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD332410FD6D000BF5BF /* ReservationListViewController.xib */; };
+		8560DD39241107F9000BF5BF /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD37241107F9000BF5BF /* MessageListViewController.swift */; };
+		8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD38241107F9000BF5BF /* MessageListViewController.xib */; };
+		8560DD3D241109C7000BF5BF /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD3B241109C7000BF5BF /* ReservationCell.swift */; };
+		8560DD3E241109C7000BF5BF /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD3C241109C7000BF5BF /* ReservationCell.xib */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -78,6 +85,13 @@
 		850B93EA2409C0390010CE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		850B93EB2409C0390010CE87 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		8560DD2D240E71FA000BF5BF /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		8560DD2F2410E7B1000BF5BF /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListViewController.swift; sourceTree = "<group>"; };
+		8560DD332410FD6D000BF5BF /* ReservationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationListViewController.xib; sourceTree = "<group>"; };
+		8560DD37241107F9000BF5BF /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		8560DD38241107F9000BF5BF /* MessageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListViewController.xib; sourceTree = "<group>"; };
+		8560DD3B241109C7000BF5BF /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		8560DD3C241109C7000BF5BF /* ReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -143,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				850B93AC2405B06C0010CE87 /* UIViewController+.swift */,
+				8560DD2F2410E7B1000BF5BF /* UIView+constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +243,26 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		8560DD312410FD3E000BF5BF /* ReservationList */ = {
+			isa = PBXGroup;
+			children = (
+				8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */,
+				8560DD332410FD6D000BF5BF /* ReservationListViewController.xib */,
+				8560DD3B241109C7000BF5BF /* ReservationCell.swift */,
+				8560DD3C241109C7000BF5BF /* ReservationCell.xib */,
+			);
+			path = ReservationList;
+			sourceTree = "<group>";
+		};
+		8560DD36241107D1000BF5BF /* MessageList */ = {
+			isa = PBXGroup;
+			children = (
+				8560DD37241107F9000BF5BF /* MessageListViewController.swift */,
+				8560DD38241107F9000BF5BF /* MessageListViewController.xib */,
+			);
+			path = MessageList;
+			sourceTree = "<group>";
+		};
 		858EC3FE2404F308008A93EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +337,8 @@
 		85EC4DFC240E4C5B00FCDCD2 /* Reservation */ = {
 			isa = PBXGroup;
 			children = (
+				8560DD36241107D1000BF5BF /* MessageList */,
+				8560DD312410FD3E000BF5BF /* ReservationList */,
 				85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */,
 				85EC4DFE240E4C7A00FCDCD2 /* ReservationViewController.xib */,
 			);
@@ -417,9 +454,12 @@
 				850B93C524075DCA0010CE87 /* SignUp5ViewController.xib in Resources */,
 				850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */,
 				850B93BB2406AE440010CE87 /* SignUp3ViewController.xib in Resources */,
+				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
+				8560DD3E241109C7000BF5BF /* ReservationCell.xib in Resources */,
+				8560DD352410FD6D000BF5BF /* ReservationListViewController.xib in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
 				850B93D6240823930010CE87 /* SignUp7ViewController.xib in Resources */,
 				850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */,
@@ -484,21 +524,25 @@
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
 				850B93AD2405B06C0010CE87 /* UIViewController+.swift in Sources */,
 				850B93D5240823930010CE87 /* SignUp7ViewController.swift in Sources */,
+				8560DD342410FD6D000BF5BF /* ReservationListViewController.swift in Sources */,
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
 				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
+				8560DD3D241109C7000BF5BF /* ReservationCell.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,
 				850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */,
 				850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */,
 				850B93B524068E4F0010CE87 /* SignUp2ViewController.swift in Sources */,
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
 				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
+				8560DD39241107F9000BF5BF /* MessageListViewController.swift in Sources */,
 				85A506B32404C89900A2F582 /* AppDelegate.swift in Sources */,
 				8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */,
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
+				8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,

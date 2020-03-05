@@ -7,25 +7,46 @@
 //
 
 import UIKit
+import Parchment
 
-class ReservationViewController: UIViewController {
+class ReservationViewController: UIViewController{
+    
+    var pagingVC = PagingViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "予約一覧"
+        //上タブの設定
+        let firstVC = SignUp2ViewController()
+        let secondVC = ReservationListViewController()
+        
+        //各タブ名の設定
+        firstVC.title = "確定済み予約一覧"
+        secondVC.title = "メッセージ"
+
+        pagingVC = PagingViewController(viewControllers: [firstVC, secondVC])
+        pagingVC.menuItemSize = PagingMenuItemSize.fixed(width: UIScreen.main.bounds.width / 2, height: 60)
+        addChild(pagingVC)
+        view.addSubview(pagingVC.view)
+        pagingVC.didMove(toParent: self)
+        pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
+        
        
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
-    */
+    
+    override func viewDidLayoutSubviews() {
+        let bottomM = self.view.safeAreaInsets.top
+        view.constrainToEdges(pagingVC.view, topPadding: bottomM)
+    }
+    
+    
+    
+    
+
+    
 
 }

@@ -16,16 +16,17 @@ class MainTabBarController: UITabBarController {
         // 背景色
         tabBar.barTintColor = UIColor.white
         // アイテムの色
-        tabBar.tintColor = UIColor.white
+        tabBar.tintColor = UIColor.black
         
         let firstVC = MainNavigationController(rootViewController: HomeViewController())
-        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        firstVC.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(systemName: "house.fill"), tag: 0)
         
         let secondVC = MainNavigationController(rootViewController: ReservationViewController())
-        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+//        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+        secondVC.tabBarItem = UITabBarItem(title: "予約一覧", image: UIImage(systemName: "tray.fill"), tag: 1)
         
         let thirdVC = MainNavigationController(rootViewController: ProfileViewController())
-        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+        thirdVC.tabBarItem = UITabBarItem(title: "マイページ", image: UIImage(systemName: "person.fill"), tag: 2)
         
         setViewControllers([firstVC, secondVC, thirdVC], animated: true)
         

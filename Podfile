@@ -11,6 +11,6 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'FirebaseFirestoreSwift'
-
+pod 'Parchment'
 
 end
