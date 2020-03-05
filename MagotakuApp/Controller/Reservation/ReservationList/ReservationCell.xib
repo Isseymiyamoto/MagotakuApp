@@ -22,14 +22,14 @@
                             <constraint firstAttribute="width" constant="48" id="l1L-rj-ApM"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="パートナー：宮本一成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-RG-FOl">
-                        <rect key="frame" x="96" y="51" width="163.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パートナー：宮本一成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-RG-FOl">
+                        <rect key="frame" x="96" y="52.5" width="163.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2020/2/27 18:00 〜 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-Q1-WkO">
-                        <rect key="frame" x="96" y="24" width="187" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020/2/27 18:00 〜 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-Q1-WkO">
+                        <rect key="frame" x="96" y="24" width="187" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,9 +38,11 @@
                 <constraints>
                     <constraint firstItem="Y0B-RG-FOl" firstAttribute="leading" secondItem="FDG-2S-mNj" secondAttribute="trailing" constant="16" id="19c-UL-Dx5"/>
                     <constraint firstItem="FDG-2S-mNj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="1W8-Ji-Trq"/>
+                    <constraint firstAttribute="bottom" secondItem="Y0B-RG-FOl" secondAttribute="bottom" constant="24" id="HO5-DC-Y2y"/>
                     <constraint firstItem="Blj-Q1-WkO" firstAttribute="leading" secondItem="FDG-2S-mNj" secondAttribute="trailing" constant="16" id="MqI-cx-zAy"/>
                     <constraint firstItem="FDG-2S-mNj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="QxB-MQ-IG4"/>
                     <constraint firstAttribute="bottom" secondItem="FDG-2S-mNj" secondAttribute="bottom" constant="24" id="XXL-Y8-kbp"/>
+                    <constraint firstItem="Blj-Q1-WkO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="mJB-b8-tUz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
