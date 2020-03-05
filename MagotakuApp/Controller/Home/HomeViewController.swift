@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -15,7 +17,7 @@ class HomeViewController: UIViewController {
 
         self.title = "ホーム"
      
-        
+        print(Auth.auth().currentUser!.uid)
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
