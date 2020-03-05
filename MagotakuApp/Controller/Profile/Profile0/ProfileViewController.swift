@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -18,6 +20,18 @@ class ProfileViewController: UIViewController {
     }
 
     
+    @IBAction func logout(_ sender: Any) {
+        do {
+                try Auth.auth().signOut()
+                // 強制的に現在の表示している vc を変更する
+                let vc = ViewController()
+                let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.window?.rootViewController = vc
+            } catch {
+                print("error:",error.localizedDescription)
+            }
+        
+    }
     /*
     // MARK: - Navigation
 

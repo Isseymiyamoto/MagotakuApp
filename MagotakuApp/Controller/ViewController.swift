@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //navigationbarを非表示にする
         navigationController?.navigationBar.isHidden = true
+        
+        
     }
     
     //初回利用タップ時→新規登録画面に遷移

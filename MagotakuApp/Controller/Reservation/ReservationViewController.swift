@@ -17,8 +17,8 @@ class ReservationViewController: UIViewController{
         super.viewDidLoad()
 
         //上タブの設定
-        let firstVC = SignUp2ViewController()
-        let secondVC = ReservationListViewController()
+        let firstVC = ReservationListViewController()
+        let secondVC = SignUp2ViewController()
         
         //各タブ名の設定
         firstVC.title = "確定済み予約一覧"

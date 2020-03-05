@@ -11,6 +11,8 @@ import Firebase
 import FirebaseAuth
 
 class HomeViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,8 @@ class HomeViewController: UIViewController {
 //    override func viewWillAppear(_ animated: Bool) {
 //        navigationController?.navigationBar.isHidden = true
 //    }
-
+    
+    
     
 
 }

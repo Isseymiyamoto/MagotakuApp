@@ -16,7 +16,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OJ-QN-e8m">
+                    <rect key="frame" x="32" y="418" width="350" height="60"/>
+                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="itT-gM-Dlk"/>
+                    </constraints>
+                    <state key="normal" title="ログアウト">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="Ybl-BF-SjE"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2OJ-QN-e8m" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1cn-tc-RfU"/>
+                <constraint firstItem="2OJ-QN-e8m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="2El-ed-Pwp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2OJ-QN-e8m" secondAttribute="trailing" constant="32" id="EEZ-rs-adx"/>
+                <constraint firstItem="2OJ-QN-e8m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wC8-Bq-oEK"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="91"/>
         </view>

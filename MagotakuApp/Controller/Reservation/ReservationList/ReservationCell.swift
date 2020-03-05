@@ -10,9 +10,17 @@ import UIKit
 
 class ReservationCell: UITableViewCell {
 
+    @IBOutlet weak var partnerImage: UIImageView!
+    @IBOutlet weak var cell: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        partnerImage.layer.cornerRadius = partnerImage.frame.width / 2
+        
+        cell.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width , height: 96)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
