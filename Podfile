@@ -12,5 +12,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'FirebaseFirestoreSwift'
 pod 'Parchment'
+pod 'FSCalendar'
 
 end

@@ -12,10 +12,17 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var logoutBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "マイページ"
+//        self.title = "マイページ"
+        let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        titleView.image = UIImage(systemName: "paperclip.circle.fill")
+        self.navigationItem.titleView = titleView
+        
+        logoutBtn.layer.cornerRadius = logoutBtn.frame.height / 2
         
     }
 

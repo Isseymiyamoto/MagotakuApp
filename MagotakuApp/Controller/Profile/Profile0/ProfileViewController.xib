@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="logoutBtn" destination="2OJ-QN-e8m" id="WXI-45-fec"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

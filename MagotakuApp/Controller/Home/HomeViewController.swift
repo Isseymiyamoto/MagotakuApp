@@ -13,18 +13,31 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     
-
+    @IBOutlet weak var reservationBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "ホーム"
+//        self.title = "ホーム"
+        let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        titleView.image = UIImage(systemName: "paperclip.circle.fill")
+        self.navigationItem.titleView = titleView
      
-        print(Auth.auth().currentUser!.uid)
+        reservationBtn.layer.cornerRadius = 30.0
+        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.navigationBar.isHidden = true
-//    }
+    //新規予約1に飛ばす
+    @IBAction func takeReserve(_ sender: Any) {
+        let vc = Reservation01ViewController()
+        //戻るボタンの設定
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+
     
     
     
