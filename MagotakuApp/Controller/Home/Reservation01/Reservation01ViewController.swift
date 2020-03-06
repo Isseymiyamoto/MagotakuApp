@@ -66,15 +66,20 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
     
     
     override func viewDidLayoutSubviews() {
-        let safeAreaHeight = self.view.safeAreaInsets.top
-        let tabbarHeight = self.tabBarController?.tabBar.frame.height
-        print(safeAreaHeight)
+        let safeAreaTopHeight = self.view.safeAreaInsets.top
+        let safeAreaBottomHeight = self.view.safeAreaInsets.bottom
+//        let tabbarHeight = self.tabBarController?.tabBar.frame.height
+        print(safeAreaBottomHeight)
         
 //        titleLabel.frame = CGRect(x: 8, y: safeAreaHeight + 16, width: UIScreen.main.bounds.width - 64, height: 22)
-        calendar.frame = CGRect(x: 0, y: safeAreaHeight + 16 , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - safeAreaHeight - tabbarHeight! - 60)
-        nextBtn.frame = CGRect(x: 32, y: UIScreen.main.bounds.height - tabbarHeight! - 60, width: UIScreen.main.bounds.width - 64, height: 48)
+        calendar.frame = CGRect(x: 0, y: safeAreaTopHeight + 24 , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - safeAreaTopHeight - safeAreaBottomHeight - 96)
+        nextBtn.frame = CGRect(x: 32, y: UIScreen.main.bounds.height - safeAreaBottomHeight - 60, width: UIScreen.main.bounds.width - 64, height: 48)
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -88,8 +93,6 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         }else{
             showErrorAlert(text: "日付が選択されてないよ！")
         }
-        
-        
     }
     
     // date型 -> 年月日をIntで取得
@@ -104,11 +107,9 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
 
     @IBAction func tapToNext(_ sender: Any) {
         let vc = Reservation02ViewController()
+        vc.selectedDate = selectedDate
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-  
-
 }

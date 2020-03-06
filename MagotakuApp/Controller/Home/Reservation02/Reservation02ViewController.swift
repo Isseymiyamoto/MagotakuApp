@@ -10,21 +10,24 @@ import UIKit
 
 class Reservation02ViewController: UIViewController {
 
+    //test用の変数
+    var selectedDate: [Int]!
+    
+    @IBOutlet weak var testLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //navigationBarのタイトル設定
+        self.title = "お手伝い内容を選ぶ"
 
-        // Do any additional setup after loading the view.
+        var testString: String!
+        testString = "選択日時：\(String(test[0]))年\(String(test[1]))月\(String(test[2]))日"
+        testLabel.text = testString
+        
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
