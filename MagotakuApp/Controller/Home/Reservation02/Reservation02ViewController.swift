@@ -22,7 +22,7 @@ class Reservation02ViewController: UIViewController {
         self.title = "お手伝い内容を選ぶ"
 
         var testString: String!
-        testString = "選択日時：\(String(test[0]))年\(String(test[1]))月\(String(test[2]))日"
+        testString = "選択日時：\(String(selectedDate[0]))年\(String(selectedDate[1]))月\(String(selectedDate[2]))日"
         testLabel.text = testString
         
     }
