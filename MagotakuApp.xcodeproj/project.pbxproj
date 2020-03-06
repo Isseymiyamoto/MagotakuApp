@@ -42,6 +42,8 @@
 		8560DD422412168B000BF5BF /* Reservation01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD402412168B000BF5BF /* Reservation01ViewController.swift */; };
 		8560DD432412168B000BF5BF /* Reservation01ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD412412168B000BF5BF /* Reservation01ViewController.xib */; };
 		8560DD4624121C49000BF5BF /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD4524121C49000BF5BF /* Reservation.swift */; };
+		8560DD4B2412727A000BF5BF /* Reservation02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD4924127279000BF5BF /* Reservation02ViewController.swift */; };
+		8560DD4C2412727A000BF5BF /* Reservation02ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -98,6 +100,8 @@
 		8560DD402412168B000BF5BF /* Reservation01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation01ViewController.swift; sourceTree = "<group>"; };
 		8560DD412412168B000BF5BF /* Reservation01ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation01ViewController.xib; sourceTree = "<group>"; };
 		8560DD4524121C49000BF5BF /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		8560DD4924127279000BF5BF /* Reservation02ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation02ViewController.swift; sourceTree = "<group>"; };
+		8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation02ViewController.xib; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		850B93E92409C0230010CE87 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8560DD482412724F000BF5BF /* Reservation02 */,
 				8560DD3F24121660000BF5BF /* Reservation01 */,
 				850B93EA2409C0390010CE87 /* HomeViewController.swift */,
 				850B93EB2409C0390010CE87 /* HomeViewController.xib */,
@@ -277,6 +282,15 @@
 				8560DD412412168B000BF5BF /* Reservation01ViewController.xib */,
 			);
 			path = Reservation01;
+			sourceTree = "<group>";
+		};
+		8560DD482412724F000BF5BF /* Reservation02 */ = {
+			isa = PBXGroup;
+			children = (
+				8560DD4924127279000BF5BF /* Reservation02ViewController.swift */,
+				8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */,
+			);
+			path = Reservation02;
 			sourceTree = "<group>";
 		};
 		858EC3FE2404F308008A93EC /* Controller */ = {
@@ -486,6 +500,7 @@
 				85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */,
 				8560DD432412168B000BF5BF /* Reservation01ViewController.xib in Resources */,
 				85EC4E00240E4C7A00FCDCD2 /* ReservationViewController.xib in Resources */,
+				8560DD4C2412727A000BF5BF /* Reservation02ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +566,7 @@
 				850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */,
 				850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */,
 				850B93B524068E4F0010CE87 /* SignUp2ViewController.swift in Sources */,
+				8560DD4B2412727A000BF5BF /* Reservation02ViewController.swift in Sources */,
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
 				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
 				8560DD39241107F9000BF5BF /* MessageListViewController.swift in Sources */,
