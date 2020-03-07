@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginBtn: UIButton!
     var bottomMargin:CGFloat? = nil
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

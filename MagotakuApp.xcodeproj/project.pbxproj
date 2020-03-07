@@ -44,6 +44,8 @@
 		8560DD4624121C49000BF5BF /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD4524121C49000BF5BF /* Reservation.swift */; };
 		8560DD4B2412727A000BF5BF /* Reservation02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD4924127279000BF5BF /* Reservation02ViewController.swift */; };
 		8560DD4C2412727A000BF5BF /* Reservation02ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */; };
+		8560DD512413A936000BF5BF /* Reservation00ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD4F2413A936000BF5BF /* Reservation00ViewController.swift */; };
+		8560DD522413A936000BF5BF /* Reservation00ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8560DD502413A936000BF5BF /* Reservation00ViewController.xib */; };
 		858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */; };
 		858EC4022404F324008A93EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858EC4002404F324008A93EC /* LoginViewController.swift */; };
 		858EC4032404F324008A93EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858EC4012404F324008A93EC /* LoginViewController.xib */; };
@@ -102,6 +104,8 @@
 		8560DD4524121C49000BF5BF /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		8560DD4924127279000BF5BF /* Reservation02ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation02ViewController.swift; sourceTree = "<group>"; };
 		8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation02ViewController.xib; sourceTree = "<group>"; };
+		8560DD4F2413A936000BF5BF /* Reservation00ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation00ViewController.swift; sourceTree = "<group>"; };
+		8560DD502413A936000BF5BF /* Reservation00ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation00ViewController.xib; sourceTree = "<group>"; };
 		858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		858EC4002404F324008A93EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		858EC4012404F324008A93EC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 		850B93E92409C0230010CE87 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8560DD4E2413A90D000BF5BF /* Reservation00 */,
 				8560DD482412724F000BF5BF /* Reservation02 */,
 				8560DD3F24121660000BF5BF /* Reservation01 */,
 				850B93EA2409C0390010CE87 /* HomeViewController.swift */,
@@ -291,6 +296,15 @@
 				8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */,
 			);
 			path = Reservation02;
+			sourceTree = "<group>";
+		};
+		8560DD4E2413A90D000BF5BF /* Reservation00 */ = {
+			isa = PBXGroup;
+			children = (
+				8560DD4F2413A936000BF5BF /* Reservation00ViewController.swift */,
+				8560DD502413A936000BF5BF /* Reservation00ViewController.xib */,
+			);
+			path = Reservation00;
 			sourceTree = "<group>";
 		};
 		858EC3FE2404F308008A93EC /* Controller */ = {
@@ -489,6 +503,7 @@
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
+				8560DD522413A936000BF5BF /* Reservation00ViewController.xib in Resources */,
 				8560DD3E241109C7000BF5BF /* ReservationCell.xib in Resources */,
 				8560DD352410FD6D000BF5BF /* ReservationListViewController.xib in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
@@ -576,6 +591,7 @@
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
+				8560DD512413A936000BF5BF /* Reservation00ViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
 				8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,

@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
     
     //新規予約1に飛ばす
     @IBAction func takeReserve(_ sender: Any) {
-        let vc = Reservation01ViewController()
+        let vc = Reservation00ViewController()
         //戻るボタンの設定
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
