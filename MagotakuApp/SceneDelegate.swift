@@ -25,7 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                if let _ = Auth.auth().currentUser {
                    window?.rootViewController = MainTabBarController() //ログイン後のメイン画面
                }else{
-                   window?.rootViewController = ViewController() //ログイン画面
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateInitialViewController()
+                   window?.rootViewController = vc //ログイン画面
                }
                window?.makeKeyAndVisible()
 
