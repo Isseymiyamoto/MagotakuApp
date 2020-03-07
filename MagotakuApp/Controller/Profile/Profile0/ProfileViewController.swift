@@ -13,6 +13,8 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var testTV: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -58,6 +58,9 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         self.calendar.calendarWeekdayView.weekdayLabels[5].textColor = UIColor.black
         self.calendar.calendarWeekdayView.weekdayLabels[6].textColor = UIColor.blue
         
+        //今日が既に選択された状態になっているのを解除して、違う色をつけたい
+        
+        
         //次へボタンの設定
         nextBtn.layer.cornerRadius = 24
         nextBtn.backgroundColor = UIColor.gray

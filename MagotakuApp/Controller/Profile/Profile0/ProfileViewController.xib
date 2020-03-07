@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
                 <outlet property="logoutBtn" destination="2OJ-QN-e8m" id="WXI-45-fec"/>
+                <outlet property="testTV" destination="CKR-KS-mHs" id="diE-cg-jp4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,16 +32,27 @@
                         <action selector="logout:" destination="-1" eventType="touchUpInside" id="Ybl-BF-SjE"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-KS-mHs">
+                    <rect key="frame" x="32" y="104" width="350" height="254"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2OJ-QN-e8m" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1cn-tc-RfU"/>
                 <constraint firstItem="2OJ-QN-e8m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="2El-ed-Pwp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2OJ-QN-e8m" secondAttribute="trailing" constant="32" id="EEZ-rs-adx"/>
+                <constraint firstItem="2OJ-QN-e8m" firstAttribute="top" secondItem="CKR-KS-mHs" secondAttribute="bottom" constant="60" id="XA8-Gr-mdC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CKR-KS-mHs" secondAttribute="trailing" constant="32" id="ae0-Pt-UZV"/>
+                <constraint firstItem="CKR-KS-mHs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="pYV-6R-3Ex"/>
                 <constraint firstItem="2OJ-QN-e8m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wC8-Bq-oEK"/>
+                <constraint firstItem="CKR-KS-mHs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="xZ6-HL-tHs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="91"/>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </view>
     </objects>
 </document>

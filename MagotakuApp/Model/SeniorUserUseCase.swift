@@ -83,6 +83,21 @@ class SeniorUserUseCase {
         }
     }
     
+    //データ取得
+//    func fetchSeniorUserInfo() -> SeniorUser {
+//        let collectionRef = getCollectionRef()
+//        collectionRef.getDocuments(source: .default) { (snapshot, err) in
+//            guard err == nil, let snapshot = snapshot,!snapshot.isEmpty else {
+//                print("データ取得失敗",err.debugDescription)
+//                return
+//            }
+//            print("データ取得成功")
+//            let SeniorUserInfo = snapshot.documents.compactMap { snapshot in
+//                return try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data())
+//            }
+//        }
+//
+//    }
     
     
     
