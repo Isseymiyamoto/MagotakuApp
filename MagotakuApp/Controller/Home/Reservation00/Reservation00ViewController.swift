@@ -13,6 +13,10 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     //次へボタンの設定
     @IBOutlet weak var nextBtn: UIButton!
     
+    var cell :CustomCell!
+    var cell2: CustomCell2!
+    
+    
     //tableViewに使用する値
     private let sections: [[String]] = [
         ["訪問希望日"],
@@ -22,10 +26,18 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     //スクリーンを取得
     let x = UIScreen.main.bounds
     
+    
+    //2セクション目のTFに入るテキスト
+    var selectDate: String!
+    var selectDate2: String!
+    
    
     
     //UIDatePickerを定義するための変数
-//    var datePicker: UIDatePicker = UIDatePicker()
+    var datePicker: UIDatePicker = UIDatePicker()
+    var datePicker2: UIDatePicker = UIDatePicker()
+    
+    
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -52,20 +64,13 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         // tableView に使う xib ファイルを登録している。
         tableView.register( nib, forCellReuseIdentifier: "CustomCell")
         
+        // nib と xib はほぼ一緒
+        let nib2 = UINib(nibName: "CustomCell2", bundle: nil)
+        // tableView に使う xib ファイルを登録している。
+        tableView.register( nib2, forCellReuseIdentifier: "CustomCell2")
+        
         
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        datePicker.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300) //サイズを指定
-//        datePicker.center = self.view.center
-//        datePicker.timeZone = NSTimeZone.local
-//        datePicker.locale = Locale(identifier: "ja") //日本語に変更
-//        datePicker.datePickerMode = UIDatePicker.Mode.date //形式を指定
-//        datePicker.addTarget(self, action: #selector(setDate), for: .valueChanged) //値が選択されたときのアクションを追加
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
-//        cell.customTF.inputView = datePicker
-//
-//    }
     
     override func viewDidLayoutSubviews() {
         tabBarController?.tabBar.isHidden = true
@@ -93,12 +98,38 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
             cell1.textLabel?.text = sections[indexPath.section][indexPath.row]
             return cell1
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        }else if indexPath.section == 1 && indexPath.row == 0{
+            cell = (tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell)
             cell.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell.customTF.borderStyle = .none
-//            cell.customTF.frame = CGRect(x: UIScreen.main.bounds.width - 216, y: 0, width: 200, height: cell.frame.size.height)
+            cell.customTF.tintColor = .clear
+            cell.customTF.text = selectDate
+            datePicker = cell.datePicker
+            cell.customTF.inputView = datePicker
+            
+            // 決定バーの生成
+                  let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+                  let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+                  let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setDate))
+                  toolbar.setItems([spacelItem, doneItem], animated: true)
+            cell.customTF.inputAccessoryView = toolbar
+            
             return cell
+        }else{
+            cell2 = (tableView.dequeueReusableCell(withIdentifier: "CustomCell2", for: indexPath) as! CustomCell2)
+            cell2.textLabel?.text = sections[indexPath.section][indexPath.row]
+            cell2.customTF2.borderStyle = .none
+            cell2.customTF2.tintColor = .clear
+            cell2.customTF2.text = selectDate2
+            datePicker2 = cell2.datePicker2
+            cell2.customTF2.inputView = datePicker2
+            // 決定バーの生成
+                  let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+                  let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+                  let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setDate2))
+                  toolbar.setItems([spacelItem, doneItem], animated: true)
+            cell2.customTF2.inputAccessoryView = toolbar
+            return cell2
         }
     }
     
@@ -127,8 +158,10 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             //カレンダーを配置しているReservation01VCに遷移させる
             let vc = Reservation01ViewController()
             navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.section == 1 && indexPath.row == 0{
+            cell.customTF.becomeFirstResponder()
         }else{
-            
+            cell2.customTF2.becomeFirstResponder()
         }
         
         
@@ -166,6 +199,21 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    @objc func setDate() {
+       let f = DateFormatter()
+       f.dateStyle = .long
+       f.locale = Locale(identifier: "ja")
+        selectDate = f.string(from: datePicker.date)
+        tableView.reloadData()
+    }
+    
+    @objc func setDate2() {
+       let f = DateFormatter()
+       f.dateStyle = .long
+       f.locale = Locale(identifier: "ja")
+        selectDate2 = f.string(from: datePicker2.date)
+        tableView.reloadData()
+    }
   
 
 }

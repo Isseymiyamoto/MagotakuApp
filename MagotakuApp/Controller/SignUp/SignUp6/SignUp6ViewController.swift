@@ -34,7 +34,7 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         //photoライブラリの使用許可
         PHPhotoLibrary.requestAuthorization{(status) in
-            switch(status){
+            switch status {
             case .authorized:
                 print("許可されています")
             case .denied:
@@ -43,6 +43,8 @@ class SignUp6ViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("notDetermined")
             case .restricted:
                 print("制限されています")
+            @unknown default:
+                print(Error.self)
             }
         }
          

@@ -12,10 +12,17 @@ class CustomCell: UITableViewCell {
     
     @IBOutlet weak var customTF: UITextField!
     
+    // ピッカー設定
+    var datePicker = UIDatePicker()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+            datePicker.timeZone = NSTimeZone.local
+            datePicker.locale = Locale(identifier: "ja") //日本語に変更
+            datePicker.datePickerMode = UIDatePicker.Mode.time//形式を指定
+            datePicker.minuteInterval = 15
+        
+                
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +30,8 @@ class CustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
     
 }
