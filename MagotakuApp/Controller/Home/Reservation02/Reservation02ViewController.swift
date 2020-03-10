@@ -9,11 +9,7 @@
 import UIKit
 
 class Reservation02ViewController: UIViewController {
-
-    //test用の変数
-    var selectedDate: [Int]!
     
-    @IBOutlet weak var testLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +17,6 @@ class Reservation02ViewController: UIViewController {
         //navigationBarのタイトル設定
         self.title = "お手伝い内容を選ぶ"
 
-        var testString: String!
-        testString = "選択日時：\(String(selectedDate[0]))年\(String(selectedDate[1]))月\(String(selectedDate[2]))日"
-        testLabel.text = testString
         
     }
 

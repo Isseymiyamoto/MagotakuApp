@@ -13,21 +13,20 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     //次へボタンの設定
     @IBOutlet weak var nextBtn: UIButton!
     
-    //UIDatePickerを定義するための変数
-    var datePicker: UIDatePicker = UIDatePicker()
-
-    
     //tableViewに使用する値
     private let sections: [[String]] = [
         ["訪問希望日"],
         ["開始時間", "利用時間"]
     ]
     
-    
-    
     //スクリーンを取得
     let x = UIScreen.main.bounds
     
+   
+    
+    //UIDatePickerを定義するための変数
+//    var datePicker: UIDatePicker = UIDatePicker()
+
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,12 +44,28 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
         //UIViewのbackgroundを設定
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
-
+        
+        // nib と xib はほぼ一緒
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        // tableView に使う xib ファイルを登録している。
+        tableView.register( nib, forCellReuseIdentifier: "CustomCell")
+        
+        
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        datePicker.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300) //サイズを指定
+//        datePicker.center = self.view.center
+//        datePicker.timeZone = NSTimeZone.local
+//        datePicker.locale = Locale(identifier: "ja") //日本語に変更
+//        datePicker.datePickerMode = UIDatePicker.Mode.date //形式を指定
+//        datePicker.addTarget(self, action: #selector(setDate), for: .valueChanged) //値が選択されたときのアクションを追加
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
+//        cell.customTF.inputView = datePicker
+//
+//    }
     
     override func viewDidLayoutSubviews() {
         tabBarController?.tabBar.isHidden = true
@@ -58,19 +73,8 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         nextBtn.frame = CGRect(x: 32, y: x.height - 108, width: x.width - 64, height: 48)
         nextBtn.layer.cornerRadius = 24
         
-        
-        //nabvigationBarの位置を取得
-//        let navXPoint: CGFloat = (navigationController!.navigationBar.frame.origin.x)
-//        let navHeight: CGFloat = (navigationController?.navigationBar.frame.height)!
-//
-//        print(navXPoint)
-//        print(navHeight)
-//
-//        kakunin.frame = CGRect(x: 0, y: 68, width: 12, height: 12)
-        
-       
-        
     }
+   
 
     //sectionの中に何個セル(row)が入るのか
     //[section]のsectionは引数sectionを使用しているだけ
@@ -78,12 +82,24 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         return sections[section].count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(76)
+    }
+    
     
     //セルを構築する際に呼ばれるメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = sections[indexPath.section][indexPath.row]
-        return cell
+        if indexPath.section == 0 && indexPath.row == 0{
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell1.textLabel?.text = sections[indexPath.section][indexPath.row]
+            return cell1
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+            cell.textLabel?.text = sections[indexPath.section][indexPath.row]
+            cell.customTF.borderStyle = .none
+//            cell.customTF.frame = CGRect(x: UIScreen.main.bounds.width - 216, y: 0, width: 200, height: cell.frame.size.height)
+            return cell
+        }
     }
     
     //全体としてのセクション数は幾つなのか
@@ -111,7 +127,11 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             //カレンダーを配置しているReservation01VCに遷移させる
             let vc = Reservation01ViewController()
             navigationController?.pushViewController(vc, animated: true)
+        }else{
+            
         }
+        
+        
     }
     
     //tableViewのheaderの高さ設定
@@ -137,6 +157,13 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
    
+    
+    @IBAction func tapToNext(_ sender: Any) {
+        let vc = Reservation02ViewController()
+        let backButtonItem =  UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     
   

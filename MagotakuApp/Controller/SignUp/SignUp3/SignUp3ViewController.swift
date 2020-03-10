@@ -34,7 +34,7 @@ class SignUp3ViewController: UIViewController{
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
-        birthdateTF.inputView = datePicker
+//        birthdateTF.inputView = datePicker
         
         // 決定バーの生成
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
