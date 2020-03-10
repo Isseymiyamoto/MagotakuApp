@@ -27,8 +27,7 @@ class SignUp8ViewController: UIViewController {
     
     @IBOutlet weak var aNameLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
-    var sName:String?
-    var aName:String?
+  
     
     
     override func viewDidLoad() {
@@ -62,8 +61,12 @@ class SignUp8ViewController: UIViewController {
         }
         
         //遷移先に飛ばす
-        let vc = HomeViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+                return
+        }
+        let vc = MainTabBarController()
+        sceneDelegate.window?.rootViewController = vc
     }
     
 

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FSCalendar
 
-class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UINavigationControllerDelegate {
     
     
     //カレンダー定義
@@ -25,7 +25,9 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         super.viewDidLoad()
 
         //NavigationBarのタイトル設定
-        self.title = "訪問希望日を選ぶ"
+        self.title = "訪問希望日をタップしてください"
+        
+        
         
         //titleLabelの設定
 //        titleLabel.text = ""
@@ -110,10 +112,14 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
     }
 
     @IBAction func tapToNext(_ sender: Any) {
-        let vc = Reservation02ViewController()
-        vc.selectedDate = selectedDate
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = Reservation02ViewController()
+//        vc.selectedDate = selectedDate
+//        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+//        navigationItem.backBarButtonItem = backButtonItem
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        //選択画面に戻る
+//        let preNV = self.presentingViewController as! UINavigationController
+        navigationController?.popViewController(animated: true)
     }
 }

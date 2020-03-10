@@ -10,25 +10,65 @@ import UIKit
 
 class Reservation00ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //次へボタンの設定
+    @IBOutlet weak var nextBtn: UIButton!
+    
+    //UIDatePickerを定義するための変数
+    var datePicker: UIDatePicker = UIDatePicker()
+
+    
     //tableViewに使用する値
     private let sections: [[String]] = [
         ["訪問希望日"],
-        ["開始時間", "終了時間"]
+        ["開始時間", "利用時間"]
     ]
+    
+    
+    
+    //スクリーンを取得
+    let x = UIScreen.main.bounds
+    
 
     @IBOutlet weak var tableView: UITableView!
+    
+    //カレンダーで選択した値が入る
+    var decidedDate: String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //navigationBarのタイトル設定
-        self.title = "訪問希望日を選ぶ"
+        self.title = "新規予約"
         
         //プロトコルの設定
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        
+        //UIViewのbackgroundを設定
+        tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        tabBarController?.tabBar.isHidden = true
+        
+        nextBtn.frame = CGRect(x: 32, y: x.height - 108, width: x.width - 64, height: 48)
+        nextBtn.layer.cornerRadius = 24
+        
+        
+        //nabvigationBarの位置を取得
+//        let navXPoint: CGFloat = (navigationController!.navigationBar.frame.origin.x)
+//        let navHeight: CGFloat = (navigationController?.navigationBar.frame.height)!
+//
+//        print(navXPoint)
+//        print(navHeight)
+//
+//        kakunin.frame = CGRect(x: 0, y: 68, width: 12, height: 12)
+        
+       
         
     }
 
@@ -53,15 +93,52 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let title = sections[section].first{
-            return String(title)
-        }
         return ""
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return ""
+//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+//        return ""
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //タップされたセルのセクション番目の取得
+        print(indexPath.section)
+        //タップされたセルのrow番目の取得
+        print(indexPath.row)
+        
+        //セルの場所で処理を分岐
+        if indexPath.section == 0 && indexPath.row == 0{
+            //カレンダーを配置しているReservation01VCに遷移させる
+            let vc = Reservation01ViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
+    //tableViewのheaderの高さ設定
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        switch section {
+        case 0:
+            return CGFloat(x.height / 20)
+        default:
+            return CGFloat(x.height / 20)
+        }
+    }
+    
+    //tableViewのfooterの高さ設定
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        switch section {
+        case 0:
+            return CGFloat(0)
+        default:
+            return CGFloat(1)
+        }
+    }
+    
+   
+    
+    
   
 
 }

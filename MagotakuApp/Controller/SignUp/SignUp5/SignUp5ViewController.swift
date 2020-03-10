@@ -39,6 +39,7 @@ class SignUp5ViewController: UIViewController, UITextViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         }else{
             showErrorAlert(text: "サービス利用者の趣味または性格を入力してください")
+            
         }
         
     }
