@@ -117,6 +117,9 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
 //        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
 //        navigationItem.backBarButtonItem = backButtonItem
 //        navigationController?.pushViewController(vc, animated: true)
+        let preNC = self.navigationController as! UINavigationController
+        let preVC = preNC.viewControllers[preNC.viewControllers.count - 1]
+//        preVC.variable = self.variable  //ここで値渡し
         
         //選択画面に戻る
 //        let preNV = self.presentingViewController as! UINavigationController

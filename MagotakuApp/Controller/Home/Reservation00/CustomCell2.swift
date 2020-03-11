@@ -26,7 +26,7 @@ class CustomCell2: UITableViewCell {
 
         datePicker2.timeZone = NSTimeZone.local
         datePicker2.locale = Locale(identifier: "ja") //日本語に変更
-        datePicker2.datePickerMode = UIDatePicker.Mode.time//形式を指定
+        datePicker2.datePickerMode = UIDatePicker.Mode.countDownTimer
         datePicker2.minuteInterval = 15
     }
     
