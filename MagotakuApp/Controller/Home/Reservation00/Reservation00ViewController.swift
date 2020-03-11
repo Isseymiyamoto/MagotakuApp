@@ -31,6 +31,9 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     var selectDate: String!
     var selectDate2: String!
     
+    //1セクションのcontentViewに入るテキスト
+    var calendarDate: String = ""
+    
    
     
     //UIDatePickerを定義するための変数
@@ -41,11 +44,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
 
 
     @IBOutlet weak var tableView: UITableView!
-    
-    //カレンダーで選択した値が入る
-    var decidedDate: String!
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,6 +69,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.register( nib2, forCellReuseIdentifier: "CustomCell2")
         
         
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,6 +79,14 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         nextBtn.layer.cornerRadius = 24
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        tableView.reloadData()
+//    }
    
 
     //sectionの中に何個セル(row)が入るのか
@@ -95,8 +103,10 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     //セルを構築する際に呼ばれるメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0{
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .value1, reuseIdentifier: "cell")
             cell1.textLabel?.text = sections[indexPath.section][indexPath.row]
+            cell1.detailTextLabel?.text = calendarDate
+            cell1.detailTextLabel?.textColor = UIColor.black
             return cell1
         }else if indexPath.section == 1 && indexPath.row == 0{
             cell = (tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell)
