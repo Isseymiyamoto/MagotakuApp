@@ -80,8 +80,6 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         calendar.frame = CGRect(x: 0, y: safeAreaTopHeight + 24 , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - safeAreaTopHeight - safeAreaBottomHeight - 96)
 //        calendar.frame = CGRect(x: 0, y: safeAreaTopHeight + 24 , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
         nextBtn.frame = CGRect(x: 32, y: UIScreen.main.bounds.height - safeAreaBottomHeight - 60, width: UIScreen.main.bounds.width - 64, height: 48)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -8,7 +8,12 @@
 
 import UIKit
 
-class Reservation02ViewController: UIViewController {
+class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -17,6 +22,14 @@ class Reservation02ViewController: UIViewController {
         //navigationBarのタイトル設定
         self.title = "お手伝い内容を選ぶ"
 
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
     }
 

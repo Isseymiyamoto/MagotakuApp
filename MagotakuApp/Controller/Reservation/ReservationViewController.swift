@@ -26,12 +26,23 @@ class ReservationViewController: UIViewController{
 
         pagingVC = PagingViewController(viewControllers: [firstVC, secondVC])
         pagingVC.menuItemSize = PagingMenuItemSize.fixed(width: UIScreen.main.bounds.width / 2, height: 60)
+        
+//        addChild(pagingVC)
+//        view.addSubview(pagingVC.view)
+//        pagingVC.didMove(toParent: self)
+//        pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//          pagingVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//          pagingVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//          pagingVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//          pagingVC.view.topAnchor.constraint(equalTo: view.topAnchor)
+//        ])
+
         addChild(pagingVC)
         view.addSubview(pagingVC.view)
         pagingVC.didMove(toParent: self)
         pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
-        
-       
+         
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +53,7 @@ class ReservationViewController: UIViewController{
         let bottomM = self.view.safeAreaInsets.top
         view.constrainToEdges(pagingVC.view, topPadding: bottomM)
     }
-    
+
     
     
     

@@ -49,9 +49,14 @@
                                     <action selector="tapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rsY-jp-7sK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIV-Qc-Tur">
+                                <rect key="frame" x="32" y="786" width="350" height="30"/>
+                                <state key="normal" title="まごちゃんはこちらから"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="PIV-Qc-Tur" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="2q9-xv-kZ2"/>
                             <constraint firstItem="N3B-P2-DIw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="5w5-7u-3wb"/>
                             <constraint firstItem="Z40-8S-fOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Azu-ud-aiI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yrs-Qf-g7Z" secondAttribute="trailing" constant="32" id="EkT-zG-GNb"/>
@@ -59,8 +64,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z40-8S-fOo" secondAttribute="trailing" constant="32" id="L53-Va-Lvn"/>
                             <constraint firstItem="Z40-8S-fOo" firstAttribute="top" secondItem="Yrs-Qf-g7Z" secondAttribute="bottom" constant="12" id="UUK-RQ-Mb0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3B-P2-DIw" secondAttribute="trailing" constant="32" id="ZJp-BY-wMN"/>
+                            <constraint firstItem="PIV-Qc-Tur" firstAttribute="top" secondItem="Z40-8S-fOo" secondAttribute="bottom" constant="4" id="b6z-mw-B50"/>
                             <constraint firstItem="N3B-P2-DIw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="dMp-Yd-XoH"/>
                             <constraint firstItem="Yrs-Qf-g7Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="erO-0w-RD8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PIV-Qc-Tur" secondAttribute="trailing" constant="32" id="jbh-sw-0U4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
