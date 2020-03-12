@@ -29,7 +29,12 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         return 9
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .black
+        return cell
         
     }
 

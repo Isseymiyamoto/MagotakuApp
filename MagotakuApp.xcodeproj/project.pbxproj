@@ -62,6 +62,9 @@
 		85DB99F72417A05F0092935B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F62417A05F0092935B /* CustomLabel.swift */; };
 		85DB99FA2417ADA30092935B /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F82417ADA30092935B /* CustomCell2.swift */; };
 		85DB99FB2417ADA30092935B /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99F92417ADA30092935B /* CustomCell2.xib */; };
+		85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99FC241A05670092935B /* CustomCollectionCell.swift */; };
+		85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99FD241A05670092935B /* CustomCollectionCell.xib */; };
+		85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
@@ -130,6 +133,9 @@
 		85DB99F62417A05F0092935B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		85DB99F82417ADA30092935B /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 		85DB99F92417ADA30092935B /* CustomCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
+		85DB99FC241A05670092935B /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		85DB99FD241A05670092935B /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
+		85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 			children = (
 				8560DD4924127279000BF5BF /* Reservation02ViewController.swift */,
 				8560DD4A2412727A000BF5BF /* Reservation02ViewController.xib */,
+				85DB99FC241A05670092935B /* CustomCollectionCell.swift */,
+				85DB99FD241A05670092935B /* CustomCollectionCell.xib */,
 			);
 			path = Reservation02;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 				8560DD2D240E71FA000BF5BF /* TextView.swift */,
 				8560DD4524121C49000BF5BF /* Reservation.swift */,
 				85DB99F62417A05F0092935B /* CustomLabel.swift */,
+				85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +536,7 @@
 				850B93BB2406AE440010CE87 /* SignUp3ViewController.xib in Resources */,
 				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
+				85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */,
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
 				8560DD522413A936000BF5BF /* Reservation00ViewController.xib in Resources */,
@@ -626,9 +636,11 @@
 				8560DD512413A936000BF5BF /* Reservation00ViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
 				8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */,
+				85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
+				85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */,
 				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,
 				850B93C7240778730010CE87 /* PlaceholderTextView.swift in Sources */,
 				8560DD4624121C49000BF5BF /* Reservation.swift in Sources */,
