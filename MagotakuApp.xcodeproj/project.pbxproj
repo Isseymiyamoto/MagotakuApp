@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5651E1AFA100B09CD6CB88FA /* Pods_MagotakuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */; };
+		8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */; };
+		8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */; };
 		850B93A0240560530010CE87 /* SeniorUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B939F240560530010CE87 /* SeniorUser.swift */; };
 		850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */; };
 		850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */; };
@@ -77,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		1A12F10324DD0A6DD32145AC /* Pods-MagotakuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.debug.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation03ViewController.swift; sourceTree = "<group>"; };
+		8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation03ViewController.xib; sourceTree = "<group>"; };
 		850B939F240560530010CE87 /* SeniorUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUser.swift; sourceTree = "<group>"; };
 		850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp1ViewController.xib; sourceTree = "<group>"; };
@@ -160,6 +164,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8505BEC6241B7E2100E46191 /* Reservation03 */ = {
+			isa = PBXGroup;
+			children = (
+				8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */,
+				8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */,
+			);
+			path = Reservation03;
+			sourceTree = "<group>";
+		};
 		850B93A124057EF60010CE87 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +282,7 @@
 		850B93E92409C0230010CE87 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8505BEC6241B7E2100E46191 /* Reservation03 */,
 				85DB99EE241776E70092935B /* DatePicker */,
 				8560DD4E2413A90D000BF5BF /* Reservation00 */,
 				8560DD482412724F000BF5BF /* Reservation02 */,
@@ -549,6 +563,7 @@
 				850B93CC24078C9B0010CE87 /* SignUp6ViewController.xib in Resources */,
 				850B93C02406F1A90010CE87 /* SignUp4ViewController.xib in Resources */,
 				85DB99F524178E750092935B /* CustomCell.xib in Resources */,
+				8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */,
 				85A506BA2404C89900A2F582 /* Main.storyboard in Resources */,
 				85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */,
 				8560DD432412168B000BF5BF /* Reservation01ViewController.xib in Resources */,
@@ -638,6 +653,7 @@
 				8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */,
 				85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
+				8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
 				85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */,
