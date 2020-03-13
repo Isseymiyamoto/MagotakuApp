@@ -21,6 +21,11 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         
         //navigationBarのタイトル設定
         self.title = "お手伝い内容を選ぶ"
+        
+        // nib と xib はほぼ一緒
+        let nib = UINib(nibName: "CustomCollectionCell", bundle: nil)
+        // tableView に使う xib ファイルを登録している。
+        collectionView.register(_ nib: nib, forCellWithReuseIdentifier identifier: "CustomCollectionCell")
 
         
     }

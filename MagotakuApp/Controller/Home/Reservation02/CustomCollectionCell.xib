@@ -16,13 +16,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-k1-NFp">
-                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-k1-NFp">
+                        <rect key="frame" x="33" y="33" width="30" height="30"/>
+                        <state key="normal" title="Btn"/>
                     </button>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="WGG-k1-NFp" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9ke-uJ-9cj"/>
+                <constraint firstItem="WGG-k1-NFp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sUU-2b-dwe"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="96" height="96"/>
             <connections>
