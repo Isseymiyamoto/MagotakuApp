@@ -72,10 +72,12 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
             //check画像を消す
             cell.backgroundColor = .lightGray
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
+//            cell.checkBtn.imageView?.image = UIImage(systemName: "square")
             cell.checkd = false
             
         }else{
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
+//            cell.checkBtn.imageView?.image = UIImage(systemName: "checkmark.square")
             cell.backgroundColor = .systemPink
             cell.checkd = true
         }

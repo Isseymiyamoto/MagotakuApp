@@ -113,6 +113,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             cell.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell.customTF.borderStyle = .none
             cell.customTF.tintColor = .clear
+            cell.customTF.placeholder = "例: 午前12:00"
             cell.customTF.text = selectDate
             datePicker = cell.datePicker
             cell.customTF.inputView = datePicker
@@ -130,6 +131,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             cell2.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell2.customTF2.borderStyle = .none
             cell2.customTF2.tintColor = .clear
+            cell2.customTF2.placeholder = "例: 2時間"
             cell2.customTF2.text = selectDate2
             datePicker2 = cell2.datePicker2
             cell2.customTF2.inputView = datePicker2
@@ -211,15 +213,17 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     
     @objc func setDate() {
        let f = DateFormatter()
-       f.dateStyle = .long
+       f.timeStyle = .short
        f.locale = Locale(identifier: "ja")
+        f.dateFormat = "h時mm分"
         selectDate = f.string(from: datePicker.date)
         tableView.reloadData()
     }
     
     @objc func setDate2() {
        let f = DateFormatter()
-       f.dateStyle = .long
+       f.timeStyle = .short
+        f.dateFormat = "h時間mm分"
        f.locale = Locale(identifier: "ja")
         selectDate2 = f.string(from: datePicker2.date)
         tableView.reloadData()
