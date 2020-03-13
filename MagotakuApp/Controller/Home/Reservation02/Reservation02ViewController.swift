@@ -56,18 +56,8 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionCell", for: indexPath) as! CustomCollectionCell
         cell.backgroundColor = .lightGray
-        
-//        if indexPath.count % 3 == 0{
-//            cell.imageView.image = UIImage(systemName: cellImages[0])
-//        }else if indexPath.count % 3 == 1{
-//            cell.imageView.image = UIImage(systemName: cellImages[1])
-//        }else{
-//            cell.imageView.image = UIImage(systemName: cellImages[2])
-//        }
-//
         cell.imageView.frame = CGRect(x: cell.frame.width / 4, y: cell.frame.width / 4, width: cell.frame.width / 2 , height: cell.frame.width / 2)
         cell.imageView.image = UIImage(systemName: cellImages[indexPath.item % 3])
-        
         
         return cell
         
@@ -81,10 +71,11 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         if cell.checkd{
             //check画像を消す
             cell.backgroundColor = .lightGray
+            cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
             cell.checkd = false
             
         }else{
-            cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark"), for: .normal)
+            cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
             cell.backgroundColor = .systemPink
             cell.checkd = true
         }

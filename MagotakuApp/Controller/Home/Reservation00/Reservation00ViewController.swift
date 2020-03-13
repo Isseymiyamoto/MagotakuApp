@@ -49,7 +49,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
 
         //navigationBarのタイトル設定
-        self.title = "新規予約"
+        self.title = "訪問希望日を選択して下さい"
         
         //プロトコルの設定
         tableView.delegate = self

@@ -21,6 +21,7 @@ class CustomCollectionCell: UICollectionViewCell {
         
 //        self.imageView.frame = CGRect(x: self.view.frame.width / 4, y: self.view.frame.width / 4, width: self.view.frame.width / 2 , height: self.view.frame.width / 2)
         
+        checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
     }
     
     
