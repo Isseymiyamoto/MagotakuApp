@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Reservation02ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="UpF-Z3-Y18" id="rAz-Og-0hm"/>
+                <outlet property="collectionView" destination="Fho-XR-YjZ" id="Ray-DD-ukK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,11 +18,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UpF-Z3-Y18">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-XR-YjZ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hme-8K-gVk">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tox-zb-fE5">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

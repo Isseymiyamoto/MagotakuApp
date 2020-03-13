@@ -8,10 +8,12 @@
 
 import UIKit
 
-class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     
     
+    //スクリーンサイズ取得用
+    let x = UIScreen.main.bounds
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,27 +24,41 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         //navigationBarのタイトル設定
         self.title = "お手伝い内容を選ぶ"
         
-        // nib と xib はほぼ一緒
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+
+        //Xibファイルの設定
         let nib = UINib(nibName: "CustomCollectionCell", bundle: nil)
-        // tableView に使う xib ファイルを登録している。
-        collectionView.register(_ nib: nib, forCellWithReuseIdentifier identifier: "CustomCollectionCell")
+        collectionView.register(nib, forCellWithReuseIdentifier: "CustomCollectionCell")
 
         
+        //レイアウト設定
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: x.width / 4, height: x.width / 4)
+        layout.minimumLineSpacing = x.width / 10
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        collectionView.collectionViewLayout = layout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 30
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionCell", for: indexPath)
+        cell.backgroundColor = .systemPink
         return cell
         
     }
+    
+    
+    
 
+    
 
   
 
