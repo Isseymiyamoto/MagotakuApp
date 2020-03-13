@@ -13,6 +13,9 @@ class CustomCollectionCell: UICollectionViewCell {
     @IBOutlet weak var checkBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
+    //選択されているか否か
+    var checkd = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
