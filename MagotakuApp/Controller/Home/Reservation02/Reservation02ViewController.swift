@@ -10,6 +10,8 @@ import UIKit
 
 class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    //cellに入れる写真名の配列
+    let cellImages:[String] = ["folder.fill.badge.minus", "paperplane", "tray.fill"]
     
     
     //スクリーンサイズ取得用
@@ -32,6 +34,8 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         //Xibファイルの設定
         let nib = UINib(nibName: "CustomCollectionCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CustomCollectionCell")
+        
+        
 
         
         //レイアウト設定
@@ -49,10 +53,26 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionCell", for: indexPath)
-        cell.backgroundColor = .systemPink
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionCell", for: indexPath) as! CustomCollectionCell
+        cell.backgroundColor = .lightGray
+//        if indexPath.count % 3 == 0{
+//            cell.imageView.image = UIImage(systemName: cellImages[0])
+//        }else if indexPath.count % 3 == 1{
+//            cell.imageView.image = UIImage(systemName: cellImages[1])
+//        }else{
+//            cell.imageView.image = UIImage(systemName: cellImages[2])
+//        }
+//
+        
+        cell.imageView.image = UIImage(systemName: cellImages[indexPath.item % 3])
+        
+        
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
     }
     
     

@@ -16,6 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w4L-Nt-D7d">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-k1-NFp">
                         <rect key="frame" x="33" y="33" width="30" height="30"/>
                         <state key="normal" title="Btn"/>
@@ -24,12 +27,17 @@
             </view>
             <constraints>
                 <constraint firstItem="WGG-k1-NFp" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9ke-uJ-9cj"/>
+                <constraint firstItem="w4L-Nt-D7d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F1V-HM-MV6"/>
+                <constraint firstAttribute="bottom" secondItem="w4L-Nt-D7d" secondAttribute="bottom" id="Fa3-Xt-kt4"/>
+                <constraint firstItem="w4L-Nt-D7d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m9M-s9-GwF"/>
+                <constraint firstAttribute="trailing" secondItem="w4L-Nt-D7d" secondAttribute="trailing" id="qV0-VU-6OQ"/>
                 <constraint firstItem="WGG-k1-NFp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sUU-2b-dwe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="96" height="96"/>
             <connections>
                 <outlet property="checkBtn" destination="WGG-k1-NFp" id="v1v-nk-bAl"/>
+                <outlet property="imageView" destination="w4L-Nt-D7d" id="hm0-bZ-Iac"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="101.11607142857143"/>
         </collectionViewCell>

@@ -11,7 +11,8 @@ import UIKit
 class CustomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var checkBtn: UIButton!
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
