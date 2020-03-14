@@ -55,6 +55,15 @@ class ViewController: UIViewController {
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    //学生側ログイン画面に遷移
+    @IBAction func tapToStudentLogin(_ sender: Any) {
+        let vc = LoginStudentViewController()
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 }
 

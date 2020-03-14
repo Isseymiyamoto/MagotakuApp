@@ -10,6 +10,8 @@
 		5651E1AFA100B09CD6CB88FA /* Pods_MagotakuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */; };
 		8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */; };
 		8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */; };
+		8505BECF241C7AAB00E46191 /* LoginStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BECD241C7AAB00E46191 /* LoginStudentViewController.swift */; };
+		8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */; };
 		850B93A0240560530010CE87 /* SeniorUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B939F240560530010CE87 /* SeniorUser.swift */; };
 		850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */; };
 		850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */; };
@@ -80,6 +82,8 @@
 		1A12F10324DD0A6DD32145AC /* Pods-MagotakuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.debug.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation03ViewController.swift; sourceTree = "<group>"; };
 		8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation03ViewController.xib; sourceTree = "<group>"; };
+		8505BECD241C7AAB00E46191 /* LoginStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStudentViewController.swift; sourceTree = "<group>"; };
+		8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginStudentViewController.xib; sourceTree = "<group>"; };
 		850B939F240560530010CE87 /* SeniorUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUser.swift; sourceTree = "<group>"; };
 		850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp1ViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +173,23 @@
 				8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */,
 			);
 			path = Reservation03;
+			sourceTree = "<group>";
+		};
+		8505BECB241C7A6B00E46191 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				8505BECC241C7A7900E46191 /* Login */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		8505BECC241C7A7900E46191 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8505BECD241C7AAB00E46191 /* LoginStudentViewController.swift */,
+				8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		850B93A124057EF60010CE87 /* SignUp */ = {
@@ -346,6 +367,7 @@
 		858EC3FE2404F308008A93EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8505BECB241C7A6B00E46191 /* Students */,
 				85EC4E07240E4E5200FCDCD2 /* Settings */,
 				85EC4E01240E4C8F00FCDCD2 /* Profile */,
 				85EC4DFC240E4C5B00FCDCD2 /* Reservation */,
@@ -537,6 +559,7 @@
 				850B93C524075DCA0010CE87 /* SignUp5ViewController.xib in Resources */,
 				850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */,
 				850B93BB2406AE440010CE87 /* SignUp3ViewController.xib in Resources */,
+				8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */,
 				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
 				85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */,
@@ -614,6 +637,7 @@
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
 				85DB99F424178E750092935B /* CustomCell.swift in Sources */,
 				850B93AD2405B06C0010CE87 /* UIViewController+.swift in Sources */,
+				8505BECF241C7AAB00E46191 /* LoginStudentViewController.swift in Sources */,
 				850B93D5240823930010CE87 /* SignUp7ViewController.swift in Sources */,
 				8560DD342410FD6D000BF5BF /* ReservationListViewController.swift in Sources */,
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
