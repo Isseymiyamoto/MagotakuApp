@@ -10,6 +10,11 @@ import UIKit
 
 class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    //タップされた箇所一時的に保存する
+    var selectBool : [Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    //最終的にtrueだったindex番号のみを格納するための配列
+    var finalResults = [Int]()
+    
     //cellに入れる写真名の配列
     let cellImages:[String] = ["folder.fill.badge.minus", "paperplane", "tray.fill"]
     
@@ -68,19 +73,30 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         
         let cell  = collectionView.cellForItem(at: indexPath) as! CustomCollectionCell
         
-        if cell.checkd{
-            //check画像を消す
+        if selectBool[indexPath.item]{
             cell.backgroundColor = .lightGray
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
-//            cell.checkBtn.imageView?.image = UIImage(systemName: "square")
-            cell.checkd = false
-            
+            selectBool[indexPath.item] = false
         }else{
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
-//            cell.checkBtn.imageView?.image = UIImage(systemName: "checkmark.square")
             cell.backgroundColor = .systemPink
-            cell.checkd = true
+            selectBool[indexPath.item] = true
         }
+        
+        
+//        if cell.checkd{
+//            //check画像を消す
+//            cell.backgroundColor = .lightGray
+//            cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
+//            cell.checkBtn.imageView?.image = UIImage(systemName: "square")
+//            cell.checkd = false
+//
+//        }else{
+//            cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
+//            cell.checkBtn.imageView?.image = UIImage(systemName: "checkmark.square")
+//            cell.backgroundColor = .systemPink
+//            cell.checkd = true
+//        }
         
         
         
@@ -89,6 +105,15 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
     
     
     @IBAction func tapToNext(_ sender: Any) {
+        print(selectBool)
+        for i in 1 ..< selectBool.count{
+            if selectBool[i]{
+                finalResults.append(i)
+            }else{
+                continue
+            }
+        }
+        print(finalResults)
         let vc = Reservation03ViewController()
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
