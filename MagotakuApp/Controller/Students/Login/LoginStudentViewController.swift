@@ -47,7 +47,7 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
             
             //navigationBarの配置
             // navigationBarのタイトル
-            self.title = "ログイン"
+            self.title = "学生側ログイン"
             //　ナビゲーションバーの背景色
             self.navigationController?.navigationBar.barTintColor = UIColor(red: 23/255, green: 35/255, blue: 57/255, alpha: 1)
             // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
@@ -99,7 +99,7 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
                     self.logInErrorAlert(error)
                 } else {
                     print ("🌞ログイン成功")
-                    //シニア用のHomeに飛ばす
+                    //学生用のHomeに飛ばす
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                         let sceneDelegate = windowScene.delegate as? SceneDelegate else{
                             return

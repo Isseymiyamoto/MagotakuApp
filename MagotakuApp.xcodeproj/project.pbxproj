@@ -12,6 +12,8 @@
 		8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */; };
 		8505BECF241C7AAB00E46191 /* LoginStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BECD241C7AAB00E46191 /* LoginStudentViewController.swift */; };
 		8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */; };
+		8505BED2241DECB800E46191 /* ReservationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BED1241DECB800E46191 /* ReservationCollection.swift */; };
+		8505BED4241DECD000E46191 /* ReservationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8505BED3241DECD000E46191 /* ReservationUseCase.swift */; };
 		850B93A0240560530010CE87 /* SeniorUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B939F240560530010CE87 /* SeniorUser.swift */; };
 		850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */; };
 		850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */; };
@@ -84,6 +86,8 @@
 		8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Reservation03ViewController.xib; sourceTree = "<group>"; };
 		8505BECD241C7AAB00E46191 /* LoginStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStudentViewController.swift; sourceTree = "<group>"; };
 		8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginStudentViewController.xib; sourceTree = "<group>"; };
+		8505BED1241DECB800E46191 /* ReservationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollection.swift; sourceTree = "<group>"; };
+		8505BED3241DECD000E46191 /* ReservationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationUseCase.swift; sourceTree = "<group>"; };
 		850B939F240560530010CE87 /* SeniorUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUser.swift; sourceTree = "<group>"; };
 		850B93A324057F1B0010CE87 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		850B93A424057F1B0010CE87 /* SignUp1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp1ViewController.xib; sourceTree = "<group>"; };
@@ -190,6 +194,39 @@
 				8505BECE241C7AAB00E46191 /* LoginStudentViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8505BED5241DECE600E46191 /* SeniorReservation */ = {
+			isa = PBXGroup;
+			children = (
+				8560DD4524121C49000BF5BF /* Reservation.swift */,
+				8505BED3241DECD000E46191 /* ReservationUseCase.swift */,
+				8505BED1241DECB800E46191 /* ReservationCollection.swift */,
+			);
+			path = SeniorReservation;
+			sourceTree = "<group>";
+		};
+		8505BED6241DECFE00E46191 /* SeniorUser */ = {
+			isa = PBXGroup;
+			children = (
+				850B939F240560530010CE87 /* SeniorUser.swift */,
+				85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */,
+				85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */,
+			);
+			path = SeniorUser;
+			sourceTree = "<group>";
+		};
+		8505BED7241DF65700E46191 /* Seniors */ = {
+			isa = PBXGroup;
+			children = (
+				85EC4E07240E4E5200FCDCD2 /* Settings */,
+				85EC4E01240E4C8F00FCDCD2 /* Profile */,
+				85EC4DFC240E4C5B00FCDCD2 /* Reservation */,
+				850B93E92409C0230010CE87 /* Home */,
+				850B93A124057EF60010CE87 /* SignUp */,
+				858EC3FF2404F30F008A93EC /* Login */,
+			);
+			path = Seniors;
 			sourceTree = "<group>";
 		};
 		850B93A124057EF60010CE87 /* SignUp */ = {
@@ -368,12 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				8505BECB241C7A6B00E46191 /* Students */,
-				85EC4E07240E4E5200FCDCD2 /* Settings */,
-				85EC4E01240E4C8F00FCDCD2 /* Profile */,
-				85EC4DFC240E4C5B00FCDCD2 /* Reservation */,
-				850B93E92409C0230010CE87 /* Home */,
-				850B93A124057EF60010CE87 /* SignUp */,
-				858EC3FF2404F30F008A93EC /* Login */,
+				8505BED7241DF65700E46191 /* Seniors */,
 				85A506B62404C89900A2F582 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -392,12 +424,10 @@
 			isa = PBXGroup;
 			children = (
 				858EC4052405047F008A93EC /* CustomTextFiled.swift */,
-				850B939F240560530010CE87 /* SeniorUser.swift */,
+				8505BED6241DECFE00E46191 /* SeniorUser */,
 				850B93C6240778730010CE87 /* PlaceholderTextView.swift */,
-				85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */,
-				85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */,
 				8560DD2D240E71FA000BF5BF /* TextView.swift */,
-				8560DD4524121C49000BF5BF /* Reservation.swift */,
+				8505BED5241DECE600E46191 /* SeniorReservation */,
 				85DB99F62417A05F0092935B /* CustomLabel.swift */,
 				85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */,
 			);
@@ -643,12 +673,14 @@
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
 				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
+				8505BED4241DECD000E46191 /* ReservationUseCase.swift in Sources */,
 				8560DD3D241109C7000BF5BF /* ReservationCell.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,
 				850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */,
 				850B93C424075DCA0010CE87 /* SignUp5ViewController.swift in Sources */,
 				850B93B524068E4F0010CE87 /* SignUp2ViewController.swift in Sources */,
 				8560DD4B2412727A000BF5BF /* Reservation02ViewController.swift in Sources */,
+				8505BED2241DECB800E46191 /* ReservationCollection.swift in Sources */,
 				85A506B72404C89900A2F582 /* ViewController.swift in Sources */,
 				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
 				8560DD39241107F9000BF5BF /* MessageListViewController.swift in Sources */,

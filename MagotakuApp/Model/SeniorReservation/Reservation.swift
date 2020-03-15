@@ -20,10 +20,14 @@ class Reservation: Codable{
     var stUid: String = ""
     //予約成立可否の識別子(0が未成立、1が成立、2がキャンセル)
     var reservationNum: Int = 0
-    //訪問希望日時
-    //    var visitDate: NSDate
+    //訪問希望日
+//    var visitDate: String　= ""
+    //訪問希望開始時間
+    var visitTime : String = ""
+    //希望時間数
+    var vistHour : String = ""
     //お手伝い内容
-    
+    var helpContents: [Int]!
     //Timestamp
     var createdAt: Timestamp
     var updatedAt: Timestamp

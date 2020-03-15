@@ -69,7 +69,7 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+//        print(indexPath.item)
         
         let cell  = collectionView.cellForItem(at: indexPath) as! CustomCollectionCell
         
@@ -105,7 +105,7 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
     
     
     @IBAction func tapToNext(_ sender: Any) {
-        print(selectBool)
+//        print(selectBool)
         for i in 1 ..< selectBool.count{
             if selectBool[i]{
                 finalResults.append(i)
