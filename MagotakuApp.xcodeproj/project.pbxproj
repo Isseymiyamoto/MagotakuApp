@@ -78,6 +78,7 @@
 		85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */; };
 		85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */; };
 		85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */; };
+		85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +155,7 @@
 		85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabBarController.swift; sourceTree = "<group>"; };
 		9ACBFEF63BB3767F2202B9DB /* Pods-MagotakuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.release.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.release.xcconfig"; sourceTree = "<group>"; };
 		C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagotakuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -182,6 +184,7 @@
 		8505BECB241C7A6B00E46191 /* Students */ = {
 			isa = PBXGroup;
 			children = (
+				85FE10A4241DFFA0005B33BE /* Settings */,
 				8505BECC241C7A7900E46191 /* Login */,
 			);
 			path = Students;
@@ -506,6 +509,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		85FE10A4241DFFA0005B33BE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		88DE865513E4F58882BDB1E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,6 +684,7 @@
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
 				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
+				85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */,
 				8505BED4241DECD000E46191 /* ReservationUseCase.swift in Sources */,
 				8560DD3D241109C7000BF5BF /* ReservationCell.swift in Sources */,
 				858EC4062405047F008A93EC /* CustomTextFiled.swift in Sources */,

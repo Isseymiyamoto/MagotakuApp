@@ -104,7 +104,7 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
                         let sceneDelegate = windowScene.delegate as? SceneDelegate else{
                             return
                     }
-                    let vc = MainTabBarController()
+                    let vc = StudentTabBarController()
                     sceneDelegate.window?.rootViewController = vc
     //                self.navigationController?.pushViewController(vc, animated: true)
                 }

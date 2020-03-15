@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginStudentViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
-                <outlet property="loginBtn" destination="sMH-1H-Cym" id="dVM-6K-mlB"/>
+                <outlet property="loginBtn" destination="sMH-1H-Cym" id="XeU-Xg-JKm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +34,9 @@
                     <state key="normal" title="ログイン">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="tapLogin:" destination="-1" eventType="touchUpInside" id="8HN-ti-5fg"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
