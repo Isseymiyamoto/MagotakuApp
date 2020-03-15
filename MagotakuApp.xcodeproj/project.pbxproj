@@ -79,6 +79,12 @@
 		85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */; };
 		85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */; };
 		85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */; };
+		85FE10AD241E18B7005B33BE /* StudentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10AB241E18B7005B33BE /* StudentProfileViewController.swift */; };
+		85FE10AE241E18B8005B33BE /* StudentProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FE10AC241E18B7005B33BE /* StudentProfileViewController.xib */; };
+		85FE10B2241E18EA005B33BE /* StudentReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10B0241E18EA005B33BE /* StudentReservationViewController.swift */; };
+		85FE10B3241E18EA005B33BE /* StudentReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FE10B1241E18EA005B33BE /* StudentReservationViewController.xib */; };
+		85FE10B7241E1916005B33BE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10B5241E1916005B33BE /* SearchViewController.swift */; };
+		85FE10B8241E1916005B33BE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FE10B6241E1916005B33BE /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +162,12 @@
 		85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabBarController.swift; sourceTree = "<group>"; };
+		85FE10AB241E18B7005B33BE /* StudentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewController.swift; sourceTree = "<group>"; };
+		85FE10AC241E18B7005B33BE /* StudentProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentProfileViewController.xib; sourceTree = "<group>"; };
+		85FE10B0241E18EA005B33BE /* StudentReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentReservationViewController.swift; sourceTree = "<group>"; };
+		85FE10B1241E18EA005B33BE /* StudentReservationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentReservationViewController.xib; sourceTree = "<group>"; };
+		85FE10B5241E1916005B33BE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		85FE10B6241E1916005B33BE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		9ACBFEF63BB3767F2202B9DB /* Pods-MagotakuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagotakuApp.release.xcconfig"; path = "Target Support Files/Pods-MagotakuApp/Pods-MagotakuApp.release.xcconfig"; sourceTree = "<group>"; };
 		C0C6317F8CB795A7E1AF04B4 /* Pods_MagotakuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagotakuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -184,6 +196,9 @@
 		8505BECB241C7A6B00E46191 /* Students */ = {
 			isa = PBXGroup;
 			children = (
+				85FE10A9241E17B6005B33BE /* Profile */,
+				85FE10A8241E17A7005B33BE /* Reservation */,
+				85FE10A7241E177E005B33BE /* Search */,
 				85FE10A4241DFFA0005B33BE /* Settings */,
 				8505BECC241C7A7900E46191 /* Login */,
 			);
@@ -517,6 +532,57 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		85FE10A7241E177E005B33BE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10B4241E18F6005B33BE /* MainSearch */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		85FE10A8241E17A7005B33BE /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10AF241E18C6005B33BE /* MainReservation */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		85FE10A9241E17B6005B33BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10AA241E18A7005B33BE /* MainProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		85FE10AA241E18A7005B33BE /* MainProfile */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10AB241E18B7005B33BE /* StudentProfileViewController.swift */,
+				85FE10AC241E18B7005B33BE /* StudentProfileViewController.xib */,
+			);
+			path = MainProfile;
+			sourceTree = "<group>";
+		};
+		85FE10AF241E18C6005B33BE /* MainReservation */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10B0241E18EA005B33BE /* StudentReservationViewController.swift */,
+				85FE10B1241E18EA005B33BE /* StudentReservationViewController.xib */,
+			);
+			path = MainReservation;
+			sourceTree = "<group>";
+		};
+		85FE10B4241E18F6005B33BE /* MainSearch */ = {
+			isa = PBXGroup;
+			children = (
+				85FE10B5241E1916005B33BE /* SearchViewController.swift */,
+				85FE10B6241E1916005B33BE /* SearchViewController.xib */,
+			);
+			path = MainSearch;
+			sourceTree = "<group>";
+		};
 		88DE865513E4F58882BDB1E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +662,7 @@
 			files = (
 				858EC4032404F324008A93EC /* LoginViewController.xib in Resources */,
 				85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */,
+				85FE10AE241E18B8005B33BE /* StudentProfileViewController.xib in Resources */,
 				850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */,
 				850B93C524075DCA0010CE87 /* SignUp5ViewController.xib in Resources */,
 				850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */,
@@ -616,12 +683,14 @@
 				850B93CC24078C9B0010CE87 /* SignUp6ViewController.xib in Resources */,
 				850B93C02406F1A90010CE87 /* SignUp4ViewController.xib in Resources */,
 				85DB99F524178E750092935B /* CustomCell.xib in Resources */,
+				85FE10B3241E18EA005B33BE /* StudentReservationViewController.xib in Resources */,
 				8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */,
 				85A506BA2404C89900A2F582 /* Main.storyboard in Resources */,
 				85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */,
 				8560DD432412168B000BF5BF /* Reservation01ViewController.xib in Resources */,
 				85EC4E00240E4C7A00FCDCD2 /* ReservationViewController.xib in Resources */,
 				8560DD4C2412727A000BF5BF /* Reservation02ViewController.xib in Resources */,
+				85FE10B8241E1916005B33BE /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +771,7 @@
 				8560DD422412168B000BF5BF /* Reservation01ViewController.swift in Sources */,
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
+				85FE10B2241E18EA005B33BE /* StudentReservationViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
 				85DB99FA2417ADA30092935B /* CustomCell2.swift in Sources */,
 				8560DD512413A936000BF5BF /* Reservation00ViewController.swift in Sources */,
@@ -709,11 +779,13 @@
 				8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */,
 				85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
+				85FE10B7241E1916005B33BE /* SearchViewController.swift in Sources */,
 				8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
 				85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */,
 				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,
+				85FE10AD241E18B7005B33BE /* StudentProfileViewController.swift in Sources */,
 				850B93C7240778730010CE87 /* PlaceholderTextView.swift in Sources */,
 				8560DD4624121C49000BF5BF /* Reservation.swift in Sources */,
 				85A506B52404C89900A2F582 /* SceneDelegate.swift in Sources */,
