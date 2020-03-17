@@ -19,16 +19,15 @@ class ReservationCollection{
     private init(){
         reservationUseCase = ReservationUseCase()
     }
-//
-//    func createSeniorUser() -> SeniorUser {
-//        let id = seniorUserUseCase.createReservationId()
-//        return Reservation(id: id)
-//    }
-//
-//    func addReservation(_ reservation: Reservation) {
-//        reservationUseCase.addReservation(reservation)
-//    }
-//    
+
+    func createReservation() ->  Reservation {
+        let id = reservationUseCase.createReservationId()
+        return Reservation(id: id)
+    }
+    
+    func addReservation(_ reservation: Reservation){
+        reservationUseCase.addReservation(reservation)
+    }
 
     
 }

@@ -14,6 +14,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var nextBtn: UIButton!
     
     var cell :CustomCell!
+    var cell1: UITableViewCell!
     var cell2: CustomCell2!
     
     
@@ -103,12 +104,14 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     //セルを構築する際に呼ばれるメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0{
+            //訪問希望月日
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .value1, reuseIdentifier: "cell")
             cell1.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell1.detailTextLabel?.text = calendarDate
             cell1.detailTextLabel?.textColor = UIColor.black
             return cell1
         }else if indexPath.section == 1 && indexPath.row == 0{
+            //訪問希望時間
             cell = (tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell)
             cell.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell.customTF.borderStyle = .none
@@ -127,6 +130,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             
             return cell
         }else{
+            //サービス提供時間
             cell2 = (tableView.dequeueReusableCell(withIdentifier: "CustomCell2", for: indexPath) as! CustomCell2)
             cell2.textLabel?.text = sections[indexPath.section][indexPath.row]
             cell2.customTF2.borderStyle = .none
@@ -204,6 +208,16 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
    
     
     @IBAction func tapToNext(_ sender: Any) {
+        //reservationに値を代入
+        //訪問希望月日
+        reservation.visitDate = calendarDate
+        //訪問希望時間
+        reservation.visitTime = cell.customTF.text!
+        //サービス提供時間
+        reservation.vistHour = cell2.customTF2.text!
+        
+        
+        
         let vc = Reservation02ViewController()
         let backButtonItem =  UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem

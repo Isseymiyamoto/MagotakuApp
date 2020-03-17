@@ -13,75 +13,48 @@ import FirebaseFirestoreSwift
 import FirebaseStorage
 
 class ReservationUseCase {
-//firestore初期化
-let db = Firestore.firestore()
-//firestorage初期化
-let storage = Storage.storage()
-
-private func getCollectionRef () -> CollectionReference {
-    guard let uid = Auth.auth().currentUser?.uid else {
-        fatalError ("Uidを取得出来ませんでした。") //本番環境では使わない
+    
+    //firestore初期化
+    let db = Firestore.firestore()
+    //firestorage初期化
+    let storage = Storage.storage()
+    
+    private func getCollectionRef () -> CollectionReference {
+        return self.db.collection("Reservation")
     }
-    return self.db.collection("Reservation").document(uid).collection("profile")
-}
 
-//documentIDをidとしてSeniorUserクラスのイニシャライズ
-func createSeniorUserId() -> String {
-    let id = self.getCollectionRef().document().documentID
-    print("seniorUserIdは",id)
-    return id
-}
+    //documentIDをidとしてReservationクラスのイニシャライズ
+    func createReservationId() -> String {
+        let id = self.getCollectionRef().document().documentID
+        print("reservationIdは",id)
+        return id
+    }
 
 
-//FirestoreにSeniorUserのProfile登録 (新規登録時に利用)
-func addTask(_ seniorUser: SeniorUser){
-    let documentRef = getCollectionRef().document(seniorUser.id)
-    let encodeTask = try! Firestore.Encoder().encode(seniorUser)
-    documentRef.setData(encodeTask) { (err) in
-        if let _err = err {
-            print("データ追加失敗",_err)
-        } else {
-            print("データ追加成功")
+    //FirestoreにSeniorUserのProfile登録 (新規登録時に利用)
+    func addReservation(_ reservation: Reservation){
+        let documentRef = getCollectionRef().document(reservation.id)
+        let encodeTask = try! Firestore.Encoder().encode(reservation)
+        documentRef.setData(encodeTask) { (err) in
+            if let _err = err {
+                print("データ追加失敗",_err)
+            } else {
+                print("データ追加成功")
+            }
         }
     }
-}
 
-func getStorageReference() -> StorageReference? {
-    guard let uid = Auth.auth().currentUser?.uid else {
-        return nil
-    }
-    return storage.reference().child("seniorUsers").child(uid)
-}
+//    func getStorageReference() -> StorageReference? {
+//        guard let uid = Auth.auth().currentUser?.uid else {
+//            return nil
+//        }
+//        return storage.reference().child("seniorUsers").child(uid)
+//    }
+//
+//    func getImageRef(imageName: String) -> StorageReference? {
+//        return getStorageReference()?.child(imageName)
+//    }
 
-func getImageRef(imageName: String) -> StorageReference? {
-    return getStorageReference()?.child(imageName)
-}
 
-func saveImage(image: UIImage?, callback: @escaping ((String?) -> Void)) {
-    // オプショナルを外したり、 iamgeData を作成
-    guard let image = image,
-        let imageData = image.jpegData(compressionQuality: 0.5),
-        let imageRef = getStorageReference() else {
-        callback(nil)
-        return
-    }
-
-    // 保存に必要なものを作成
-    let imageName = NSUUID().uuidString
-    let metaData = StorageMetadata()
-    metaData.contentType = "image/jpeg"
-
-    // 保存する
-    let ref = imageRef.child(imageName)
-    ref.putData(imageData, metadata: metaData) { (metaData, error) in
-        guard let _ = metaData else {
-            print("画像の保存に失敗しました。。。😭")
-            callback(nil)
-            return
-        }
-        print("画像の保存が成功した！！！！！！")
-        callback(imageName)
-    }
-}
 
 }

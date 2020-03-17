@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+
+var reservation = ReservationCollection.shared.createReservation()
 
 class Reservation03ViewController: UIViewController {
     
@@ -18,6 +21,11 @@ class Reservation03ViewController: UIViewController {
 
         self.title = "確認画面"
         
+        //ログインしてるか確認
+        if let user = Auth.auth().currentUser{
+            reservation.seUid = user.uid
+        }
+        
         
         registerBtn.layer.cornerRadius = 24.0
     }
@@ -25,7 +33,7 @@ class Reservation03ViewController: UIViewController {
     
     @IBAction func tapToRegister(_ sender: Any) {
         //Firestoreに予約情報送信
-        
+        ReservationCollection.shared.addReservation(reservation)
         
         //予約一覧画面に飛ばす
 //        let vc = ReservationViewController()

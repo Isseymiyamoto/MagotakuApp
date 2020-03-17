@@ -114,6 +114,7 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
             }
         }
         print(finalResults)
+        reservation.helpContents = finalResults
         let vc = Reservation03ViewController()
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
