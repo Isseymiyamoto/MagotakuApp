@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
-    
     @IBOutlet weak var reservationBtn: UIButton!
     
     override func viewDidLoad() {
@@ -26,6 +25,8 @@ class HomeViewController: UIViewController {
         reservationBtn.layer.cornerRadius = 30.0
         
 //        SeniorUserCollection.shared.fetchData()
+        
+        profile = SeniorUserCollection.shared.fetchProfile()
         
     }
     

@@ -84,41 +84,39 @@ class SeniorUserUseCase {
     }
     
     //データ取得
-    func fetchSeniorUser(callback: @escaping ([SeniorUser]?) -> Void){
+//    func fetchSeniorUser(callback: @escaping ([SeniorUser]?) -> Void){
+//        let collectionRef = getCollectionRef()
+//        collectionRef.getDocuments(source: .default) { (snapshot, err) in
+//            guard err == nil, let snapshot = snapshot, !snapshot.isEmpty else{
+//                print("データ取得失敗", err.debugDescription)
+//                return
+//            }
+//            print("データ取得成功")
+//            let SeniorUserInfo = snapshot.documents.compactMap { (snapshot) in
+//                return try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data())
+//            }
+//            callback(SeniorUserInfo)
+//        }
+//    }
+    
+    
+//
+    func fetchSeniorUser() -> SeniorUser{
         let collectionRef = getCollectionRef()
-        collectionRef.getDocuments(source: .default) { (snapshot, err) in
-            guard err == nil, let snapshot = snapshot, !snapshot.isEmpty else{
+        var userInfo: SeniorUser!
+        collectionRef.document().getDocument { (snapshot, err) in
+            guard err == nil, let snapshot = snapshot else{
                 print("データ取得失敗", err.debugDescription)
                 return
             }
             print("データ取得成功")
-            let SeniorUserInfo = snapshot.documents.compactMap { (snapshot) in
-                return try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data())
-            }
-            callback(SeniorUserInfo)
+            userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data()!)
         }
+        return userInfo
     }
-    
-    
-        
-        
-
-//    func fetchTaskDocuments(callback: @escaping ([Task]?) -> Void){
-//        let collectionRef = getCollectionRef()
-//        collectionRef.getDocuments(source: .default) { (snapshot, err) in
-//            guard err == nil, let snapshot = snapshot,!snapshot.isEmpty else {
-//                print("データ取得失敗",err.debugDescription)
-//                callback(nil)
-//                return
-//            }
 //
-//            print("データ取得成功")
-//            let tasks = snapshot.documents.compactMap { snapshot in
-//                return try? Firestore.Decoder().decode(Task.self, from: snapshot.data())
-//            }
-//            callback(tasks)
-//        }
-//    }
+
+    
     
     
     

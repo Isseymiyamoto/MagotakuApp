@@ -39,14 +39,9 @@ class SeniorUserCollection{
         }
     }
     
-//    func fetchData(){
-//        seniorUserUseCase.fetchSeniorUser { (userInfo) in
-//            guard let userInfo = userInfo else{
-//                return
-//            }
-//            self.userInfo = userInfo.sorted(by: {$0.updatedAt.dateValue() > $1.updatedAt.dateValue()})
-//        }
-//    }
+    func fetchProfile() -> SeniorUser{
+        return seniorUserUseCase.fetchSeniorUser()
+    }
     
 }
 
