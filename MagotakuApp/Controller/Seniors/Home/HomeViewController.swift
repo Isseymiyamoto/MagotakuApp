@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
      
         reservationBtn.layer.cornerRadius = 30.0
         
+//        SeniorUserCollection.shared.fetchData()
+        
     }
     
     //新規予約1に飛ばす

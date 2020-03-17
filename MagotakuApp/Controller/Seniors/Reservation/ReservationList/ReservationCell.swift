@@ -13,11 +13,18 @@ class ReservationCell: UITableViewCell {
     @IBOutlet weak var partnerImage: UIImageView!
     @IBOutlet weak var cell: UIView!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var decideLabel: UILabel!
+    @IBOutlet weak var partnerLabel: UILabel!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        partnerImage.layer.cornerRadius = partnerImage.frame.width / 2
+        partnerImage.frame = CGRect(x: 32, y: 24, width: 48, height: 48)
+        partnerImage.layer.cornerRadius = 24
+        
         
         cell.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width , height: 96)
         
