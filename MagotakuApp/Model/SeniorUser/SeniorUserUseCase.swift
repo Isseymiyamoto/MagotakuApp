@@ -83,7 +83,7 @@ class SeniorUserUseCase {
         }
     }
     
-    //データ取得
+//    データ取得
 //    func fetchSeniorUser(callback: @escaping ([SeniorUser]?) -> Void){
 //        let collectionRef = getCollectionRef()
 //        collectionRef.getDocuments(source: .default) { (snapshot, err) in
@@ -100,21 +100,18 @@ class SeniorUserUseCase {
 //    }
     
     
-//
-    func fetchSeniorUser() -> SeniorUser{
+    
+    func fetchSeniorUser() -> Void{
         let collectionRef = getCollectionRef()
-        var userInfo: SeniorUser!
-        collectionRef.document().getDocument { (snapshot, err) in
-            guard err == nil, let snapshot = snapshot else{
-                print("データ取得失敗", err.debugDescription)
-                return
-            }
-            print("データ取得成功")
-            userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data()!)
+        collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
+           if let document = document {
+            let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document.data()!)
+               print("userInfo: \(userInfo)")
+           } else {
+               print("Document does not exist")
+           }
         }
-        return userInfo
     }
-//
 
     
     

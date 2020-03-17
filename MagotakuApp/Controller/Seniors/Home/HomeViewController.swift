@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         
 //        SeniorUserCollection.shared.fetchData()
         
-        profile = SeniorUserCollection.shared.fetchProfile()
+        SeniorUserCollection.shared.fetchProfile()
         
     }
     

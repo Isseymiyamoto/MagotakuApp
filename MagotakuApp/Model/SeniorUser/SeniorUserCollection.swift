@@ -39,8 +39,12 @@ class SeniorUserCollection{
         }
     }
     
-    func fetchProfile() -> SeniorUser{
-        return seniorUserUseCase.fetchSeniorUser()
+//    func fetchProfile() -> SeniorUser{
+//        return seniorUserUseCase.fetchSeniorUser()
+//    }
+    
+    func fetchProfile() -> Void{
+        seniorUserUseCase.fetchSeniorUser()
     }
     
 }
