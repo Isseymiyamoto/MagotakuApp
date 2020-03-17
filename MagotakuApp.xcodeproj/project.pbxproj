@@ -70,6 +70,8 @@
 		85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99FC241A05670092935B /* CustomCollectionCell.swift */; };
 		85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99FD241A05670092935B /* CustomCollectionCell.xib */; };
 		85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */; };
+		85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8123E2420BD2C004ECB87 /* CustomCell3.swift */; };
+		85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8123F2420BD2C004ECB87 /* CustomCell3.xib */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
@@ -153,6 +155,8 @@
 		85DB99FC241A05670092935B /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		85DB99FD241A05670092935B /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		85E8123E2420BD2C004ECB87 /* CustomCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell3.swift; sourceTree = "<group>"; };
+		85E8123F2420BD2C004ECB87 /* CustomCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell3.xib; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				8505BEC7241B7E4100E46191 /* Reservation03ViewController.swift */,
 				8505BEC8241B7E4100E46191 /* Reservation03ViewController.xib */,
+				85E8123E2420BD2C004ECB87 /* CustomCell3.swift */,
+				85E8123F2420BD2C004ECB87 /* CustomCell3.xib */,
 			);
 			path = Reservation03;
 			sourceTree = "<group>";
@@ -674,6 +680,7 @@
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
 				8560DD522413A936000BF5BF /* Reservation00ViewController.xib in Resources */,
+				85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */,
 				8560DD3E241109C7000BF5BF /* ReservationCell.xib in Resources */,
 				8560DD352410FD6D000BF5BF /* ReservationListViewController.xib in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
@@ -753,6 +760,7 @@
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
 				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
+				85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */,
 				85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */,
 				8505BED4241DECD000E46191 /* ReservationUseCase.swift in Sources */,
 				8560DD3D241109C7000BF5BF /* ReservationCell.swift in Sources */,

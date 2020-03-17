@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Reservation03ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
                 <outlet property="registerBtn" destination="6yS-Zu-8sS" id="4C5-bW-nCb"/>
+                <outlet property="tableView" destination="vFb-ja-zbN" id="KOW-m3-F3M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,6 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFb-ja-zbN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yS-Zu-8sS">
                     <rect key="frame" x="32" y="798" width="350" height="48"/>
                     <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,7 +46,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6yS-Zu-8sS" secondAttribute="trailing" constant="32" id="xKO-0u-zXi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
     </objects>
 </document>
