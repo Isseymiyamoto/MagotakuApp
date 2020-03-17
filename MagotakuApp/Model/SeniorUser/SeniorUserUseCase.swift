@@ -18,10 +18,10 @@ class SeniorUserUseCase {
     let storage = Storage.storage()
     
     private func getCollectionRef () -> CollectionReference {
-        guard let uid = Auth.auth().currentUser?.uid else {
+        guard (Auth.auth().currentUser?.uid) != nil else {
             fatalError ("Uidを取得出来ませんでした。") //本番環境では使わない
         }
-        return self.db.collection("seniorUsers").document(uid).collection("profile")
+        return self.db.collection("seniorUsers")
     }
     
     //documentIDをidとしてSeniorUserクラスのイニシャライズ
@@ -34,7 +34,7 @@ class SeniorUserUseCase {
     
     //FirestoreにSeniorUserのProfile登録 (新規登録時に利用)
     func addTask(_ seniorUser: SeniorUser){
-        let documentRef = getCollectionRef().document(seniorUser.id)
+        let documentRef = getCollectionRef().document(seniorUser.uid)
         let encodeTask = try! Firestore.Encoder().encode(seniorUser)
         documentRef.setData(encodeTask) { (err) in
             if let _err = err {
@@ -106,7 +106,8 @@ class SeniorUserUseCase {
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
            if let document = document {
             let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document.data()!)
-               print("userInfo: \(userInfo)")
+            print("userInfo: \(userInfo!.address)")
+            
            } else {
                print("Document does not exist")
            }

@@ -27,7 +27,7 @@ class SeniorUser: Codable{
     var addressNum: String = ""
     //サービス利用者住所
     var address: String = ""
-    //サービス利用者電話
+    //サービス利用者電話userInfo    MagotakuApp.SeniorUser?    nil    none
     var phoneNumber: String = ""
     //サービス利用者性格・趣味
     var CharaHob: String = ""
