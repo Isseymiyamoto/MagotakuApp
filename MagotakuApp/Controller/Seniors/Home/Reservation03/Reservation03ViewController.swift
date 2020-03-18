@@ -34,6 +34,11 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         // tableView に使う xib ファイルを登録している。
         tableView.register( nib, forCellReuseIdentifier: "CustomCell3")
         
+        // nib と xib はほぼ一緒
+        let nib2 = UINib(nibName: "CustomCell4", bundle: nil)
+        // tableView に使う xib ファイルを登録している。
+        tableView.register( nib2, forCellReuseIdentifier: "CustomCell4")
+        
         //ログインしてるか確認
         if let user = Auth.auth().currentUser{
             reservation.seUid = user.uid
@@ -66,38 +71,68 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return setLabels.count
+        switch section {
+        case 0:
+            return setLabels.count
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //サービス提供時間
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell3", for: indexPath) as! CustomCell3
-        cell.titleLabel.text = setLabels[indexPath.row]
-        
-        switch indexPath.row {
-            case 0:
-                cell.resultLabel.text = reservation.visitDate
-            case 1:
-                cell.resultLabel.text = reservation.visitTime
-            case 2:
-                cell.resultLabel.text = reservation.vistHour
+        switch indexPath.section {
+        case 0:
+            //サービス提供時間
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell3", for: indexPath) as! CustomCell3
+            cell.titleLabel.text = setLabels[indexPath.row]
+            
+            switch indexPath.row {
+                case 0:
+                    cell.resultLabel.text = reservation.visitDate
+                case 1:
+                    cell.resultLabel.text = reservation.visitTime
+                case 2:
+                    cell.resultLabel.text = reservation.vistHour
+            default:
+                cell.resultLabel.text = "おしゃべり"
+            }
+            return cell
         default:
-            cell.resultLabel.text = "おしゃべり"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell4", for: indexPath) as! CustomCell4
+            
+            return cell
         }
-        return cell
+        
     }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 96
+        switch indexPath.section {
+        case 0:
+            return 72
+        default:
+            return 96
+        }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "入力した内容に間違いがないかご確認ください"
+
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+            let myLable = UILabel()
+            myLable.frame = CGRect(x: 16, y: (UIScreen.main.bounds.height / 16 - 24) / 2, width: UIScreen.main.bounds.width - 32, height: 24)
+            myLable.font = UIFont.boldSystemFont(ofSize: 12)
+            myLable.text = "入力した内容に間違いがないかご確認ください"
+            
+            let headerView = UIView()
+        if section == 0{
+            headerView.addSubview(myLable)
+        }
+            return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UIScreen.main.bounds.height / 10
+        return UIScreen.main.bounds.height / 16
     }
     
     

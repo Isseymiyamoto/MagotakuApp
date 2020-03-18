@@ -101,10 +101,9 @@ class SeniorUserUseCase {
 //    }
     
     
-    
+//
     func fetchSeniorUser() -> Void{
         let collectionRef = getCollectionRef()
-//        var userInfo: SeniorUser!
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
            if let document = document {
             let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document.data()!)
@@ -114,7 +113,7 @@ class SeniorUserUseCase {
                print("Document does not exist")
            }
         }
-//        return userInfo
+
     }
 
     
