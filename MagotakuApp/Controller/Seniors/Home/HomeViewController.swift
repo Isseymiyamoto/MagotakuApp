@@ -28,6 +28,8 @@ class HomeViewController: UIViewController {
         
         SeniorUserCollection.shared.fetchProfile()
         
+       
+        
     }
     
     //新規予約1に飛ばす
