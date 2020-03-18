@@ -69,6 +69,9 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         sceneDelegate.window?.rootViewController = vc
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -99,7 +102,6 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell4", for: indexPath) as! CustomCell4
-            
             return cell
         }
         
@@ -111,7 +113,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         case 0:
             return 72
         default:
-            return 96
+            return 160
         }
     }
     
