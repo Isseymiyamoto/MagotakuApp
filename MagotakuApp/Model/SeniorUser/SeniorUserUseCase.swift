@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFirestoreSwift
 import FirebaseStorage
+import FirebaseUI
 
 class SeniorUserUseCase {
     let db = Firestore.firestore()
@@ -59,7 +60,7 @@ class SeniorUserUseCase {
     func saveImage(image: UIImage?, callback: @escaping ((String?) -> Void)) {
         // オプショナルを外したり、 iamgeData を作成
         guard let image = image,
-            let imageData = image.jpegData(compressionQuality: 0.5),
+            let imageData = image.jpegData(compressionQuality: 0.1),
             let imageRef = getStorageReference() else {
             callback(nil)
             return

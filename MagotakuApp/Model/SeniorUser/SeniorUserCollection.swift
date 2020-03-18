@@ -39,9 +39,9 @@ class SeniorUserCollection{
         }
     }
     
-//    func fetchProfile() -> SeniorUser{
-//        return seniorUserUseCase.fetchSeniorUser()
-//    }
+    func getImageRef(imageName: String) -> StorageReference? {
+        return seniorUserUseCase.getImageRef(imageName: imageName)
+    }
     
     func fetchProfile() -> Void{
         seniorUserUseCase.fetchSeniorUser()

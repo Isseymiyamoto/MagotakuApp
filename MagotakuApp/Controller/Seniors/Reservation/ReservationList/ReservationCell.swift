@@ -25,6 +25,10 @@ class ReservationCell: UITableViewCell {
         partnerImage.frame = CGRect(x: 32, y: 24, width: 48, height: 48)
         partnerImage.layer.cornerRadius = 24
         
+        decideLabel.textColor = UIColor(red: 0, green: 169/255, blue: 125/255, alpha: 1)
+        decideLabel.layer.borderColor = CGColor(srgbRed: 0, green: 169/255, blue: 125/255, alpha: 1)
+        decideLabel.layer.borderWidth = 2
+        decideLabel.layer.cornerRadius = 4
         
         cell.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width , height: 96)
         

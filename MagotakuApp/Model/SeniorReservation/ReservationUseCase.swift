@@ -43,6 +43,24 @@ class ReservationUseCase {
             }
         }
     }
+    
+    func fetchReservationDocuments(callback: @escaping ([Reservation]?) -> Void){
+        let collectionRef = getCollectionRef()
+        collectionRef.whereField("seUid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(source: .default) { (snapshot, err) in
+            guard err == nil, let snapshot = snapshot,!snapshot.isEmpty else {
+                print("データ取得失敗",err.debugDescription)
+                callback(nil)
+                return
+            }
+            
+            print("データ取得成功")
+            let reservations = snapshot.documents.compactMap { snapshot in
+                return try? Firestore.Decoder().decode(Reservation.self, from: snapshot.data())
+            }
+            print(reservations)
+            callback(reservations)
+        }
+    }
 
 //    func getStorageReference() -> StorageReference? {
 //        guard let uid = Auth.auth().currentUser?.uid else {
