@@ -11,36 +11,38 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class StudentUser: Codable{
-    //識別子
-    var id: String
-    ////アカウントuid
-    var uid: String = ""
-    //サービス利用者名
-    var sName: String = ""
-    //アプリケーション使用者氏名
-    var aName: String = ""
-    //サービス利用者性別
-    var sex: String = ""
-    //サービス利用者誕生日
+    DocumentIDを入れるためのid 識別子
+    var id : String
+
+//    アカウントのuid
+    var uid : String = ""
+
+//    学生氏名
+    var name: String = ""
+
+//    学生性別
+    var sex : String = ""
+
+//    学生誕生日
     var bornDate: String = ""
-    //サービス利用者郵便番号
-    var addressNum: String = ""
-    //サービス利用者住所
-    var address: String = ""
-    //サービス利用者電話userInfo    MagotakuApp.SeniorUser?    nil    none
-    var phoneNumber: String = ""
-    //サービス利用者性格・趣味
-    var CharaHob: String = ""
-    //サービス利用者プロフィール写真
-    var imageName: String = ""
-//    var userImage: UIImage?
-    //緊急連絡先
-    var emergencyPhoneNumber: String = ""
-    //Timestamp
+
+//    学生登録区域
+    var locations: [Int]!
+
+//    学生電話番号(利用者からの電話に答えられるもの)
+    var phoneNum: String = ""
+
+//    学生趣味・特技・得意なこと
+    var hobby: String = ""
+
+//    学生学校・学年・専攻
+    var school: String = ""
+
+//    学生プロフィール用写真
+    var imageName: String
+    
     var createdAt: Timestamp
     var updatedAt: Timestamp
-    
-//    static var shared = SeniorUser(id: "uid")
     
     init(id:String) {
         self.id = id
@@ -48,5 +50,14 @@ class StudentUser: Codable{
         self.updatedAt = Timestamp()
     }
 }
+
+
+
+
+
+
+
+
+
 
 
