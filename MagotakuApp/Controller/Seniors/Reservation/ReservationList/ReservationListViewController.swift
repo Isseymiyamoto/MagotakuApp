@@ -40,9 +40,9 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
 
 
     //1セクション内のrowの数を決める
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReservationCollection.shared.reservationCount()
-   }
+    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        // 登録したセルを使う。 as! CustomCell としないと、UITableViewCell のままでしか使えない。

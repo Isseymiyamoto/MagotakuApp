@@ -38,15 +38,25 @@
                         <action selector="tapLogin:" destination="-1" eventType="touchUpInside" id="8HN-ti-5fg"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-Si-ha5">
+                    <rect key="frame" x="32" y="726" width="350" height="30"/>
+                    <state key="normal" title="未申請の方はこちら"/>
+                    <connections>
+                        <action selector="tapToSignUp:" destination="-1" eventType="touchUpInside" id="drM-OO-LA7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.091836266220000004" green="0.13500839470000001" blue="0.22353947160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="sMH-1H-Cym" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="16u-cf-tfr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pi9-iX-Gxa" secondAttribute="trailing" constant="32" id="5Zx-ee-Bd5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aKQ-Si-ha5" secondAttribute="trailing" constant="32" id="MWX-Cg-VjC"/>
+                <constraint firstItem="aKQ-Si-ha5" firstAttribute="top" secondItem="sMH-1H-Cym" secondAttribute="bottom" constant="4" id="dQ8-Bx-YTf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sMH-1H-Cym" secondAttribute="trailing" constant="32" id="fDh-hn-5XO"/>
                 <constraint firstItem="pi9-iX-Gxa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="ild-xh-sR7"/>
                 <constraint firstItem="pi9-iX-Gxa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="qe4-Jz-EaM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sMH-1H-Cym" secondAttribute="bottom" constant="140" id="sNm-DO-k7D"/>
+                <constraint firstItem="aKQ-Si-ha5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="wiq-SV-msq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="125"/>

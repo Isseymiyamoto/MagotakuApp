@@ -72,6 +72,9 @@
 		85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */; };
 		85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8123E2420BD2C004ECB87 /* CustomCell3.swift */; };
 		85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8123F2420BD2C004ECB87 /* CustomCell3.xib */; };
+		85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124324220913004ECB87 /* SignUpStudentViewController.swift */; };
+		85E8124624220913004ECB87 /* SignUpStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8124424220913004ECB87 /* SignUpStudentViewController.xib */; };
+		85E8124924220F0F004ECB87 /* StudentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124824220F0F004ECB87 /* StudentUser.swift */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
@@ -157,6 +160,9 @@
 		85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		85E8123E2420BD2C004ECB87 /* CustomCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell3.swift; sourceTree = "<group>"; };
 		85E8123F2420BD2C004ECB87 /* CustomCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell3.xib; sourceTree = "<group>"; };
+		85E8124324220913004ECB87 /* SignUpStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStudentViewController.swift; sourceTree = "<group>"; };
+		85E8124424220913004ECB87 /* SignUpStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpStudentViewController.xib; sourceTree = "<group>"; };
+		85E8124824220F0F004ECB87 /* StudentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUser.swift; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		8505BECB241C7A6B00E46191 /* Students */ = {
 			isa = PBXGroup;
 			children = (
+				85E81242242208F5004ECB87 /* SignUp */,
 				85FE10A9241E17B6005B33BE /* Profile */,
 				85FE10A8241E17A7005B33BE /* Reservation */,
 				85FE10A7241E177E005B33BE /* Search */,
@@ -447,6 +454,7 @@
 		858EC40424050457008A93EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85E8124724220EF1004ECB87 /* StudentUser */,
 				858EC4052405047F008A93EC /* CustomTextFiled.swift */,
 				8505BED6241DECFE00E46191 /* SeniorUser */,
 				850B93C6240778730010CE87 /* PlaceholderTextView.swift */,
@@ -491,6 +499,23 @@
 				858EC3FC2404E14D008A93EC /* GoogleService-Info.plist */,
 			);
 			path = MagotakuApp;
+			sourceTree = "<group>";
+		};
+		85E81242242208F5004ECB87 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				85E8124324220913004ECB87 /* SignUpStudentViewController.swift */,
+				85E8124424220913004ECB87 /* SignUpStudentViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		85E8124724220EF1004ECB87 /* StudentUser */ = {
+			isa = PBXGroup;
+			children = (
+				85E8124824220F0F004ECB87 /* StudentUser.swift */,
+			);
+			path = StudentUser;
 			sourceTree = "<group>";
 		};
 		85EC4DFC240E4C5B00FCDCD2 /* Reservation */ = {
@@ -683,6 +708,7 @@
 				85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */,
 				8560DD3E241109C7000BF5BF /* ReservationCell.xib in Resources */,
 				8560DD352410FD6D000BF5BF /* ReservationListViewController.xib in Resources */,
+				85E8124624220913004ECB87 /* SignUpStudentViewController.xib in Resources */,
 				858EC3FD2404E14D008A93EC /* GoogleService-Info.plist in Resources */,
 				85DB99FB2417ADA30092935B /* CustomCell2.xib in Resources */,
 				850B93D6240823930010CE87 /* SignUp7ViewController.xib in Resources */,
@@ -789,7 +815,9 @@
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
 				85FE10B7241E1916005B33BE /* SearchViewController.swift in Sources */,
 				8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */,
+				85E8124924220F0F004ECB87 /* StudentUser.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,
+				85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
 				85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */,
 				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,

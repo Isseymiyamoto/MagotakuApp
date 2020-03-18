@@ -154,6 +154,19 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
                 self.view.frame.origin.y = 0
             }
         }
+    
+    
+    
+    
+    @IBAction func tapToSignUp(_ sender: Any) {
+        let vc = SignUpStudentViewController()
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
         
         
 
