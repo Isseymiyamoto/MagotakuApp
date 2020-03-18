@@ -51,18 +51,17 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
     
     //もし承認判定用の番号が1になっていたらテキストカラーと文言を変更
     if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
-        cell.decideLabel.text = "承認済み"
+        cell.decideLabel.text = " 承認済み "
         cell.decideLabel.textColor = .red
-        cell.layer.borderColor = CGColor(srgbRed: 1, green: 0, blue: 0, alpha: 1)
+        cell.decideLabel.layer.borderColor = UIColor.red.cgColor
+        cell.partnerImage.image = UIImage(named: "0")
     }else{
         //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
-        if let imageName = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName){
+        if let imageName: String? = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
             cell.partnerImage.sd_setImage(with: ref)
         }
+        cell.partnerLabel.text = "パートナー：未定"
     }
-    
-    
-    
        return cell
    }
 
