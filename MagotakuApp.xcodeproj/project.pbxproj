@@ -75,6 +75,7 @@
 		85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124324220913004ECB87 /* SignUpStudentViewController.swift */; };
 		85E8124624220913004ECB87 /* SignUpStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8124424220913004ECB87 /* SignUpStudentViewController.xib */; };
 		85E8124924220F0F004ECB87 /* StudentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124824220F0F004ECB87 /* StudentUser.swift */; };
+		85E8124B24225ECC004ECB87 /* StudentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124A24225ECC004ECB87 /* StudentUseCase.swift */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
@@ -163,6 +164,7 @@
 		85E8124324220913004ECB87 /* SignUpStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStudentViewController.swift; sourceTree = "<group>"; };
 		85E8124424220913004ECB87 /* SignUpStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpStudentViewController.xib; sourceTree = "<group>"; };
 		85E8124824220F0F004ECB87 /* StudentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUser.swift; sourceTree = "<group>"; };
+		85E8124A24225ECC004ECB87 /* StudentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				85E8124824220F0F004ECB87 /* StudentUser.swift */,
+				85E8124A24225ECC004ECB87 /* StudentUseCase.swift */,
 			);
 			path = StudentUser;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				8560DD422412168B000BF5BF /* Reservation01ViewController.swift in Sources */,
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
+				85E8124B24225ECC004ECB87 /* StudentUseCase.swift in Sources */,
 				85FE10B2241E18EA005B33BE /* StudentReservationViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
 				85DB99FA2417ADA30092935B /* CustomCell2.swift in Sources */,
