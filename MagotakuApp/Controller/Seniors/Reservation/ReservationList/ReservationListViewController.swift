@@ -34,6 +34,8 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
         
         print(ReservationCollection.shared.reservationCount())
         
+        tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        
     }
 
 
@@ -54,7 +56,7 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
         cell.decideLabel.text = " 承認済み "
         cell.decideLabel.textColor = .red
         cell.decideLabel.layer.borderColor = UIColor.red.cgColor
-        cell.partnerImage.image = UIImage(named: "0")
+        cell.partnerImage.image = UIImage(named: "setting")
     }else{
         //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
         if let imageName: String? = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
@@ -64,6 +66,17 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
     }
        return cell
    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    
 
 }
 

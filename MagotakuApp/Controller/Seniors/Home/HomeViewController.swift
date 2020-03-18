@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.titleView = titleView
      
         reservationBtn.layer.cornerRadius = 30.0
+        reservationBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
 //        SeniorUserCollection.shared.fetchData()
         
