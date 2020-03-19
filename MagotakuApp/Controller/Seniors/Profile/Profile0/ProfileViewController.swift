@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let cellText = ["プロフィール", "お支払い情報", "レビュー", "設定", "ログアウト"]
     let detailText = ["プロフィールを閲覧・編集できます", "お支払い情報をか閲覧・編集できます", "レビューの閲覧・投稿できます", "各種設定を行えます", "ログアウトできます"]
+    let cellicon = ["person", "creditcard", "square.and.pencil", "gear", "lock"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +61,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //内容
         cell.textLabel!.text = cellText[indexPath.row]
         //左端のイメージアイコン設置
-        cell.imageView!.image = UIImage(systemName: "tray.fill")
+        cell.imageView!.image = UIImage(systemName: cellicon[indexPath.row])
         //内容詳細
         cell.detailTextLabel!.text = detailText[indexPath.row]
+        cell.detailTextLabel!.tintColor = UIColor.darkGray
+        //セルの右端にタッチ利用可能の補助イメージ
         let touchImage = UIImageView()
-        touchImage.image = UIImage(systemName: "arrow.right.to.line")
-        touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 16, y: 28, width: 8, height: 8)
+        touchImage.image = UIImage(systemName: "chevron.right")
+        touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 26, width: 8, height: 12)
          
         cell.contentView.addSubview(touchImage)
         return cell
@@ -74,6 +77,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //プロフィール写真用のUIImageView
         let profileImage = UIImageView()
+        //storageからimageを引っ張ってきてセットする
         if let imageName: String? = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
             profileImage.sd_setImage(with: ref)
         }
@@ -94,6 +98,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         headerView.addSubview(nameLabel)
         
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            return
+        case 1:
+            return
+        case 2:
+            return
+        case 3:
+            return
+        default:
+            do {
+                try Auth.auth().signOut()
+                    // 強制的に現在の表示している vc を変更する
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateInitialViewController()
+
+                let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.window?.rootViewController = vc
+            } catch {
+                print("error:",error.localizedDescription)
+            }
+        }
     }
 
 
