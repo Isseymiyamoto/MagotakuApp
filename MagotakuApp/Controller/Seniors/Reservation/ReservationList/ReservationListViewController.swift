@@ -76,6 +76,18 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
+            let vc = ReservationDetailViewController()
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
+        }else{
+            showErrorAlert(text: "まだパートナーが未定です。お決まりまでお待ちください")
+        }
+        
+    }
+    
     
 
 }

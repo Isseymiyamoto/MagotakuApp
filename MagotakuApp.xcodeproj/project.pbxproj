@@ -78,6 +78,8 @@
 		85E8124B24225ECC004ECB87 /* StudentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124A24225ECC004ECB87 /* StudentUseCase.swift */; };
 		85E8124E242276B2004ECB87 /* CustomCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124C242276B2004ECB87 /* CustomCell4.swift */; };
 		85E8124F242276B2004ECB87 /* CustomCell4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8124D242276B2004ECB87 /* CustomCell4.xib */; };
+		85E81253242345C5004ECB87 /* ReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E81251242345C4004ECB87 /* ReservationDetailViewController.swift */; };
+		85E81254242345C5004ECB87 /* ReservationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E81252242345C4004ECB87 /* ReservationDetailViewController.xib */; };
 		85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */; };
 		85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */; };
 		85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */; };
@@ -169,6 +171,8 @@
 		85E8124A24225ECC004ECB87 /* StudentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUseCase.swift; sourceTree = "<group>"; };
 		85E8124C242276B2004ECB87 /* CustomCell4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell4.swift; sourceTree = "<group>"; };
 		85E8124D242276B2004ECB87 /* CustomCell4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell4.xib; sourceTree = "<group>"; };
+		85E81251242345C4004ECB87 /* ReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailViewController.swift; sourceTree = "<group>"; };
+		85E81252242345C4004ECB87 /* ReservationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationDetailViewController.xib; sourceTree = "<group>"; };
 		85EC4DEC240D198500FCDCD2 /* SeniorUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserUseCase.swift; sourceTree = "<group>"; };
 		85EC4DEE240D1F9000FCDCD2 /* SeniorUserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorUserCollection.swift; sourceTree = "<group>"; };
 		85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		8560DD312410FD3E000BF5BF /* ReservationList */ = {
 			isa = PBXGroup;
 			children = (
+				85E8125024234579004ECB87 /* ReservationDetail */,
 				8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */,
 				8560DD332410FD6D000BF5BF /* ReservationListViewController.xib */,
 				8560DD3B241109C7000BF5BF /* ReservationCell.swift */,
@@ -525,6 +530,15 @@
 				85E8124A24225ECC004ECB87 /* StudentUseCase.swift */,
 			);
 			path = StudentUser;
+			sourceTree = "<group>";
+		};
+		85E8125024234579004ECB87 /* ReservationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				85E81251242345C4004ECB87 /* ReservationDetailViewController.swift */,
+				85E81252242345C4004ECB87 /* ReservationDetailViewController.xib */,
+			);
+			path = ReservationDetail;
 			sourceTree = "<group>";
 		};
 		85EC4DFC240E4C5B00FCDCD2 /* Reservation */ = {
@@ -710,6 +724,7 @@
 				8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */,
 				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
+				85E81254242345C5004ECB87 /* ReservationDetailViewController.xib in Resources */,
 				85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */,
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
@@ -786,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E81253242345C5004ECB87 /* ReservationDetailViewController.swift in Sources */,
 				850B93A524057F1B0010CE87 /* SignUp1ViewController.swift in Sources */,
 				858EC4022404F324008A93EC /* LoginViewController.swift in Sources */,
 				85DB99F424178E750092935B /* CustomCell.swift in Sources */,

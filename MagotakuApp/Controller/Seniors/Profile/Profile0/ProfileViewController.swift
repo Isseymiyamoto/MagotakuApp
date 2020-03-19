@@ -36,20 +36,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     
-    @IBAction func logout(_ sender: Any) {
-        do {
-                try Auth.auth().signOut()
-                // 強制的に現在の表示している vc を変更する
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateInitialViewController()
-
-                let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
-                sceneDelegate.window?.rootViewController = vc
-            } catch {
-                print("error:",error.localizedDescription)
-            }
-        
-    }
+//    ログアウトボタンでした
+//    @IBAction func logout(_ sender: Any) {
+//        do {
+//                try Auth.auth().signOut()
+//                // 強制的に現在の表示している vc を変更する
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateInitialViewController()
+//
+//                let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
+//                sceneDelegate.window?.rootViewController = vc
+//            } catch {
+//                print("error:",error.localizedDescription)
+//            }
+//
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellText.count
