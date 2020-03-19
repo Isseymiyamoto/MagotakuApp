@@ -16,23 +16,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    let cellText = ["登録内容", "ご利用可能なサービス", "訪問履歴", "設定"]
+    let cellText = ["プロフィール", "お支払い情報", "レビュー", "設定", "ログアウト"]
+    let detailText = ["プロフィールを閲覧・編集できます", "お支払い情報をか閲覧・編集できます", "レビューの閲覧・投稿できます", "各種設定を行えます", "ログアウトできます"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "マイアカウント"
-//        let titleView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-//        titleView.image = UIImage(systemName: "paperclip.circle.fill")
-//        self.navigationItem.titleView = titleView
-//
+
         logoutBtn.layer.cornerRadius = logoutBtn.frame.height / 2
         logoutBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+        tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
     }
 
     
@@ -52,12 +51,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return cellText.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .value1, reuseIdentifier: "cell")
+        //デフォルトのtableViewCellを使用
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        //内容
         cell.textLabel!.text = cellText[indexPath.row]
+        //左端のイメージアイコン設置
+        cell.imageView!.image = UIImage(systemName: "tray.fill")
+        //内容詳細
+        cell.detailTextLabel!.text = detailText[indexPath.row]
+        let touchImage = UIImageView()
+        touchImage.image = UIImage(systemName: "arrow.right.to.line")
+        touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 16, y: 28, width: 8, height: 8)
+         
+        cell.contentView.addSubview(touchImage)
         return cell
     }
     
@@ -67,37 +77,37 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let imageName: String? = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
             profileImage.sd_setImage(with: ref)
         }
-        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 48) / 2, y: 32, width: 48, height: 48)
-        profileImage.layer.cornerRadius = 24.0
+        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
+        profileImage.layer.cornerRadius = 30.0
         
+        //サービス利用者氏名を表示
         let nameLabel = UILabel()
-        nameLabel.frame = CGRect(x: 32, y: 96, width: UIScreen.main.bounds.width - 64, height: 22)
+        nameLabel.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        nameLabel.text = profile.sName
+        nameLabel.text = "\(profile.sName) さん"
         
+        //上記2個をセットするUIViewを定義
         let headerView = UIView()
+        headerView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
         headerView.addSubview(profileImage)
         headerView.addSubview(nameLabel)
         
         return headerView
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//            let myLable = UILabel()
-//            myLable.frame = CGRect(x: 16, y: (UIScreen.main.bounds.height / 16 - 24) / 2, width: UIScreen.main.bounds.width - 32, height: 24)
-//            myLable.font = UIFont.boldSystemFont(ofSize: 12)
-//            myLable.text = "入力した内容に間違いがないかご確認ください"
-//
-//            let headerView = UIView()
-//        if section == 0{
-//            headerView.addSubview(myLable)
-//        }
-//            return headerView
-//    }
+
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 160
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
+    
+    
 }

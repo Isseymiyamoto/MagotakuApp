@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
 //                gradientLayer.frame = (navigationController?.navigationBar.frame)!
 //                gradientLayer.colors = [a, b]
 //        self.navigationController?.navigationBar.layer.insertSublayer(gradientLayer, at: 0)
-//    }
+//    }bac
     
     //新規予約1に飛ばす
     @IBAction func takeReserve(_ sender: Any) {
