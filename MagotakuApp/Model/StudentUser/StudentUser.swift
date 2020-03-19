@@ -12,8 +12,6 @@ import FirebaseFirestoreSwift
 
 class StudentUser: Codable{
 //    DocumentIDを入れるためのid 識別子
-    var id : String
-
 //    アカウントのuid
     var uid : String = ""
 
@@ -41,14 +39,9 @@ class StudentUser: Codable{
 //    学生プロフィール用写真
     var imageName: String = ""
     
-    var createdAt: Timestamp
-    var updatedAt: Timestamp
+    var createdAt: Timestamp!
+    var updatedAt: Timestamp!
     
-    init(id:String) {
-        self.id = id
-        self.createdAt = Timestamp()
-        self.updatedAt = Timestamp()
-    }
 }
 
 

@@ -25,8 +25,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         self.title = "マイアカウント"
 
-        logoutBtn.layer.cornerRadius = logoutBtn.frame.height / 2
-        logoutBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
+//        logoutBtn.layer.cornerRadius = logoutBtn.frame.height / 2
+//        logoutBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -49,7 +49,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //            } catch {
 //                print("error:",error.localizedDescription)
 //            }
-//
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
