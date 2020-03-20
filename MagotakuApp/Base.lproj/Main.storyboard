@@ -51,7 +51,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIV-Qc-Tur">
                                 <rect key="frame" x="32" y="786" width="350" height="30"/>
-                                <state key="normal" title="まごちゃんはこちらから"/>
+                                <state key="normal" title="学生はこちらから"/>
                                 <connections>
                                     <action selector="tapToStudentLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ghp-Jo-uIa"/>
                                 </connections>

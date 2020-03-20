@@ -47,6 +47,10 @@ class SeniorUserCollection{
         seniorUserUseCase.fetchSeniorUser()
     }
     
+//    func loginCheck() -> Bool{
+//        return seniorUserUseCase.loginCheck()
+//    }
+//    
 }
 
 

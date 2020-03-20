@@ -24,25 +24,29 @@ class HomeViewController: UIViewController {
         reservationBtn.layer.cornerRadius = 30.0
         reservationBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
-
+//        navigationController?.navigationBar.backgroundColor = .clear
+        
         
         SeniorUserCollection.shared.fetchProfile()
         
 //        navigationController?.navigationBar.backgroundColor = UIColor.clear
         
     }
-//
+
+    
 //    override func viewDidLayoutSubviews() {
-//        //gradinet-layerカラーの作成
-//                let a:CGColor = UIColor(red: 41/255, green: 162/255, blue: 226/255, alpha: 1).cgColor
-//                let b:CGColor = UIColor(red: 65/255, green: 132/255, blue: 190/255, alpha: 1).cgColor
-//                let gradientLayer = CAGradientLayer()
-//                gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-//                gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-//                gradientLayer.frame = (navigationController?.navigationBar.frame)!
-//                gradientLayer.colors = [a, b]
+//        super.viewDidLayoutSubviews()
+//
+//        let a:CGColor = UIColor(red: 41/255, green: 162/255, blue: 226/255, alpha: 1).cgColor
+//        let b:CGColor = UIColor(red: 65/255, green: 132/255, blue: 190/255, alpha: 1).cgColor
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+//        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+//        gradientLayer.frame = (navigationController?.navigationBar.frame)!
+//        gradientLayer.colors = [a, b]
 //        self.navigationController?.navigationBar.layer.insertSublayer(gradientLayer, at: 0)
-//    }bac
+//    }
+
     
     //新規予約1に飛ばす
     @IBAction func takeReserve(_ sender: Any) {

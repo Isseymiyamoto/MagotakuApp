@@ -115,6 +115,21 @@ class SeniorUserUseCase {
         }
 
     }
+    
+//    func loginCheck() -> Bool{
+//        let collectionRef = getCollectionRef()
+//        var result: Bool!
+//        collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
+//            if document != nil{
+//                result = true
+//
+//            }else{
+//                result = false
+//
+//            }
+//        }
+//        return true
+//    }
 
     
     
