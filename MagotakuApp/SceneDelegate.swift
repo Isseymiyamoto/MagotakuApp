@@ -18,15 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
             window = UIWindow(windowScene: scene)
-               if let user = Auth.auth().currentUser {
-                window?.rootViewController = StudentTabBarController()
-               }else{
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateInitialViewController()
-                   window?.rootViewController = vc //ログイン画面
-               }
-               window?.makeKeyAndVisible()
-
+        if Auth.auth().currentUser != nil {
+//                window?.rootViewController = StudentTabBarController()
+            window?.rootViewController = MainTabBarController()
+        }else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()
+            window?.rootViewController = vc //ログイン画面
+        }
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

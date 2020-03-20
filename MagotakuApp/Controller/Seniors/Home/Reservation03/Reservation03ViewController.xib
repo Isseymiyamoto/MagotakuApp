@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFb-ja-zbN">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFb-ja-zbN">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yS-Zu-8sS">
@@ -41,7 +40,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vFb-ja-zbN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="175-CB-ZiH"/>
+                <constraint firstItem="vFb-ja-zbN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bse-aI-CgK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6yS-Zu-8sS" secondAttribute="bottom" constant="16" id="NXb-Ja-J4r"/>
+                <constraint firstItem="vFb-ja-zbN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UNU-zs-1EQ"/>
+                <constraint firstAttribute="bottom" secondItem="vFb-ja-zbN" secondAttribute="bottom" id="sHB-fY-WOd"/>
                 <constraint firstItem="6yS-Zu-8sS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="v6l-fc-wZO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6yS-Zu-8sS" secondAttribute="trailing" constant="32" id="xKO-0u-zXi"/>
             </constraints>

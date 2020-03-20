@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-XR-YjZ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="734"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-XR-YjZ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="746"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tox-zb-fE5">
                         <size key="itemSize" width="50" height="50"/>
@@ -47,9 +46,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="W24-6r-zpD" firstAttribute="top" secondItem="Fho-XR-YjZ" secondAttribute="bottom" constant="8" symbolic="YES" id="E1r-8B-ec7"/>
+                <constraint firstItem="Fho-XR-YjZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="P4j-Tc-Awk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W24-6r-zpD" secondAttribute="bottom" constant="16" id="RM8-YB-tZs"/>
+                <constraint firstItem="Fho-XR-YjZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TRF-Yt-9Hv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W24-6r-zpD" secondAttribute="trailing" constant="32" id="Zmn-Wx-0HE"/>
                 <constraint firstItem="W24-6r-zpD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="fdP-Y6-XzQ"/>
+                <constraint firstItem="Fho-XR-YjZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gEt-yt-QY6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.57971014492756" y="129.91071428571428"/>

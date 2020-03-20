@@ -18,22 +18,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SO-9d-Qbo">
-                    <rect key="frame" x="32" y="685" width="350" height="62"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SO-9d-Qbo">
+                    <rect key="frame" x="32" y="798" width="350" height="48"/>
                     <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="pZQ-u3-2s4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="決定">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="tapToNext:" destination="-1" eventType="touchUpInside" id="5V2-7k-uky"/>
+                        <action selector="tapToNext:" destination="-1" eventType="touchUpInside" id="pSr-NZ-RxO"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="0SO-9d-Qbo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="7La-Jp-jAB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0SO-9d-Qbo" secondAttribute="trailing" constant="32" id="SZd-4L-Wle"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0SO-9d-Qbo" secondAttribute="trailing" constant="32" id="TwD-FY-oOc"/>
+                <constraint firstItem="0SO-9d-Qbo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="dpJ-7k-Fgb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0SO-9d-Qbo" secondAttribute="bottom" constant="16" id="vqX-wb-5pW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>

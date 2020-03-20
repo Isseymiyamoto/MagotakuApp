@@ -32,24 +32,41 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+//        tableView.backgroundColor = .black
         navigationController?.navigationBar.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+        
+        if let navigationBar = self.navigationController?.navigationBar {
+            let gradient = CAGradientLayer()
+            var bounds = navigationBar.bounds
+            bounds.size.height += self.additionalSafeAreaInsets.top
+            gradient.frame = bounds
+            gradient.colors = [UIColor(red: 41/255, green: 162/255, blue: 226/255, alpha: 1).cgColor, UIColor(red: 65/255, green: 132/255, blue: 190/255, alpha: 1).cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+
+            if let image = getImageFrom(gradientLayer: gradient) {
+                navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+            }
+        }
     }
 
+    func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
+        var gradientImage:UIImage?
+        UIGraphicsBeginImageContext(gradientLayer.frame.size)
+        if let context = UIGraphicsGetCurrentContext() {
+            gradientLayer.render(in: context)
+            gradientImage = UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
+        }
+        UIGraphicsEndImageContext()
+        return gradientImage
+    }
+
+
     
-//    ログアウトボタンでした
-//    @IBAction func logout(_ sender: Any) {
-//        do {
-//                try Auth.auth().signOut()
-//                // 強制的に現在の表示している vc を変更する
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = storyboard.instantiateInitialViewController()
-//
-//                let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
-//                sceneDelegate.window?.rootViewController = vc
-//            } catch {
-//                print("error:",error.localizedDescription)
-//            }
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellText.count

@@ -18,13 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-LZ-ktN">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-LZ-ktN">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IfE-LZ-ktN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8ea-jU-q9m"/>
+                <constraint firstItem="IfE-LZ-ktN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DhZ-Ei-oJK"/>
+                <constraint firstItem="IfE-LZ-ktN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Iud-c9-Ebo"/>
+                <constraint firstAttribute="bottom" secondItem="IfE-LZ-ktN" secondAttribute="bottom" id="lsr-Ae-ft7"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </view>

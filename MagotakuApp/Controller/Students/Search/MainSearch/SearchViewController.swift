@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
         if let navigationBar = self.navigationController?.navigationBar {
             let gradient = CAGradientLayer()
             var bounds = navigationBar.bounds
-            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+            bounds.size.height += self.additionalSafeAreaInsets.top
             gradient.frame = bounds
             gradient.colors = [UIColor(red: 41/255, green: 162/255, blue: 226/255, alpha: 1).cgColor, UIColor(red: 65/255, green: 132/255, blue: 190/255, alpha: 1).cgColor]
             gradient.startPoint = CGPoint(x: 0, y: 0)

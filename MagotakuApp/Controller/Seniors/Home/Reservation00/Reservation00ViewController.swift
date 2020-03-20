@@ -52,6 +52,8 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         //navigationBarのタイトル設定
         self.title = "訪問希望日を選択して下さい"
         
+        self.view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        
         //プロトコルの設定
         tableView.delegate = self
         tableView.dataSource = self
@@ -74,20 +76,20 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         tabBarController?.tabBar.isHidden = true
         
-        nextBtn.frame = CGRect(x: 32, y: x.height - 108, width: x.width - 64, height: 48)
+//        nextBtn.frame = CGRect(x: 32, y: x.height - 108, width: x.width - 64, height: 48)
         nextBtn.layer.cornerRadius = 24
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        tableView.reloadData()
-//    }
+
    
 
     //sectionの中に何個セル(row)が入るのか
@@ -160,9 +162,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         return ""
     }
     
-//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//        return ""
-//    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //タップされたセルのセクション番目の取得
