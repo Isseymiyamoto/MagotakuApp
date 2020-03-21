@@ -43,6 +43,10 @@ class StudentUseCase{
                 studentProfile.address = document!.data()!["address"]! as! String
                 studentProfile.school = document!.data()!["school"]! as! String
                 studentProfile.hobby = document!.data()!["hobby"]! as! String
+                
+                
+                
+                
             }else{
                 print("君のデータはありませんね。(StudentUseCase/fetchStudentUser)")
             }

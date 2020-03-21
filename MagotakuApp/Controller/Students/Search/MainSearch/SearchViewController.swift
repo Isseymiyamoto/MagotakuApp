@@ -30,12 +30,7 @@ class SearchViewController: UIViewController {
         //学生情報をfetchして表示する
         
         
-        if studentProfile.uid != ""{
-            print("studentProfile.uid:\(studentProfile.uid)")
-            testLabel.text = studentProfile.uid
-        }else{
-            testLabel.text = "いやえぐいて"
-        }
+    
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,6 +48,13 @@ class SearchViewController: UIViewController {
             if let image = getImageFrom(gradientLayer: gradient) {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
+        }
+        
+        if studentProfile.uid != ""{
+            print("studentProfile.uid:\(studentProfile.uid)")
+            testLabel.text = studentProfile.uid
+        }else{
+            testLabel.text = "いやえぐいて"
         }
     }
     

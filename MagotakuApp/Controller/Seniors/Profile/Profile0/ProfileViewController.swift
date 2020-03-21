@@ -13,7 +13,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
-    @IBOutlet weak var logoutBtn: UIButton!
+//    @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     let cellText = ["プロフィール", "お支払い情報", "レビュー", "設定", "ログアウト"]

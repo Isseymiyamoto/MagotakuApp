@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentProfileViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
-                <outlet property="logoutBtn" destination="X1U-Jn-7b5" id="Ri9-Tr-JrQ"/>
+                <outlet property="tableView" destination="vol-dw-iQU" id="PRF-IT-1Vf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,30 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1U-Jn-7b5">
-                    <rect key="frame" x="32" y="424" width="350" height="48"/>
-                    <color key="backgroundColor" red="0.4910187721" green="0.55137854809999998" blue="0.90199810270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="9eM-x9-Kpv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="ログアウト">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="oWs-QB-SLY"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vol-dw-iQU">
+                    <rect key="frame" x="0.0" y="44" width="414" height="832"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="X1U-Jn-7b5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="1HE-ze-CrB"/>
-                <constraint firstItem="X1U-Jn-7b5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1yx-lS-Xoh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X1U-Jn-7b5" secondAttribute="trailing" constant="32" id="9uD-Wi-kw8"/>
-                <constraint firstItem="X1U-Jn-7b5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oHm-5e-XON"/>
+                <constraint firstItem="vol-dw-iQU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0vP-3E-wKQ"/>
+                <constraint firstItem="vol-dw-iQU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DIk-8f-P0x"/>
+                <constraint firstItem="vol-dw-iQU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="c6s-my-5A8"/>
+                <constraint firstAttribute="bottom" secondItem="vol-dw-iQU" secondAttribute="bottom" constant="20" symbolic="YES" id="uwT-s8-rXM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="141" y="129"/>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
         </view>
     </objects>
 </document>
