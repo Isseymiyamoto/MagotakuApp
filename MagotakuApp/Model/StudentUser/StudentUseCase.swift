@@ -45,7 +45,12 @@ class StudentUseCase{
                 studentProfile.hobby = document!.data()!["hobby"]! as! String
                 
                 
-                
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                    let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+                        return
+                }
+                let vc = StudentTabBarController()
+                sceneDelegate.window?.rootViewController = vc
                 
             }else{
                 print("君のデータはありませんね。(StudentUseCase/fetchStudentUser)")

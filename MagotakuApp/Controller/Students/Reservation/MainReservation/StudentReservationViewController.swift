@@ -17,7 +17,7 @@ class StudentReservationViewController: UIViewController {
             super.viewDidLoad()
 
             //上タブの設定
-            let firstVC = ReservationListViewController()
+            let firstVC = SignUp3ViewController()
             let secondVC = SignUp2ViewController()
             
             //各タブ名の設定

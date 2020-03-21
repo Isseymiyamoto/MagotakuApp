@@ -102,15 +102,16 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
                     self.logInErrorAlert(error)
                 } else {
                     print ("🌞ログイン成功")
-//                    StudentUserCollection.shared.fetchProfile()
+                    
+                    StudentUserCollection.shared.fetchProfile()
                     //学生用のHomeに飛ばす
-                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                        let sceneDelegate = windowScene.delegate as? SceneDelegate else{
-                            return
-                    }
-                    let vc = StudentTabBarController()
-                    sceneDelegate.window?.rootViewController = vc
-    //                self.navigationController?.pushViewController(vc, animated: true)
+//                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                        let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+//                            return
+//                    }
+//                    let vc = StudentTabBarController()
+//                    sceneDelegate.window?.rootViewController = vc
+
                 }
             }
         }
