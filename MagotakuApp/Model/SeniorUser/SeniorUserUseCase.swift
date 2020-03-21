@@ -84,24 +84,7 @@ class SeniorUserUseCase {
         }
     }
     
-//    データ取得
-//    func fetchSeniorUser(callback: @escaping ([SeniorUser]?) -> Void){
-//        let collectionRef = getCollectionRef()
-//        collectionRef.getDocuments(source: .default) { (snapshot, err) in
-//            guard err == nil, let snapshot = snapshot, !snapshot.isEmpty else{
-//                print("データ取得失敗", err.debugDescription)
-//                return
-//            }
-//            print("データ取得成功")
-//            let SeniorUserInfo = snapshot.documents.compactMap { (snapshot) in
-//                return try? Firestore.Decoder().decode(SeniorUser.self, from: snapshot.data())
-//            }
-//            callback(SeniorUserInfo)
-//        }
-//    }
-    
-    
-//
+
     func fetchSeniorUser() -> Void{
         let collectionRef = getCollectionRef()
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
@@ -116,20 +99,22 @@ class SeniorUserUseCase {
 
     }
     
-//    func loginCheck() -> Bool{
-//        let collectionRef = getCollectionRef()
-//        var result: Bool!
-//        collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
-//            if document != nil{
-//                result = true
-//
-//            }else{
-//                result = false
-//
-//            }
-//        }
-//        return true
-//    }
+    
+    func loginCheck(callback: @escaping ((Bool) -> Void)){
+        let collectionRef = getCollectionRef()
+        var result: Bool = false
+        print(Auth.auth().currentUser!.uid)
+        collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
+            if document != nil{
+                result = true
+                print("正常な方が読まれています")
+            }else{
+                print(err!.localizedDescription)
+                print("エラーの方が読まれてます")
+            }
+            callback(result)
+        }
+    }
 
     
     

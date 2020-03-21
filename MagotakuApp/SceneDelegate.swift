@@ -19,8 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
             window = UIWindow(windowScene: scene)
         if Auth.auth().currentUser != nil {
-//                window?.rootViewController = StudentTabBarController()
-            window?.rootViewController = MainTabBarController()
+            SeniorUserCollection.shared.loginCheck{(result) in
+                print("resultを出力します")
+                print(result)
+                if result == true{
+                    self.window?.rootViewController = MainTabBarController()
+                }else{
+                    self.window?.rootViewController = StudentTabBarController()
+                }
+            }
+            
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateInitialViewController()

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class LoginStudentViewController: UIViewController, UITextFieldDelegate {
     
     let mailTF: CustomTextField! = CustomTextField()
@@ -19,6 +20,8 @@ class LoginStudentViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
             super.viewDidLoad()
+        
+        
             
             
             self.mailTF.delegate = self

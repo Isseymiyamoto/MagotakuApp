@@ -14,5 +14,6 @@ pod 'FirebaseFirestoreSwift'
 pod 'FirebaseUI/Storage'
 pod 'Parchment'
 pod 'FSCalendar'
+pod 'IQKeyboardManagerSwift'
 
 end

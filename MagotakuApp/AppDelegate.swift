@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        
+        //キーボードの出現による他のコンポーネントの移動はここで制御
+//        IQKeyboardManager.shared.enable = true
         
         FirebaseApp.configure()
         return true

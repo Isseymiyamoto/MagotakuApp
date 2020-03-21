@@ -47,10 +47,18 @@ class SeniorUserCollection{
         seniorUserUseCase.fetchSeniorUser()
     }
     
-//    func loginCheck() -> Bool{
-//        return seniorUserUseCase.loginCheck()
-//    }
-//    
+    func loginCheck(callback: @escaping ((Bool) -> Void)){
+        var boolResult = false
+        seniorUserUseCase.loginCheck { (result) in
+            print(result)
+            if result == true{
+                boolResult = true
+            }
+            callback(boolResult)
+        }
+    }
+    
+    
 }
 
 
