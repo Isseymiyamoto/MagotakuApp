@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var studentProfile: StudentUser!
 
@@ -23,10 +24,10 @@ class SearchViewController: UIViewController {
         ]
         
         //学生情報をfetchして表示する
-        StudentUserCollection.shared.fetchProfile()
-        print(studentProfile)
-
-     
+        
+//        print(studentProfile)
+        seniorProfile
+    
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,6 +46,8 @@ class SearchViewController: UIViewController {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
         }
+        
+//        print(studentProfile!.uid)
         
     }
     
