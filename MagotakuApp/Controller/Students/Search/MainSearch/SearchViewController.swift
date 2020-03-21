@@ -9,9 +9,13 @@
 import UIKit
 import Firebase
 
-var studentProfile: StudentUser!
+//var studentProfile: StudentUser!
+var studentProfile: StudentUser = StudentUser()
 
 class SearchViewController: UIViewController {
+    
+    @IBOutlet weak var testLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,13 @@ class SearchViewController: UIViewController {
         
         //学生情報をfetchして表示する
         
-//        print(studentProfile)
-        seniorProfile
-    
+        
+        if studentProfile.uid != ""{
+            print("studentProfile.uid:\(studentProfile.uid)")
+            testLabel.text = studentProfile.uid
+        }else{
+            testLabel.text = "いやえぐいて"
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,9 +54,6 @@ class SearchViewController: UIViewController {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
         }
-        
-//        print(studentProfile!.uid)
-        
     }
     
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {

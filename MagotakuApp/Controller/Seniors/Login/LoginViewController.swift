@@ -103,7 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print ("🌞ログイン成功")
                 
-                
+                StudentUserCollection.shared.fetchProfile()
                 //シニア用のHomeに飛ばす
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                     let sceneDelegate = windowScene.delegate as? SceneDelegate else{

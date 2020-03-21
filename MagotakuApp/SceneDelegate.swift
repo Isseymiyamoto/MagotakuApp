@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 if result == true{
                     self.window?.rootViewController = MainTabBarController()
                 }else{
+                    StudentUserCollection.shared.fetchProfile()
                     self.window?.rootViewController = StudentTabBarController()
                 }
             }

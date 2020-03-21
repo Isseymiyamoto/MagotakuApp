@@ -33,9 +33,16 @@ class StudentUseCase{
         let collectionRef = getCollectionRef()
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
             if document?.data() != nil{
-                let userInfo = try? Firestore.Decoder().decode(StudentUser.self, from: document!.data()!)
-                print("userInfo:\(userInfo!)")
-                studentProfile = userInfo!
+                
+                //ひたすら代入する
+                studentProfile.uid = document!.data()!["uid"]! as! String
+                studentProfile.name = document!.data()!["name"]! as! String
+                studentProfile.sex = document!.data()!["sex"]! as! String
+                studentProfile.age = document!.data()!["age"]! as! String
+                studentProfile.phoneNum = document!.data()!["phoneNum"]! as! String
+                studentProfile.address = document!.data()!["address"]! as! String
+                studentProfile.school = document!.data()!["school"]! as! String
+                studentProfile.hobby = document!.data()!["hobby"]! as! String
             }else{
                 print("君のデータはありませんね。(StudentUseCase/fetchStudentUser)")
             }
