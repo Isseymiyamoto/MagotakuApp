@@ -105,11 +105,11 @@ class SeniorUserUseCase {
         var result: Bool = false
         print(Auth.auth().currentUser!.uid)
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
-            if document != nil{
+            if document?.data() != nil{
                 result = true
                 print("正常な方が読まれています")
             }else{
-                print(err!.localizedDescription)
+                print(err)
                 print("エラーの方が読まれてます")
             }
             callback(result)
