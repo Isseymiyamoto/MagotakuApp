@@ -21,11 +21,11 @@ class StudentUser: Codable{
 //    学生性別
     var sex : String = ""
 
-//    学生誕生日
-    var bornDate: String = ""
+//    年齢
+    var age: String = ""
 
-//    学生登録区域
-    var locations: [Int]!
+//    学生大まかな住所
+    var address: String = ""
 
 //    学生電話番号(利用者からの電話に答えられるもの)
     var phoneNum: String = ""

@@ -37,6 +37,10 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
 
     //1セクション内のrowの数を決める
@@ -48,22 +52,21 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
        // 登録したセルを使う。 as! CustomCell としないと、UITableViewCell のままでしか使えない。
        let cell = tableView.dequeueReusableCell(withIdentifier: "ReservationCell", for: indexPath) as! ReservationCell
     
-    //日付用のUILabelに代入
-    cell.dateLabel.text = "\(ReservationCollection.shared.getReservation(at: indexPath.row).visitDate) \(ReservationCollection.shared.getReservation(at: indexPath.row).visitTime)"
-    
-    //もし承認判定用の番号が1になっていたらテキストカラーと文言を変更
-    if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
-        cell.decideLabel.text = " 承認済み "
-        cell.decideLabel.textColor = .red
-        cell.decideLabel.layer.borderColor = UIColor.red.cgColor
-        cell.partnerImage.image = UIImage(named: "setting")
-    }else{
-        //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
-        if let imageName: String? = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
-            cell.partnerImage.sd_setImage(with: ref)
-        }
-        cell.partnerLabel.text = "パートナー：未定"
-    }
+            //日付用のUILabelに代入
+            cell.dateLabel.text = "\(ReservationCollection.shared.getReservation(at: indexPath.row).visitDate) \(ReservationCollection.shared.getReservation(at: indexPath.row).visitTime)"
+            //もし承認判定用の番号が1になっていたらテキストカラーと文言を変更
+            if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
+                cell.decideLabel.text = " 承認済み "
+                cell.decideLabel.textColor = .red
+                cell.decideLabel.layer.borderColor = UIColor.red.cgColor
+                cell.partnerImage.image = UIImage(named: "setting")
+            }else{
+                //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
+                if let imageName: String = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName){
+                    cell.partnerImage.sd_setImage(with: ref)
+                }
+                cell.partnerLabel.text = "パートナー：未定"
+            }
        return cell
    }
     

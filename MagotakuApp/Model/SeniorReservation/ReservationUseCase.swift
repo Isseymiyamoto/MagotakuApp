@@ -61,18 +61,4 @@ class ReservationUseCase {
             callback(reservations)
         }
     }
-
-//    func getStorageReference() -> StorageReference? {
-//        guard let uid = Auth.auth().currentUser?.uid else {
-//            return nil
-//        }
-//        return storage.reference().child("seniorUsers").child(uid)
-//    }
-//
-//    func getImageRef(imageName: String) -> StorageReference? {
-//        return getStorageReference()?.child(imageName)
-//    }
-
-
-
 }

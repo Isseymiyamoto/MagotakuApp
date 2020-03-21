@@ -88,8 +88,8 @@ class SeniorUserUseCase {
     func fetchSeniorUser() -> Void{
         let collectionRef = getCollectionRef()
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
-           if let document = document {
-            let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document.data()!)
+            if document?.data() != nil {
+                let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document!.data()!)
             print("userInfo: \(userInfo!)")
             profile = userInfo!
            } else {
@@ -109,7 +109,7 @@ class SeniorUserUseCase {
                 result = true
                 print("正常な方が読まれています")
             }else{
-                print(err)
+                print(err as Any)
                 print("エラーの方が読まれてます")
             }
             callback(result)

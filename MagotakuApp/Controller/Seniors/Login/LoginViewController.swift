@@ -102,6 +102,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.logInErrorAlert(error)
             } else {
                 print ("🌞ログイン成功")
+                
+                
                 //シニア用のHomeに飛ばす
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                     let sceneDelegate = windowScene.delegate as? SceneDelegate else{
