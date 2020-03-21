@@ -130,7 +130,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         default:
             do {
                 try Auth.auth().signOut()
-                ReservationCollection.shared.resetData()
+//                ReservationCollection.shared.resetData()
                     // 強制的に現在の表示している vc を変更する
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateInitialViewController()
