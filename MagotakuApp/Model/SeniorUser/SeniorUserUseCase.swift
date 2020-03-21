@@ -91,7 +91,7 @@ class SeniorUserUseCase {
             if document?.data() != nil {
                 let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document!.data()!)
             print("userInfo: \(userInfo!)")
-            profile = userInfo!
+            seniorProfile = userInfo!
            } else {
                print("Document does not exist")
            }

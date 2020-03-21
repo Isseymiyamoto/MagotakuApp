@@ -62,7 +62,7 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
                 cell.partnerImage.image = UIImage(named: "setting")
             }else{
                 //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
-                if let imageName: String = profile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName){
+                if let imageName: String = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName){
                     cell.partnerImage.sd_setImage(with: ref)
                 }
                 cell.partnerLabel.text = "パートナー：未定"

@@ -8,6 +8,8 @@
 
 import UIKit
 
+var studentProfile: StudentUser!
+
 class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,6 +21,10 @@ class SearchViewController: UIViewController {
         // 文字の色
             .foregroundColor: UIColor.white
         ]
+        
+        //学生情報をfetchして表示する
+        StudentUserCollection.shared.fetchProfile()
+        print(studentProfile)
 
      
     }

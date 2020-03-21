@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 
-var profile = SeniorUserCollection.shared.createSeniorUser()
+var seniorProfile = SeniorUserCollection.shared.createSeniorUser()
 var seniorImage: UIImage?
 
 class SignUp8ViewController: UIViewController {
@@ -39,7 +39,7 @@ class SignUp8ViewController: UIViewController {
         }
         
         //profileのidに
-        profile.uid = user!.uid
+        seniorProfile.uid = user!.uid
         //navigationBarのタイトル設定
         self.title = "登録情報確認"
     }
@@ -55,8 +55,8 @@ class SignUp8ViewController: UIViewController {
                 guard let imageName = imageName else{
                     return
                 }
-                profile.imageName = imageName
-                SeniorUserCollection.shared.addTask(profile)
+                seniorProfile.imageName = imageName
+                SeniorUserCollection.shared.addTask(seniorProfile)
             }
         }
         

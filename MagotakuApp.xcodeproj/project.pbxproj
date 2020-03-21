@@ -62,6 +62,7 @@
 		85A506BA2404C89900A2F582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506B82404C89900A2F582 /* Main.storyboard */; };
 		85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BB2404C89C00A2F582 /* Assets.xcassets */; };
 		85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */; };
+		85CA687D24260F7000062D82 /* StudentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA687C24260F7000062D82 /* StudentCollection.swift */; };
 		85DB99F424178E750092935B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F224178E750092935B /* CustomCell.swift */; };
 		85DB99F524178E750092935B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99F324178E750092935B /* CustomCell.xib */; };
 		85DB99F72417A05F0092935B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F62417A05F0092935B /* CustomLabel.swift */; };
@@ -155,6 +156,7 @@
 		85A506BB2404C89C00A2F582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A506BE2404C89C00A2F582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A506C02404C89C00A2F582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CA687C24260F7000062D82 /* StudentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollection.swift; sourceTree = "<group>"; };
 		85DB99F224178E750092935B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		85DB99F324178E750092935B /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		85DB99F62417A05F0092935B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 			children = (
 				85E8124824220F0F004ECB87 /* StudentUser.swift */,
 				85E8124A24225ECC004ECB87 /* StudentUseCase.swift */,
+				85CA687C24260F7000062D82 /* StudentCollection.swift */,
 			);
 			path = StudentUser;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				85DB99F424178E750092935B /* CustomCell.swift in Sources */,
 				850B93AD2405B06C0010CE87 /* UIViewController+.swift in Sources */,
 				8505BECF241C7AAB00E46191 /* LoginStudentViewController.swift in Sources */,
+				85CA687D24260F7000062D82 /* StudentCollection.swift in Sources */,
 				850B93D5240823930010CE87 /* SignUp7ViewController.swift in Sources */,
 				8560DD342410FD6D000BF5BF /* ReservationListViewController.swift in Sources */,
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,

@@ -39,8 +39,8 @@ class StudentUser: Codable{
 //    学生プロフィール用写真
     var imageName: String = ""
     
-    var createdAt: Timestamp!
-    var updatedAt: Timestamp!
+//    var createdAt: Timestamp!
+//    var updatedAt: Timestamp!
     
 }
 

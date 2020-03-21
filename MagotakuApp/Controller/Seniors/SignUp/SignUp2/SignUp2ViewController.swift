@@ -92,10 +92,10 @@ class SignUp2ViewController: UIViewController {
 //            let lastVC = SignUp8ViewController()
             if sexNum == 1{
 //                SeniorUser.shared.sex = "男性"
-                profile.sex = "男性"
+                seniorProfile.sex = "男性"
             }else{
 //                SeniorUser.shared.sex = "女性"
-                profile.sex = "女性"
+                seniorProfile.sex = "女性"
             }
             let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
             navigationItem.backBarButtonItem = backButtonItem
