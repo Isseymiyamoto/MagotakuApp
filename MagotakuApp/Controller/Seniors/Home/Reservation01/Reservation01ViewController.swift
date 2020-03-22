@@ -27,14 +27,7 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         //NavigationBarのタイトル設定
         self.title = "訪問希望日をタップしてください"
         
-        
-        
-        //titleLabelの設定
-//        titleLabel.text = ""
-//        titleLabel.textAlignment = .left
-//        titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
-//        view.addSubview(titleLabel)
-        
+
         
         //カレンダーの設定について
         let calendar = FSCalendar()

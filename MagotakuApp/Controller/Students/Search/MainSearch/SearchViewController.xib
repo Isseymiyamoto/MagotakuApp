@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
-                <outlet property="testLabel" destination="dxd-h8-Pkm" id="fop-N7-qX2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,21 +16,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-h8-Pkm">
-                    <rect key="frame" x="32" y="433.5" width="350" height="29"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="dxd-h8-Pkm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Cu1-IG-Bdm"/>
-                <constraint firstItem="dxd-h8-Pkm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Jjz-gW-hK9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dxd-h8-Pkm" secondAttribute="trailing" constant="32" id="TKj-Rn-bov"/>
-                <constraint firstItem="dxd-h8-Pkm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dZq-Ua-FeK"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="139"/>
         </view>

@@ -8,15 +8,16 @@
 
 import UIKit
 import Firebase
+import FSCalendar
 
-//var studentProfile: StudentUser!
+//学生側プロフィールの初期化
 var studentProfile: StudentUser = StudentUser()
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
-    @IBOutlet weak var testLabel: UILabel!
+    //カレンダー定義
+    fileprivate weak var calendar: FSCalendar!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,10 +28,33 @@ class SearchViewController: UIViewController {
             .foregroundColor: UIColor.white
         ]
         
-        //学生情報をfetchして表示する
         
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        calendar.dataSource = self
+        calendar.delegate = self
         
-    
+        //カレンダーの表記を日本語化
+        calendar.appearance.headerDateFormat = "YYYY年MM月"
+        self.calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
+        self.calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
+        self.calendar.calendarWeekdayView.weekdayLabels[2].text = "火"
+        self.calendar.calendarWeekdayView.weekdayLabels[3].text = "水"
+        self.calendar.calendarWeekdayView.weekdayLabels[4].text = "木"
+        self.calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
+        self.calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
+        //曜日毎にテキストカラーを変更
+        self.calendar.calendarWeekdayView.weekdayLabels[0].textColor = UIColor.red
+        self.calendar.calendarWeekdayView.weekdayLabels[1].textColor = UIColor.black
+        self.calendar.calendarWeekdayView.weekdayLabels[2].textColor = UIColor.black
+        self.calendar.calendarWeekdayView.weekdayLabels[3].textColor = UIColor.black
+        self.calendar.calendarWeekdayView.weekdayLabels[4].textColor = UIColor.black
+        self.calendar.calendarWeekdayView.weekdayLabels[5].textColor = UIColor.black
+        self.calendar.calendarWeekdayView.weekdayLabels[6].textColor = UIColor.blue
+        
+        self.calendar.firstWeekday = 3
+        
+        view.addSubview(calendar)
+        self.calendar = calendar
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,12 +74,7 @@ class SearchViewController: UIViewController {
             }
         }
         
-        if studentProfile.uid != ""{
-            print("studentProfile.uid:\(studentProfile.uid)")
-            testLabel.text = studentProfile.uid
-        }else{
-            testLabel.text = "いやえぐいて"
-        }
+        
     }
     
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
