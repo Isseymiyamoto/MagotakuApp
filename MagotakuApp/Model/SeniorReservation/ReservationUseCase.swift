@@ -44,6 +44,7 @@ class ReservationUseCase {
         }
     }
     
+    //シニア側において、自分の予約を取得する
     func fetchReservationDocuments(callback: @escaping ([Reservation]?) -> Void){
         let collectionRef = getCollectionRef()
         collectionRef.whereField("seUid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(source: .default) { (snapshot, err) in
@@ -61,4 +62,26 @@ class ReservationUseCase {
             callback(reservations)
         }
     }
+    
+    //すべての予約を取得する
+    func fetchAllReservation(callback: @escaping ([Reservation]?) -> Void){
+        let collectionRef = getCollectionRef()
+        collectionRef.getDocuments(source: .default, completion: { (snapshot, err) in
+            guard let snapshot = snapshot, err == nil, !snapshot.isEmpty else{
+                print("データ取得失敗(reservationUseCase/fetchAllReservation)", err.debugDescription)
+                callback(nil)
+                return
+            }
+            
+            print("データ取得成功(reservationUseCase/fetchAllReservation)")
+            let reservations = snapshot.documents.compactMap{ snapshot in
+                return try? Firestore.Decoder().decode(Reservation.self, from: snapshot.data())
+            }
+            print(reservations)
+            callback(reservations)
+        })
+    }
+    
+    
+    
 }

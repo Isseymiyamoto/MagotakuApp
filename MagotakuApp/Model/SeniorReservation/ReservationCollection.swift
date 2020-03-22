@@ -26,7 +26,11 @@ class ReservationCollection{
         load()
     }
     
-    private var reservations: [Reservation] = []
+    //seniro個人向けのreservations
+    private var personalReservations: [Reservation] = []
+    
+    //全体でのreservations
+    private var allReservations: [Reservation] = []
     
     weak var delegate: ReservationCollectionDelegate? = nil
 
@@ -36,21 +40,21 @@ class ReservationCollection{
     }
     
     func reservationCount() -> Int{
-        return reservations.count
+        return personalReservations.count
     }
     
     func addReservation(_ reservation: Reservation){
         reservationUseCase.addReservation(reservation)
-        reservations.append(reservation)
+        personalReservations.append(reservation)
         save()
     }
     
     func getReservation (at: Int) -> Reservation{
-        return reservations[at]
+        return personalReservations[at]
     }
     
     private func save() {
-        reservations = sortReservationByUpdatedAt(reservations: reservations)
+        personalReservations = sortReservationByUpdatedAt(reservations: personalReservations)
         delegate?.saved()
     }
     
@@ -60,7 +64,7 @@ class ReservationCollection{
                 self.save()
                 return
             }
-            self.reservations = self.sortReservationByUpdatedAt(reservations: fetchReservations)
+            self.personalReservations = self.sortReservationByUpdatedAt(reservations: fetchReservations)
             self.delegate?.loaded()
         }
     }
@@ -70,7 +74,16 @@ class ReservationCollection{
     }
     
     func resetData(){
-        reservations = []
+        personalReservations = []
+    }
+    
+    private func allFetch(){
+        reservationUseCase.fetchAllReservation { (fetchReservations) in
+            guard let fetchReservations = fetchReservations else{
+                return
+            }
+            self.allReservations = self.sortReservationByUpdatedAt(reservations: fetchReservations)
+        }
     }
 
     

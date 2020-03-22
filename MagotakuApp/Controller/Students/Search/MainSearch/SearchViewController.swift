@@ -13,10 +13,19 @@ import FSCalendar
 //学生側プロフィールの初期化
 var studentProfile: StudentUser = StudentUser()
 
-class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    
+    //collectonView
+    @IBOutlet weak var collectionView: UICollectionView!
     //カレンダー定義
     fileprivate weak var calendar: FSCalendar!
+    
+    //スクロールビュー
+    @IBOutlet weak var scrollView: UIScrollView!
+    //スクロールビューに載せるUIView
+    var view1 = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +38,15 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         ]
         
         
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300))
         calendar.dataSource = self
         calendar.delegate = self
+        view.addSubview(calendar)
+        self.calendar = calendar
         
         //カレンダーの表記を日本語化
-        calendar.appearance.headerDateFormat = "YYYY年MM月"
+        self.calendar = calendar
+//        calendar.appearance.headerDateFormat = "YYYY年MM月"
         self.calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
         self.calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
         self.calendar.calendarWeekdayView.weekdayLabels[2].text = "火"
@@ -51,10 +63,12 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         self.calendar.calendarWeekdayView.weekdayLabels[5].textColor = UIColor.black
         self.calendar.calendarWeekdayView.weekdayLabels[6].textColor = UIColor.blue
         
-        self.calendar.firstWeekday = 3
-        
-        view.addSubview(calendar)
-        self.calendar = calendar
+        self.calendar.calendarHeaderView.isHidden = true
+        self.calendar.headerHeight = 12.0
+        self.calendar.setScope(.week, animated: false)
+        self.calendar.pagingEnabled = true
+
+        horizontalScroll()
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,7 +102,60 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         return gradientImage
     }
 
+    //スクロールビューに対するメソッド
+    func horizontalScroll(){
+        scrollView.isScrollEnabled = true
+        scrollView.isPagingEnabled = true
+        //view1のframe
+        view1.frame = CGRect(x: 0, y: 0, width: scrollView.frame.size.width * 2, height: scrollView.frame.size.height)
+        view1.backgroundColor = .systemRed
+        //タブ的なボタン設置
+        for i in 0...6{
+            let button = UIButton()
+            button.frame = CGRect(x: (i*100), y: 10, width: 80, height: 55)
+            button.tag = i
+            setTitleForButton(tag: button.tag, button: button)
+            button.setTitleColor(.gray, for: .normal)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.layer.borderWidth = 1
+            view1.addSubview(button)
+        }
+        scrollView.addSubview(view1)
+        scrollView.contentSize = view1.bounds.size
+    }
 
+    //スクロールビューのボタンに文字を挿入
+    func setTitleForButton(tag: Int, button:UIButton){
+        switch tag {
+        case 0:
+            button.setTitle("おしゃべり", for: .normal)
+        case 1:
+            button.setTitle("イヤイヤ", for: .normal)
+        case 2:
+            button.setTitle("テクノロジー", for: .normal)
+        case 3:
+            button.setTitle("おしゃべり", for: .normal)
+        case 4:
+            button.setTitle("おしゃべり", for: .normal)
+        case 5:
+            button.setTitle("おしゃべり", for: .normal)
+        default:
+            button.setTitle("おしゃべり", for: .normal)
+        }
+    }
+        
     
+    
+    // collectionViewについての実装
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ReservationCollection.shared.reservationCount()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        
+        return cell
+    }
 
 }
+

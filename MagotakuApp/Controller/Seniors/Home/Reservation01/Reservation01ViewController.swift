@@ -66,13 +66,9 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
     override func viewDidLayoutSubviews() {
         let safeAreaTopHeight = self.view.safeAreaInsets.top
         let safeAreaBottomHeight = self.view.safeAreaInsets.bottom
-//        let tabbarHeight = self.tabBarController?.tabBar.frame.height
         print(safeAreaBottomHeight)
-        
-//        titleLabel.frame = CGRect(x: 8, y: safeAreaHeight + 16, width: UIScreen.main.bounds.width - 64, height: 22)
+    
         calendar.frame = CGRect(x: 0, y: safeAreaTopHeight , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - safeAreaTopHeight - safeAreaBottomHeight - 160)
-//        calendar.frame = CGRect(x: 0, y: safeAreaTopHeight + 24 , width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-//        nextBtn.frame = CGRect(x: 32, y: UIScreen.main.bounds.height - safeAreaBottomHeight - 60, width: UIScreen.main.bounds.width - 64, height: 48)
     }
     
     override func viewWillAppear(_ animated: Bool) {
