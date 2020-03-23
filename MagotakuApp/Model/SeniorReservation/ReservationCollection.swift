@@ -24,6 +24,9 @@ class ReservationCollection{
     private init(){
         reservationUseCase = ReservationUseCase()
         load()
+        
+        //テスト的に全データ取得する
+//        allFetch()
     }
     
     //seniro個人向けのreservations
@@ -39,6 +42,7 @@ class ReservationCollection{
         return Reservation(id: id)
     }
     
+    //シニア側の個人の予約数を管理
     func reservationCount() -> Int{
         return personalReservations.count
     }
@@ -77,6 +81,9 @@ class ReservationCollection{
         personalReservations = []
     }
     
+    
+    //学生側に表示するよう
+    //すべてのデータを引っ張ってくる
     private func allFetch(){
         reservationUseCase.fetchAllReservation { (fetchReservations) in
             guard let fetchReservations = fetchReservations else{
@@ -84,6 +91,11 @@ class ReservationCollection{
             }
             self.allReservations = self.sortReservationByUpdatedAt(reservations: fetchReservations)
         }
+    }
+    
+    //すべての予約数を管理(学生表示用)
+    func allReservationCount() -> Int{
+        return allReservations.count
     }
 
     

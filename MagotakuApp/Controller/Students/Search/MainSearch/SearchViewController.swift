@@ -15,7 +15,8 @@ var studentProfile: StudentUser = StudentUser()
 
 class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
+    //テスト的に前予約をfetchできているか確認する
+    var reservationCount = ReservationCollection.shared.allReservationCount()
     
     //collectonView
     @IBOutlet weak var collectionView: UICollectionView!
@@ -69,6 +70,11 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         self.calendar.pagingEnabled = true
 
         horizontalScroll()
+        
+        print("reservationCountを出力しますよ")
+        print(reservationCount)
+        print("reservationCountを出力しますよ")
+        
     }
     
     override func viewDidLayoutSubviews() {
