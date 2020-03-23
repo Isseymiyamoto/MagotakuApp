@@ -22,7 +22,6 @@ class MainTabBarController: UITabBarController {
         firstVC.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(systemName: "house.fill"), tag: 0)
         
         let secondVC = MainNavigationController(rootViewController: ReservationViewController())
-//        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
         secondVC.tabBarItem = UITabBarItem(title: "予約一覧", image: UIImage(systemName: "tray.fill"), tag: 1)
         
         let thirdVC = MainNavigationController(rootViewController: ProfileViewController())

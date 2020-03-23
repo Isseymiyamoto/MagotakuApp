@@ -63,8 +63,6 @@
 		85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BB2404C89C00A2F582 /* Assets.xcassets */; };
 		85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */; };
 		85CA687D24260F7000062D82 /* StudentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA687C24260F7000062D82 /* StudentCollection.swift */; };
-		85CA68802428B81B00062D82 /* testesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA687E2428B81B00062D82 /* testesViewController.swift */; };
-		85CA68812428B81B00062D82 /* testesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CA687F2428B81B00062D82 /* testesViewController.xib */; };
 		85DB99F424178E750092935B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F224178E750092935B /* CustomCell.swift */; };
 		85DB99F524178E750092935B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99F324178E750092935B /* CustomCell.xib */; };
 		85DB99F72417A05F0092935B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99F62417A05F0092935B /* CustomLabel.swift */; };
@@ -159,8 +157,6 @@
 		85A506BE2404C89C00A2F582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A506C02404C89C00A2F582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CA687C24260F7000062D82 /* StudentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollection.swift; sourceTree = "<group>"; };
-		85CA687E2428B81B00062D82 /* testesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testesViewController.swift; sourceTree = "<group>"; };
-		85CA687F2428B81B00062D82 /* testesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testesViewController.xib; sourceTree = "<group>"; };
 		85DB99F224178E750092935B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		85DB99F324178E750092935B /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		85DB99F62417A05F0092935B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -555,8 +551,6 @@
 				8560DD312410FD3E000BF5BF /* ReservationList */,
 				85EC4DFD240E4C7A00FCDCD2 /* ReservationViewController.swift */,
 				85EC4DFE240E4C7A00FCDCD2 /* ReservationViewController.xib */,
-				85CA687E2428B81B00062D82 /* testesViewController.swift */,
-				85CA687F2428B81B00062D82 /* testesViewController.xib */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -751,7 +745,6 @@
 				850B93C02406F1A90010CE87 /* SignUp4ViewController.xib in Resources */,
 				85DB99F524178E750092935B /* CustomCell.xib in Resources */,
 				85FE10B3241E18EA005B33BE /* StudentReservationViewController.xib in Resources */,
-				85CA68812428B81B00062D82 /* testesViewController.xib in Resources */,
 				8505BECA241B7E4100E46191 /* Reservation03ViewController.xib in Resources */,
 				85A506BA2404C89900A2F582 /* Main.storyboard in Resources */,
 				85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */,
@@ -823,7 +816,6 @@
 				85EC4DEF240D1F9000FCDCD2 /* SeniorUserCollection.swift in Sources */,
 				85EC4E05240E4CE200FCDCD2 /* ProfileViewController.swift in Sources */,
 				85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */,
-				85CA68802428B81B00062D82 /* testesViewController.swift in Sources */,
 				85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */,
 				85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */,
 				8505BED4241DECD000E46191 /* ReservationUseCase.swift in Sources */,
