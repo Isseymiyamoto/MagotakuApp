@@ -10,7 +10,7 @@ import UIKit
 import Parchment
 
 class ReservationViewController: UIViewController{
-    
+   
     var pagingVC = PagingViewController()
 
     override func viewDidLoad() {
@@ -19,29 +19,20 @@ class ReservationViewController: UIViewController{
         //上タブの設定
         let firstVC = ReservationListViewController()
         let secondVC = SignUp2ViewController()
-        
+
         //各タブ名の設定
         firstVC.title = "確定済み予約一覧"
         secondVC.title = "メッセージ"
 
         pagingVC = PagingViewController(viewControllers: [firstVC, secondVC])
         pagingVC.menuItemSize = PagingMenuItemSize.fixed(width: UIScreen.main.bounds.width / 2, height: 60)
-        
-//        addChild(pagingVC)
-//        view.addSubview(pagingVC.view)
-//        pagingVC.didMove(toParent: self)
-//        pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//          pagingVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//          pagingVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//          pagingVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//          pagingVC.view.topAnchor.constraint(equalTo: view.topAnchor)
-//        ])
-
         addChild(pagingVC)
         view.addSubview(pagingVC.view)
         pagingVC.didMove(toParent: self)
         pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        
          
     }
 
@@ -53,11 +44,6 @@ class ReservationViewController: UIViewController{
         let bottomM = self.view.safeAreaInsets.top
         view.constrainToEdges(pagingVC.view, topPadding: bottomM)
     }
-
-    
-    
-    
-
     
 
 }
