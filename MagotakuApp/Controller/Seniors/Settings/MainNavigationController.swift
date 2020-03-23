@@ -12,10 +12,6 @@ class MainNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
-        
         
         //　ナビゲーションバーの背景色
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 23/255, green: 35/255, blue: 57/255, alpha: 1)
@@ -26,9 +22,6 @@ class MainNavigationController: UINavigationController {
         // 文字の色
             .foregroundColor: UIColor.white
         ]
-        
-        
-                
     }
     
    

@@ -28,8 +28,6 @@ class MainTabBarController: UITabBarController {
         thirdVC.tabBarItem = UITabBarItem(title: "マイページ", image: UIImage(systemName: "person.fill"), tag: 2)
         
         setViewControllers([firstVC, secondVC, thirdVC], animated: true)
-        
-        
     }
     
 
