@@ -19,13 +19,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     @IBOutlet weak var calendarView: UIView!
     
     //テストカウント用のlabel
-    @IBOutlet weak var testCountLabel: UILabel!
+//    @IBOutlet weak var testCountLabel: UILabel!
     
     //テスト的に前予約をfetchできているか確認する
     var reservationCount = StudentReservationCollection.shared.allReservationCount()
     
     //collectonView
-//    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     //カレンダー定義
     fileprivate weak var calendar: FSCalendar!
     
@@ -33,6 +33,9 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     @IBOutlet weak var scrollView: UIScrollView!
     //スクロールビューに載せるUIView
     var view1 = UIView()
+    
+    //スクリーンサイズ取得用
+    let x = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,12 +80,27 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         self.calendar.setScope(.week, animated: false)
         self.calendar.pagingEnabled = true
 
-        horizontalScroll()
+        
+        //collectionViewの設定
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let nib = UINib(nibName: "CustomReservationCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "CustomReservationCell")
+        
+        //レイアウト設定
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: x.width / 4, height: x.width / 4)
+        layout.minimumLineSpacing = x.width / 10
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        collectionView.collectionViewLayout = layout
         
         print("reservationCountを出力しますよ")
         print(reservationCount)
-        testCountLabel.text = String(reservationCount)
+//        testCountLabel.text = String(reservationCount)
         print("reservationCountを出力しますよ")
+        
+        
         
     }
     
@@ -103,8 +121,12 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             }
             
             //calendarViewのheightを設定する
-            calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 96)
-            scrollView.frame = CGRect(x: 0, y: 104, width: UIScreen.main.bounds.width, height: 80)
+            calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 88)
+            //scrollViewのframe決定
+            scrollView.frame = CGRect(x: 0, y: 92, width: UIScreen.main.bounds.width, height: 40)
+            collectionView.frame = CGRect(x: 0, y: 144, width: UIScreen.main.bounds.width, height: 600)
+            
+            horizontalScroll()
         }
         
         
@@ -128,15 +150,18 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = true
         //view1のframe
-        view1.frame = CGRect(x: 0, y: 0, width: scrollView.frame.size.width * 2, height: scrollView.frame.size.height)
-        view1.backgroundColor = .systemRed
+        view1.frame = CGRect(x: 16, y: 0, width: scrollView.frame.size.width * 2, height: scrollView.frame.size.height)
+//        view1.backgroundColor = .systemRed
         //タブ的なボタン設置
         for i in 0...6{
             let button = UIButton()
-            button.frame = CGRect(x: (i*100), y: 10, width: 80, height: 55)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+            button.frame = CGRect(x: (i*100), y: 4, width: 80, height: 32)
             button.tag = i
             setTitleForButton(tag: button.tag, button: button)
-            button.setTitleColor(.gray, for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.layer.cornerRadius = 12
+            button.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.layer.borderWidth = 1
             view1.addSubview(button)
@@ -149,21 +174,28 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     func setTitleForButton(tag: Int, button:UIButton){
         switch tag {
         case 0:
-            button.setTitle("おしゃべり", for: .normal)
+            button.setTitle("全て", for: .normal)
         case 1:
-            button.setTitle("イヤイヤ", for: .normal)
+            button.setTitle("傾聴", for: .normal)
         case 2:
-            button.setTitle("テクノロジー", for: .normal)
+            button.setTitle("ITレッスン", for: .normal)
         case 3:
-            button.setTitle("おしゃべり", for: .normal)
+            button.setTitle("家事", for: .normal)
         case 4:
-            button.setTitle("おしゃべり", for: .normal)
+            button.setTitle("散歩", for: .normal)
         case 5:
             button.setTitle("おしゃべり", for: .normal)
         default:
-            button.setTitle("おしゃべり", for: .normal)
+            button.setTitle("その他", for: .normal)
         }
     }
+    
+//    override func touchesShouldCancel(in view: UIView) -> Bool {
+//        if view is UIButton {
+//            return true
+//        }
+//        return super.touchesShouldCancel(in: view)
+//    }
         
     
     
@@ -172,9 +204,11 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         return StudentReservationCollection.shared.allReservationCount()
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
+        cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
         return cell
     }
 

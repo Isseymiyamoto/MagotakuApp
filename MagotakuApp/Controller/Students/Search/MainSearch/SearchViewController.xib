@@ -10,8 +10,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
                 <outlet property="calendarView" destination="RaK-Se-VRX" id="mMq-bk-fmC"/>
+                <outlet property="collectionView" destination="sSN-W5-2sF" id="69H-cM-JWB"/>
                 <outlet property="scrollView" destination="22M-0S-aCf" id="wYb-nw-wDj"/>
-                <outlet property="testCountLabel" destination="VhW-ka-nlM" id="eZZ-Lu-gtP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,16 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-ka-nlM">
-                    <rect key="frame" x="32" y="437.5" width="350" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RaK-Se-VRX">
                     <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22M-0S-aCf">
                     <rect key="frame" x="0.0" y="180" width="414" height="128"/>
@@ -37,14 +31,19 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="NEn-dR-JgW"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="cmI-n9-J1j"/>
                 </scrollView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-W5-2sF">
+                    <rect key="frame" x="0.0" y="316" width="414" height="580"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uKJ-ve-y0D">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="VhW-ka-nlM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1zK-mP-azY"/>
-                <constraint firstItem="VhW-ka-nlM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="3IT-dO-cDW"/>
-                <constraint firstItem="VhW-ka-nlM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ad0-Mp-Mtf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VhW-ka-nlM" secondAttribute="trailing" constant="32" id="lli-uw-mo3"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </view>

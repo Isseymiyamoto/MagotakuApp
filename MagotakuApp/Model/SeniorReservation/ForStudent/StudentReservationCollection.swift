@@ -55,5 +55,9 @@ class StudentReservationCollection{
     private func sortReservationByUpdatedAt(reservations: [Reservation]) -> [Reservation]{
         return reservations.sorted(by: {$0.updatedAt.dateValue() > $1.updatedAt.dateValue()})
     }
+    
+    func getReservation (at: Int) -> Reservation{
+        return allReservations[at]
+    }
 
 }
