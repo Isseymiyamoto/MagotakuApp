@@ -86,7 +86,7 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
             navigationItem.backBarButtonItem = backButtonItem
             navigationController?.pushViewController(vc, animated: true)
         }else{
-            showErrorAlert(text: "まだパートナーが未定です。お決まりまでお待ちください")
+            notDoneAlert(text: "まだパートナーが未定です。お決まりまでお待ちください")
         }
         
     }

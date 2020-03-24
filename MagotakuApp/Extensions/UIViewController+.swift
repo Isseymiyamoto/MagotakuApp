@@ -18,5 +18,12 @@ extension UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
     }
+    
+    func notDoneAlert(text: String){
+        let alertController = UIAlertController(title: "確約待ち", message: text , preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
