@@ -18,6 +18,9 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     //calendar用のView
     @IBOutlet weak var calendarView: UIView!
     
+    //scrollViewに設置されているButtonについて、どれが選択されているかtag番号で識別
+    var tagNumber = 0
+    
     //テストカウント用のlabel
 //    @IBOutlet weak var testCountLabel: UILabel!
     
@@ -90,18 +93,14 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
         //レイアウト設定
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: x.width / 4, height: x.width / 4)
+        layout.itemSize = CGSize(width: (x.width / 5) * 2, height: x.width / 2)
         layout.minimumLineSpacing = x.width / 10
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 16, left: x.width / 15, bottom: 16, right: x.width / 15)
         collectionView.collectionViewLayout = layout
         
         print("reservationCountを出力しますよ")
         print(reservationCount)
-//        testCountLabel.text = String(reservationCount)
         print("reservationCountを出力しますよ")
-        
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -156,7 +155,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         for i in 0...6{
             let button = UIButton()
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-            button.frame = CGRect(x: (i*100), y: 4, width: 80, height: 32)
+            button.frame = CGRect(x: (i*80), y: 4, width: 64, height: 32)
             button.tag = i
             setTitleForButton(tag: button.tag, button: button)
             button.setTitleColor(.black, for: .normal)
@@ -164,11 +163,35 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             button.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.layer.borderWidth = 1
+            button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+            if i == 0{
+                button.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
+                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+            }
+            
             view1.addSubview(button)
         }
         scrollView.addSubview(view1)
         scrollView.contentSize = view1.bounds.size
     }
+    
+    //上部scrollViewに配置したUIButtonに対してタップ時の挙動を追加
+    @objc func tapButton(sender: UIButton!){
+        if sender.tag != tagNumber{
+            // 1.tagNumber目のUIButtonのbackgroundとfontを元に戻す
+            
+            // 2.タップされたsenderのbackgroundとfontを変更する
+            sender.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
+            sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+            // 3.tagNumberを選ばれたsender.tag番目に変更する
+            tagNumber = sender.tag
+        
+        }else{
+            return
+        }
+    }
+    
+    
 
     //スクロールビューのボタンに文字を挿入
     func setTitleForButton(tag: Int, button:UIButton){

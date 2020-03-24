@@ -32,7 +32,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="cmI-n9-J1j"/>
                 </scrollView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-W5-2sF">
-                    <rect key="frame" x="0.0" y="316" width="414" height="580"/>
+                    <rect key="frame" x="0.0" y="372" width="414" height="524"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uKJ-ve-y0D">
