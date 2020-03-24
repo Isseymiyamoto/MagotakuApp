@@ -17,7 +17,7 @@ class StudentReservationViewController: UIViewController {
             super.viewDidLoad()
 
             //上タブの設定
-            let firstVC = SignUp3ViewController()
+            let firstVC = StudentReservationListViewController()
             let secondVC = SignUp2ViewController()
             
             //各タブ名の設定
@@ -43,12 +43,6 @@ class StudentReservationViewController: UIViewController {
             view.constrainToEdges(pagingVC.view, topPadding: bottomM)
         }
 
-        
-        
-        
-
-
-   
 }
 
 

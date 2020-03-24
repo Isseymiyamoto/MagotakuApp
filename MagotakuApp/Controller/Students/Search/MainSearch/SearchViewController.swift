@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     @IBOutlet weak var calendarView: UIView!
     
     //scrollViewに設置されているButtonについて、どれが選択されているかtag番号で識別
-    var tagNumber = 0
+    var tagNumber = 1
     
     //テストカウント用のlabel
 //    @IBOutlet weak var testCountLabel: UILabel!
@@ -156,7 +156,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             let button = UIButton()
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.frame = CGRect(x: (i*80), y: 4, width: 64, height: 32)
-            button.tag = i
+            button.tag = i + 1
             setTitleForButton(tag: button.tag, button: button)
             button.setTitleColor(.black, for: .normal)
             button.layer.cornerRadius = 12
@@ -167,6 +167,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             if i == 0{
                 button.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
                 button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+                print(button.frame)
             }
             
             view1.addSubview(button)
@@ -179,13 +180,18 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     @objc func tapButton(sender: UIButton!){
         if sender.tag != tagNumber{
             // 1.tagNumber目のUIButtonのbackgroundとfontを元に戻す
+            let button = self.view1.viewWithTag(tagNumber) as? UIButton
+            print(type(of: button))
+            print(button as Any)
+            button?.removeFromSuperview()
+            button?.backgroundColor = UIColor.white
+            button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             
             // 2.タップされたsenderのbackgroundとfontを変更する
             sender.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
             sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
             // 3.tagNumberを選ばれたsender.tag番目に変更する
             tagNumber = sender.tag
-        
         }else{
             return
         }
