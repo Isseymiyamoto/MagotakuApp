@@ -20,18 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = UIWindow(windowScene: scene)
         if Auth.auth().currentUser != nil {
             SeniorUserCollection.shared.loginCheck{(result) in
-                print("resultを出力します")
+                print("resultを出力します/SceneDelegate.swift/認証結果を以下に表示する")
                 print(result)
                 if result == true{
+                    //認証がok かつ SeniorUser内にcuurentUser.uidがあるのでSenior側の画面に飛ばす
                     self.window?.rootViewController = MainTabBarController()
                 }else{
+                    //認証がok but SeniorUser内にuidは存在しなかったので、学生側の画面に飛ばす
+                    //fetchProfileメソッド内にself.window?.rootViewControllerを含んでいる
                     StudentUserCollection.shared.fetchProfile()
-                    
-                    //以前使用していたもの
-//                    self.window?.rootViewController = StudentTabBarController()
                 }
             }
-            
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateInitialViewController()

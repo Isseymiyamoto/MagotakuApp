@@ -15,11 +15,15 @@ var studentProfile: StudentUser = StudentUser()
 
 class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    //テストカウント用のlabel
+    @IBOutlet weak var testCountLabel: UILabel!
+    
     //テスト的に前予約をfetchできているか確認する
-    var reservationCount = ReservationCollection.shared.allReservationCount()
+    var reservationCount = StudentReservationCollection.shared.allReservationCount()
     
     //collectonView
-    @IBOutlet weak var collectionView: UICollectionView!
+//    @IBOutlet weak var collectionView: UICollectionView!
     //カレンダー定義
     fileprivate weak var calendar: FSCalendar!
     
@@ -73,6 +77,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
         print("reservationCountを出力しますよ")
         print(reservationCount)
+        testCountLabel.text = String(reservationCount)
         print("reservationCountを出力しますよ")
         
     }

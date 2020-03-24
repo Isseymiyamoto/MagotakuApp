@@ -30,6 +30,7 @@ class StudentUseCase{
     
     //dbに格納されている学生情報を取得
     func fetchStudentUser() -> Void{
+        print("fetchStudentUser開始ですよ")
         let collectionRef = getCollectionRef()
         collectionRef.document(Auth.auth().currentUser!.uid).getDocument { (document, err) in
             if document?.data() != nil{
@@ -44,14 +45,10 @@ class StudentUseCase{
                 studentProfile.school = document!.data()!["school"]! as! String
                 studentProfile.hobby = document!.data()!["hobby"]! as! String
                 
-                
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                    let sceneDelegate = windowScene.delegate as? SceneDelegate else{
-                        return
-                }
-                let vc = StudentTabBarController()
-                sceneDelegate.window?.rootViewController = vc
-                
+                //test的においてみる
+                StudentReservationCollection.shared.allFetch()
+                               
+                print("これにてfetchStudentUser終了ですよ")
             }else{
                 print("君のデータはありませんね。(StudentUseCase/fetchStudentUser)")
             }
