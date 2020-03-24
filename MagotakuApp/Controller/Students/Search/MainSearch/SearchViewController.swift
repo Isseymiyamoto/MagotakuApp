@@ -15,6 +15,8 @@ var studentProfile: StudentUser = StudentUser()
 
 class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //calendar用のView
+    @IBOutlet weak var calendarView: UIView!
     
     //テストカウント用のlabel
     @IBOutlet weak var testCountLabel: UILabel!
@@ -42,11 +44,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             .foregroundColor: UIColor.white
         ]
         
+       
+        
         
         let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300))
         calendar.dataSource = self
         calendar.delegate = self
-        view.addSubview(calendar)
+        calendarView.addSubview(calendar)
         self.calendar = calendar
         
         //カレンダーの表記を日本語化
@@ -97,7 +101,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             if let image = getImageFrom(gradientLayer: gradient) {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
+            
+            //calendarViewのheightを設定する
+            calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 96)
+            scrollView.frame = CGRect(x: 0, y: 104, width: UIScreen.main.bounds.width, height: 80)
         }
+        
+        
         
         
     }
@@ -159,7 +169,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     
     // collectionViewについての実装
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ReservationCollection.shared.reservationCount()
+        return StudentReservationCollection.shared.allReservationCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
