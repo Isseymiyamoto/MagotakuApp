@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="calendarView" destination="RaK-Se-VRX" id="mMq-bk-fmC"/>
                 <outlet property="collectionView" destination="sSN-W5-2sF" id="69H-cM-JWB"/>
+                <outlet property="dateLabel" destination="sQ3-js-Vbb" id="dzu-kh-4qJ"/>
                 <outlet property="scrollView" destination="22M-0S-aCf" id="wYb-nw-wDj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,6 +32,13 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="NEn-dR-JgW"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="cmI-n9-J1j"/>
                 </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ3-js-Vbb">
+                    <rect key="frame" x="32" y="333" width="31" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-W5-2sF">
                     <rect key="frame" x="0.0" y="372" width="414" height="524"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

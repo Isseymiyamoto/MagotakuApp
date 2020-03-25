@@ -21,6 +21,12 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     //scrollViewに設置されているButtonについて、どれが選択されているかtag番号で識別
     var tagNumber = 1
     
+    //選択している日付を反映する為のUILabel
+    @IBOutlet weak var dateLabel: UILabel!
+    //dateLabelに反映する為のdate
+    var selectedDate = Date()
+    
+    
     //テストカウント用のlabel
 //    @IBOutlet weak var testCountLabel: UILabel!
     
@@ -101,6 +107,11 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         print("reservationCountを出力しますよ")
         print(reservationCount)
         print("reservationCountを出力しますよ")
+        
+        
+        //dateLabelには今日の日付を入れておく
+        dateLabel.text = "\(toStringWithCurrentLocale(date: selectedDate))"
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,7 +134,8 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 88)
             //scrollViewのframe決定
             scrollView.frame = CGRect(x: 0, y: 92, width: UIScreen.main.bounds.width, height: 40)
-            collectionView.frame = CGRect(x: 0, y: 144, width: UIScreen.main.bounds.width, height: 600)
+            dateLabel.frame = CGRect(x: 16, y: 144, width: UIScreen.main.bounds.width - 32, height: 12)
+            collectionView.frame = CGRect(x: 0, y: 164, width: UIScreen.main.bounds.width, height: 600)
             
             horizontalScroll()
         }
@@ -239,6 +251,18 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
         cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
         return cell
+    }
+    
+    
+    //selectedDateに反映する為のformatter
+    func toStringWithCurrentLocale(date: Date) -> String {
+
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
     }
 
 }
