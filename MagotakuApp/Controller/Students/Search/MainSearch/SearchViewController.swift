@@ -24,7 +24,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     //選択している日付を反映する為のUILabel
     @IBOutlet weak var dateLabel: UILabel!
     //dateLabelに反映する為のdate
-    var selectedDate = Date()
+//    var selectedDate = Date()
     
     
     //テストカウント用のlabel
@@ -110,7 +110,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
         
         //dateLabelには今日の日付を入れておく
-        dateLabel.text = "\(toStringWithCurrentLocale(date: selectedDate))"
+        dateLabel.text = "\(toStringWithCurrentLocale(date: Date()))"
         
     }
     
@@ -134,7 +134,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 88)
             //scrollViewのframe決定
             scrollView.frame = CGRect(x: 0, y: 92, width: UIScreen.main.bounds.width, height: 40)
-            dateLabel.frame = CGRect(x: 16, y: 144, width: UIScreen.main.bounds.width - 32, height: 12)
+            dateLabel.frame = CGRect(x: 16, y: 148, width: UIScreen.main.bounds.width - 32, height: 12)
             collectionView.frame = CGRect(x: 0, y: 164, width: UIScreen.main.bounds.width, height: 600)
             
             horizontalScroll()
@@ -250,9 +250,22 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
         cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
+        cell.seniorImage.image = UIImage(systemName: "pencil.circle")
+        cell.seniorImage.frame = CGRect(x: 8, y: 2, width: cell.bounds.size.width - 16, height: cell.bounds.size.width - 16)
+        cell.dateLabel.frame = CGRect(x: 8, y: cell.bounds.size.width, width: cell.bounds.size.width - 16, height: 22)
+        cell.dateLabel.textAlignment = .center
         return cell
     }
     
+    
+    //選択された日付を取得
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year = tmpDate.component(.year, from: date)
+        let month = tmpDate.component(.month, from: date)
+        let day = tmpDate.component(.day, from: date)
+        dateLabel.text = "\(year)年\(month)月\(day)日"
+    }
     
     //selectedDateに反映する為のformatter
     func toStringWithCurrentLocale(date: Date) -> String {

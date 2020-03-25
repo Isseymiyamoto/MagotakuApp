@@ -12,6 +12,7 @@ class CustomReservationCell: UICollectionViewCell {
     
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var seniorImage: UIImageView!
     
     
     override func awakeFromNib() {
