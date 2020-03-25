@@ -8,7 +8,13 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +26,27 @@ class EditProfileViewController: UIViewController {
         // 文字の色
             .foregroundColor: UIColor.white
         ]
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            return cell
+        default:
+            let cell1 = UITableViewCell(style: .value1, reuseIdentifier: "cell1")
+            return cell1
+        }
+        
+    }
 
 }

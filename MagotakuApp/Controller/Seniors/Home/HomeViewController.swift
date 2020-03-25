@@ -34,7 +34,6 @@ class HomeViewController: UIViewController {
         reservationBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
         // ログインユーザーのプロフィール取得
-//        SeniorUserCollection.shared.fetchProfile()
         
         //navigationBarにグラデーションカラーセット
         if let navigationBar = self.navigationController?.navigationBar {
