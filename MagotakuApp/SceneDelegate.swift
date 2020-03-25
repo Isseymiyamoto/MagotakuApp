@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 print(result)
                 if result == true{
                     //認証がok かつ SeniorUser内にcuurentUser.uidがあるのでSenior側の画面に飛ばす
-                    self.window?.rootViewController = MainTabBarController()
+//                    self.window?.rootViewController = MainTabBarController()
+                    SeniorUserCollection.shared.fetchProfile()
                 }else{
                     //認証がok but SeniorUser内にuidは存在しなかったので、学生側の画面に飛ばす
                     //fetchProfileメソッド内にself.window?.rootViewControllerを含んでいる

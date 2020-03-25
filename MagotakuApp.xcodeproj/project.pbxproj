@@ -37,6 +37,8 @@
 		850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93E62409456F0010CE87 /* SignUp8ViewController.xib */; };
 		850B93EC2409C0390010CE87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B93EA2409C0390010CE87 /* HomeViewController.swift */; };
 		850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850B93EB2409C0390010CE87 /* HomeViewController.xib */; };
+		8514A462242AFD4400FC0BCF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514A460242AFD4400FC0BCF /* EditProfileViewController.swift */; };
+		8514A463242AFD4400FC0BCF /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8514A461242AFD4400FC0BCF /* EditProfileViewController.xib */; };
 		8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD2D240E71FA000BF5BF /* TextView.swift */; };
 		8560DD302410E7B1000BF5BF /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD2F2410E7B1000BF5BF /* UIView+constraints.swift */; };
 		8560DD342410FD6D000BF5BF /* ReservationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */; };
@@ -134,6 +136,8 @@
 		850B93E62409456F0010CE87 /* SignUp8ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUp8ViewController.xib; sourceTree = "<group>"; };
 		850B93EA2409C0390010CE87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		850B93EB2409C0390010CE87 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8514A460242AFD4400FC0BCF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8514A461242AFD4400FC0BCF /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		8560DD2D240E71FA000BF5BF /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8560DD2F2410E7B1000BF5BF /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		8560DD322410FD6D000BF5BF /* ReservationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +408,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		8514A45F242AFD2800FC0BCF /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8514A460242AFD4400FC0BCF /* EditProfileViewController.swift */,
+				8514A461242AFD4400FC0BCF /* EditProfileViewController.xib */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		8560DD312410FD3E000BF5BF /* ReservationList */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +658,7 @@
 		85FE10A9241E17B6005B33BE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8514A45F242AFD2800FC0BCF /* EditProfile */,
 				85FE10AA241E18A7005B33BE /* MainProfile */,
 			);
 			path = Profile;
@@ -762,6 +776,7 @@
 				850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */,
 				850B93C524075DCA0010CE87 /* SignUp5ViewController.xib in Resources */,
 				850B93E82409456F0010CE87 /* SignUp8ViewController.xib in Resources */,
+				8514A463242AFD4400FC0BCF /* EditProfileViewController.xib in Resources */,
 				850B93BB2406AE440010CE87 /* SignUp3ViewController.xib in Resources */,
 				8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */,
 				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
@@ -871,6 +886,7 @@
 				85E8124E242276B2004ECB87 /* CustomCell4.swift in Sources */,
 				85EC4DED240D198500FCDCD2 /* SeniorUserUseCase.swift in Sources */,
 				8560DD39241107F9000BF5BF /* MessageListViewController.swift in Sources */,
+				8514A462242AFD4400FC0BCF /* EditProfileViewController.swift in Sources */,
 				85DB99F72417A05F0092935B /* CustomLabel.swift in Sources */,
 				85A506B32404C89900A2F582 /* AppDelegate.swift in Sources */,
 				8560DD2E240E71FA000BF5BF /* TextView.swift in Sources */,

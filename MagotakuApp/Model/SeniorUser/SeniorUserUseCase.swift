@@ -92,6 +92,15 @@ class SeniorUserUseCase {
                 let userInfo = try? Firestore.Decoder().decode(SeniorUser.self, from: document!.data()!)
             print("userInfo: \(userInfo!)")
             seniorProfile = userInfo!
+                
+            //ログイン遷移
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+                    return
+            }
+            let vc = MainTabBarController()
+            sceneDelegate.window?.rootViewController = vc
+                
            } else {
                print("Document does not exist")
            }

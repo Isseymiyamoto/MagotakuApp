@@ -114,7 +114,11 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             switch indexPath.row {
             case 0:
-                return
+                //プロフィールを押した際の挙動
+                let vc = EditProfileViewController()
+                let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+                navigationItem.backBarButtonItem = backButtonItem
+                navigationController?.pushViewController(vc, animated: true)
             case 1:
                 return
             case 2:
