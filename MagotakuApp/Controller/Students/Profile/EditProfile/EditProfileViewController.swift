@@ -13,7 +13,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     let titleLabels:[String] = ["あなたの名前", "あなたの年齢", "あなたの性別", "あなたの在籍校", "あなたの電話番号", "あなたの趣味", "あなたの関心ある区域"]
     let imageLists:[String] = ["person.fill", "calendar.circle.fill", "person.crop.rectangle.fill", "house.fill", "phone.fill", "bookmark", "square.grid.2x2.fill"]
-    
+    let profileInfo: [String] = [studentProfile.name, studentProfile.age, studentProfile.sex, studentProfile.school, studentProfile.phoneNum, studentProfile.hobby, studentProfile.address]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -66,9 +66,12 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             cell.textLabel?.text = titleLabels[indexPath.section]
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             cell.imageView?.image = UIImage(systemName: imageLists[indexPath.section])
+            //セル選択時にハイライトさせない
+            cell.selectionStyle = .none
             return cell
         default:
             let cell1 = UITableViewCell(style: .value1, reuseIdentifier: "cell1")
+            cell1.textLabel?.text = profileInfo[indexPath.section]
             return cell1
         }
     }
