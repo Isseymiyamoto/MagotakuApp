@@ -176,7 +176,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.layer.borderWidth = 1
             button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-            if i == 0{
+            if button.tag == 1{
                 button.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
                 button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
                 print(button.frame)
@@ -195,7 +195,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             let button = self.view1.viewWithTag(tagNumber) as? UIButton
             print(type(of: button))
             print(button as Any)
-            button?.removeFromSuperview()
+//            button?.removeFromSuperview()
             button?.backgroundColor = UIColor.white
             button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             
@@ -214,17 +214,17 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     //スクロールビューのボタンに文字を挿入
     func setTitleForButton(tag: Int, button:UIButton){
         switch tag {
-        case 0:
-            button.setTitle("全て", for: .normal)
         case 1:
-            button.setTitle("傾聴", for: .normal)
+            button.setTitle("全て", for: .normal)
         case 2:
-            button.setTitle("ITレッスン", for: .normal)
+            button.setTitle("傾聴", for: .normal)
         case 3:
-            button.setTitle("家事", for: .normal)
+            button.setTitle("ITレッスン", for: .normal)
         case 4:
-            button.setTitle("散歩", for: .normal)
+            button.setTitle("家事", for: .normal)
         case 5:
+            button.setTitle("散歩", for: .normal)
+        case 6:
             button.setTitle("おしゃべり", for: .normal)
         default:
             button.setTitle("その他", for: .normal)
