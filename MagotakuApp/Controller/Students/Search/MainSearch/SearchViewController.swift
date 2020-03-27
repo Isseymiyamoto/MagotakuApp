@@ -188,6 +188,15 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         scrollView.contentSize = view1.bounds.size
     }
     
+    //cellを選択した際の挙動
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailSearchViewController()
+        vc.detailNum = indexPath.row
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //上部scrollViewに配置したUIButtonに対してタップ時の挙動を追加
     @objc func tapButton(sender: UIButton!){
         if sender.tag != tagNumber{
