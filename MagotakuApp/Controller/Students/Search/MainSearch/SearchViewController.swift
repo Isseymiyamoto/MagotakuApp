@@ -199,6 +199,14 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     
     //上部scrollViewに配置したUIButtonに対してタップ時の挙動を追加
     @objc func tapButton(sender: UIButton!){
+        print(sender.tag)
+        print(tagNumber)
+//        for i in 0...6{
+//            let button = self.view1.viewWithTag(i) as? UIButton
+//            button?.backgroundColor = UIColor.white
+//            button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+//        }
+
         if sender.tag != tagNumber{
             // 1.tagNumber目のUIButtonのbackgroundとfontを元に戻す
             let button = self.view1.viewWithTag(tagNumber) as? UIButton
@@ -207,10 +215,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
 //            button?.removeFromSuperview()
             button?.backgroundColor = UIColor.white
             button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-            
+
             // 2.タップされたsenderのbackgroundとfontを変更する
-            sender.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
-            sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+            let button1 = self.view1.viewWithTag(sender.tag) as? UIButton
+            button1!.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
+            button1!.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+//            sender.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
+//            sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
             // 3.tagNumberを選ばれたsender.tag番目に変更する
             tagNumber = sender.tag
         }else{
