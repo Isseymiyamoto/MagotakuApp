@@ -23,13 +23,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     
     //選択している日付を反映する為のUILabel
     @IBOutlet weak var dateLabel: UILabel!
-    //dateLabelに反映する為のdate
-//    var selectedDate = Date()
-    
-    
-    //テストカウント用のlabel
-//    @IBOutlet weak var testCountLabel: UILabel!
-    
+
     //テスト的に前予約をfetchできているか確認する
     var reservationCount = StudentReservationCollection.shared.allReservationCount()
     
@@ -67,7 +61,6 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
         //カレンダーの表記を日本語化
         self.calendar = calendar
-//        calendar.appearance.headerDateFormat = "YYYY年MM月"
         self.calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
         self.calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
         self.calendar.calendarWeekdayView.weekdayLabels[2].text = "火"
@@ -112,6 +105,10 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         //dateLabelには今日の日付を入れておく
         dateLabel.text = "\(toStringWithCurrentLocale(date: Date()))"
         
+        
+        //ボタンを生成するfunction
+        horizontalScroll()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -137,8 +134,8 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             dateLabel.frame = CGRect(x: 16, y: 148, width: UIScreen.main.bounds.width - 32, height: 12)
             collectionView.frame = CGRect(x: 0, y: 164, width: UIScreen.main.bounds.width, height: 600)
             
-            horizontalScroll()
         }
+        
         
         
         
@@ -158,11 +155,12 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
 
     //スクロールビューに対するメソッド
     func horizontalScroll(){
+        print("horizontalScrollが呼ばれました")
+        
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = true
         //view1のframe
         view1.frame = CGRect(x: 16, y: 0, width: scrollView.frame.size.width * 2, height: scrollView.frame.size.height)
-//        view1.backgroundColor = .systemRed
         //タブ的なボタン設置
         for i in 0...6{
             let button = UIButton()
@@ -201,27 +199,18 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     @objc func tapButton(sender: UIButton!){
         print(sender.tag)
         print(tagNumber)
-//        for i in 0...6{
-//            let button = self.view1.viewWithTag(i) as? UIButton
-//            button?.backgroundColor = UIColor.white
-//            button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-//        }
-
+        
         if sender.tag != tagNumber{
             // 1.tagNumber目のUIButtonのbackgroundとfontを元に戻す
             let button = self.view1.viewWithTag(tagNumber) as? UIButton
             print(type(of: button))
             print(button as Any)
-//            button?.removeFromSuperview()
             button?.backgroundColor = UIColor.white
             button?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-
             // 2.タップされたsenderのbackgroundとfontを変更する
             let button1 = self.view1.viewWithTag(sender.tag) as? UIButton
             button1!.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
             button1!.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-//            sender.backgroundColor = UIColor(red: 124/255, green: 143/255, blue: 230/255, alpha: 1)
-//            sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
             // 3.tagNumberを選ばれたsender.tag番目に変更する
             tagNumber = sender.tag
         }else{
