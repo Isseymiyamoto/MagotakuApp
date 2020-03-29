@@ -16,8 +16,12 @@ class Reservation: Codable{
     var id: String
     //シニア側uid
     var seUid: String = ""
+    //シニア側imageURL
+    var seniorImage: String = ""
     //学生側uid
     var stUid: String = ""
+    //学生側imageURL
+    var studentImage: String = ""
     //予約成立可否の識別子(0が未成立、1が成立、2がキャンセル)
     var reservationNum: Int = 0
     //訪問希望日
