@@ -97,7 +97,13 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
         let date: [Int] = [year, month, day]
         return date
     }
+    
+    
+//    func getWekkDay(_ date:Date) -> String{
+//        return date.weekdayshortname
+//    }
 
+    
     @IBAction func tapToNext(_ sender: Any) {
 //        let vc = Reservation02ViewController()
 //        vc.selectedDate = selectedDate
@@ -106,7 +112,7 @@ class Reservation01ViewController: UIViewController, FSCalendarDataSource, FSCal
 //        navigationController?.pushViewController(vc, animated: true)
         let preNC = self.navigationController!
         let preVC = preNC.viewControllers[preNC.viewControllers.count - 2] as! Reservation00ViewController
-        preVC.calendarDate = "\(self.selectedDate[0])年\(self.selectedDate[1])月\(self.selectedDate[2])日"
+        preVC.calendarDate = "\(self.selectedDate[0])年\(self.selectedDate[1])月\(self.selectedDate[2])日()"
         
         
         //選択画面に戻る

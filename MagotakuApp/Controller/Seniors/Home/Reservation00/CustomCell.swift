@@ -20,7 +20,7 @@ class CustomCell: UITableViewCell {
             datePicker.timeZone = NSTimeZone.local
             datePicker.locale = Locale(identifier: "ja") //日本語に変更
             datePicker.datePickerMode = UIDatePicker.Mode.time//形式を指定
-            datePicker.minuteInterval = 15
+            datePicker.minuteInterval = 30
         
                 
     }

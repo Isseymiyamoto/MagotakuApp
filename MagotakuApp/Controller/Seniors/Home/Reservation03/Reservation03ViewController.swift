@@ -59,12 +59,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         ReservationCollection.shared.addReservation(reservation)
         //AddReservationした後にreservationを新しく生成する
         reservation = ReservationCollection.shared.createReservation()
-        
-        //予約一覧画面に飛ばす
-//        let vc = ReservationViewController()
-//        let backButtonItem =  UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-//        navigationItem.backBarButtonItem = backButtonItem
-//        navigationController?.pushViewController(vc, animated: true)
+    
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
             let sceneDelegate = windowScene.delegate as? SceneDelegate else{
                 return

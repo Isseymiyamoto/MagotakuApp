@@ -68,5 +68,10 @@ class StudentReservationCollection{
     func getReservation (at: Int) -> Reservation{
         return allReservations[at]
     }
+    
+    //学生側にてシニア側の画像を取得する
+    func getImageRef(uid: String, imageName: String) -> StorageReference? {
+        return reservationUseCase.getImageRef(uid: uid, imageName: imageName)
+    }
 
 }

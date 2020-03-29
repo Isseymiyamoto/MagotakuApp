@@ -48,6 +48,7 @@ class SeniorUserUseCase {
     
     func getStorageReference() -> StorageReference? {
         guard let uid = Auth.auth().currentUser?.uid else {
+            print("このuidは学生じゃの")
             return nil
         }
         return storage.reference().child("seniorUsers").child(uid)

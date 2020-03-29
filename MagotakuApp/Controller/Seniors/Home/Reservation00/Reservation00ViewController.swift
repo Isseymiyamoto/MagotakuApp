@@ -38,7 +38,9 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
    
     
     //UIDatePickerを定義するための変数
+    //訪問開始日時を選択する方のdatePicker
     var datePicker: UIDatePicker = UIDatePicker()
+    //サービス利用時間の選択欄
     var datePicker2: UIDatePicker = UIDatePicker()
     
     
@@ -71,6 +73,8 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         // tableView に使う xib ファイルを登録している。
         tableView.register( nib2, forCellReuseIdentifier: "CustomCell2")
         
+        
+        //datePickerに関する設定の読み込み
         
         
     }
@@ -227,10 +231,11 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     @objc func setDate() {
-       let f = DateFormatter()
-       f.timeStyle = .short
-       f.locale = Locale(identifier: "ja")
-        f.dateFormat = "h時mm分"
+        let f = DateFormatter()
+//        f.timeStyle = .short
+        f.locale = Locale(identifier: "ja")
+        f.setLocalizedDateFormatFromTemplate("jm")
+//        f.dateFormat = "hh時mm分"
         selectDate = f.string(from: datePicker.date)
         tableView.reloadData()
     }

@@ -111,6 +111,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -259,10 +266,20 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
         cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
-        cell.seniorImage.image = UIImage(systemName: "pencil.circle")
-        cell.seniorImage.frame = CGRect(x: 8, y: 2, width: cell.bounds.size.width - 16, height: cell.bounds.size.width - 16)
+        
+        cell.seniorImage.frame = CGRect(x: cell.bounds.size.width / 6, y: 16, width: (cell.bounds.size.width / 3) * 2 , height: (cell.bounds.size.width / 3) * 2)
+        cell.seniorImage.layer.cornerRadius = cell.bounds.size.width / 3
         cell.dateLabel.frame = CGRect(x: 8, y: cell.bounds.size.width, width: cell.bounds.size.width - 16, height: 22)
         cell.dateLabel.textAlignment = .center
+        
+        //cellのUIImageViewに対して、seniorImageを配置する
+        if let imageName: String = StudentReservationCollection.shared.getReservation(at: indexPath.row).seniorImage, let ref = StudentReservationCollection.shared.getImageRef(uid: StudentReservationCollection.shared.getReservation(at: indexPath.row).seUid, imageName: imageName){
+            cell.seniorImage.sd_setImage(with: ref)
+        }else{
+           cell.seniorImage.image = UIImage(systemName: "pencil.circle")
+        }
+        
+        
         return cell
     }
     
@@ -288,4 +305,5 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     }
 
 }
+
 
