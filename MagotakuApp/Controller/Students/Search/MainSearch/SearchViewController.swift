@@ -92,9 +92,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         
         //レイアウト設定
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (x.width / 5) * 2, height: x.width / 2)
-        layout.minimumLineSpacing = x.width / 10
-        layout.sectionInset = UIEdgeInsets(top: 16, left: x.width / 15, bottom: 16, right: x.width / 15)
+//        layout.itemSize = CGSize(width: (x.width / 5) * 2, height: x.width / 2)
+//        layout.minimumLineSpacing = x.width / 10
+//        layout.sectionInset = UIEdgeInsets(top: 16, left: x.width / 15, bottom: 16, right: x.width / 15)
+        
+        layout.itemSize = CGSize(width: (x.width - 48) / 2, height: x.width / 2)
+        layout.minimumLineSpacing = 16
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         collectionView.collectionViewLayout = layout
         
         print("reservationCountを出力しますよ")
@@ -267,8 +271,8 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
         cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
         
-        cell.seniorImage.frame = CGRect(x: cell.bounds.size.width / 6, y: 16, width: (cell.bounds.size.width / 3) * 2 , height: (cell.bounds.size.width / 3) * 2)
-        cell.seniorImage.layer.cornerRadius = cell.bounds.size.width / 3
+        cell.seniorImage.frame = CGRect(x: 0, y: 0, width: cell.bounds.size.width , height: cell.bounds.size.width)
+        cell.seniorImage.layer.cornerRadius = 6
         cell.dateLabel.frame = CGRect(x: 8, y: cell.bounds.size.width, width: cell.bounds.size.width - 16, height: 22)
         cell.dateLabel.textAlignment = .center
         
