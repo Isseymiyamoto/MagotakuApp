@@ -201,6 +201,8 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailSearchViewController()
         vc.detailNum = indexPath.row
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomReservationCell
+        vc.seniorImage = cell.seniorImage.image
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
