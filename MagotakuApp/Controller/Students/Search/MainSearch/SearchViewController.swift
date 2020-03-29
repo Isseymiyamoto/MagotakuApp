@@ -96,7 +96,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
 //        layout.minimumLineSpacing = x.width / 10
 //        layout.sectionInset = UIEdgeInsets(top: 16, left: x.width / 15, bottom: 16, right: x.width / 15)
         
-        layout.itemSize = CGSize(width: (x.width - 48) / 2, height: x.width / 2)
+        layout.itemSize = CGSize(width: (x.width - 48) / 2, height: (x.width / 2) + 32)
         layout.minimumLineSpacing = 16
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         collectionView.collectionViewLayout = layout
@@ -269,12 +269,29 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomReservationCell", for: indexPath) as! CustomReservationCell
-        cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
+        
         
         cell.seniorImage.frame = CGRect(x: 0, y: 0, width: cell.bounds.size.width , height: cell.bounds.size.width)
         cell.seniorImage.layer.cornerRadius = 6
-        cell.dateLabel.frame = CGRect(x: 8, y: cell.bounds.size.width, width: cell.bounds.size.width - 16, height: 22)
-        cell.dateLabel.textAlignment = .center
+        //test的にseniorImageのframeをtwitter風に変えてみる
+//        cell.seniorImage.frame = CGRect(x: 0, y: 0, width: cell.bounds.size.width / 3, height: cell.bounds.size.width / 3)
+//        cell.seniorImage.layer.cornerRadius = cell.bounds.size.width / 6
+        
+        //日付用の位置設定、文字フォント設定
+        cell.dateLabel.frame = CGRect(x: 0, y: cell.bounds.size.width, width: cell.bounds.size.width / 2, height: 16)
+        cell.dateLabel.textAlignment = .left
+        cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
+        cell.dateLabel.font = .systemFont(ofSize: 12)
+        cell.dateLabel.textColor = .darkGray
+        
+        //時間用の位置設定、文字フォント設定
+        cell.timeLabel.frame = CGRect(x: 0, y: cell.bounds.size.width + 16, width: cell.bounds.size.width / 2, height: 16)
+        cell.timeLabel.textAlignment = .left
+//        cell.timeLabel.text = ""
+        cell.timeLabel.font = .systemFont(ofSize: 12)
+        cell.timeLabel.textColor = .darkGray
+        
+//        cell.backgroundColor = UIColor(red: 240/255, green: 161/255, blue: 65/255, alpha: 1)
         
         //cellのUIImageViewに対して、seniorImageを配置する
         if let imageName: String = StudentReservationCollection.shared.getReservation(at: indexPath.row).seniorImage, let ref = StudentReservationCollection.shared.getImageRef(uid: StudentReservationCollection.shared.getReservation(at: indexPath.row).seUid, imageName: imageName){

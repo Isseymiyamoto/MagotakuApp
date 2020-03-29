@@ -12,6 +12,8 @@ class CustomReservationCell: UICollectionViewCell {
     
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var expectedPrice: UILabel!
     @IBOutlet weak var seniorImage: UIImageView!
     
     
@@ -19,8 +21,10 @@ class CustomReservationCell: UICollectionViewCell {
         super.awakeFromNib()
     
         dateLabel.adjustsFontSizeToFitWidth = true
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        expectedPrice.adjustsFontSizeToFitWidth = true
+        timeLabel.adjustsFontSizeToFitWidth = true
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = UIColor.black.cgColor
     }
 
 }

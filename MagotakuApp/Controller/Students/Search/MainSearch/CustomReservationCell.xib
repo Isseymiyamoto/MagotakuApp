@@ -20,8 +20,22 @@
                         <rect key="frame" x="4" y="10" width="148" height="95"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-Qg-ya9">
+                        <rect key="frame" x="20" y="140" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMk-XQ-Vrf">
+                        <rect key="frame" x="114" y="134" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-lX-4XH">
-                        <rect key="frame" x="57" y="128" width="42" height="21"/>
+                        <rect key="frame" x="20" y="112" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -33,7 +47,9 @@
             <size key="customSize" width="156" height="175"/>
             <connections>
                 <outlet property="dateLabel" destination="Gvx-lX-4XH" id="dzl-Vz-F1T"/>
+                <outlet property="expectedPrice" destination="lMk-XQ-Vrf" id="vxB-U2-TLW"/>
                 <outlet property="seniorImage" destination="BUi-qB-irO" id="OYm-dq-12b"/>
+                <outlet property="timeLabel" destination="ZQ3-Qg-ya9" id="Qed-01-ve2"/>
             </connections>
             <point key="canvasLocation" x="213.04347826086959" y="195.20089285714286"/>
         </collectionViewCell>
