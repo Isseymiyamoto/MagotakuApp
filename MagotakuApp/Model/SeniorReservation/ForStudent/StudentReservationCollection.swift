@@ -30,6 +30,15 @@ class StudentReservationCollection{
         print("allFetchスタート")
         reservationUseCase.fetchAllReservation { (fetchReservations) in
             guard let fetchReservations = fetchReservations else{
+                //test的に変更
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                    let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+                        return
+                }
+                let vc = StudentTabBarController()
+                sceneDelegate.window?.rootViewController = vc
+                //ここまで
+                
                 return
             }
             self.allReservations = self.sortReservationByUpdatedAt(reservations: fetchReservations)

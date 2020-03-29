@@ -40,6 +40,7 @@ class ReservationUseCase {
                 print("データ追加失敗",_err)
             } else {
                 print("データ追加成功")
+                
             }
         }
     }
@@ -72,8 +73,7 @@ class ReservationUseCase {
                 callback(nil)
                 return
             }
-            
-            print("データ取得成功(reservationUseCase/fetchAllReservation)")
+             print("データ取得成功(reservationUseCase/fetchAllReservation)")
             let reservations = snapshot.documents.compactMap{ snapshot in
                 return try? Firestore.Decoder().decode(Reservation.self, from: snapshot.data())
             }

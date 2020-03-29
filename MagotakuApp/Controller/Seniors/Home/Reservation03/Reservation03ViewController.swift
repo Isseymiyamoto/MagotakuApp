@@ -42,6 +42,8 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         //ログインしてるか確認
         if let user = Auth.auth().currentUser{
             reservation.seUid = user.uid
+            //seniorのimageURLを挿入
+            reservation.seniorImage = seniorProfile.imageName
         }
         
         
@@ -55,6 +57,8 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func tapToRegister(_ sender: Any) {
         //Firestoreに予約情報送信
         ReservationCollection.shared.addReservation(reservation)
+        //AddReservationした後にreservationを新しく生成する
+        reservation = ReservationCollection.shared.createReservation()
         
         //予約一覧画面に飛ばす
 //        let vc = ReservationViewController()
