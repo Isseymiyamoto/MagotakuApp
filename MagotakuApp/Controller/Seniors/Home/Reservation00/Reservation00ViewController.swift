@@ -220,8 +220,7 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         reservation.visitTime = cell.customTF.text!
         //サービス提供時間
         reservation.vistHour = cell2.customTF2.text!
-        
-        
+
         
         let vc = Reservation02ViewController()
         let backButtonItem =  UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)

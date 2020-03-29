@@ -33,9 +33,9 @@ class Reservation: Codable{
     //お手伝い内容
     var helpContents: [Int]!
     //予想金額
-    var ExpectedPrice: String!
+    var ExpectedPrice: String = ""
     //確定金額
-    var price: String!
+    var price: String = ""
     
     //Timestamp
     var createdAt: Timestamp

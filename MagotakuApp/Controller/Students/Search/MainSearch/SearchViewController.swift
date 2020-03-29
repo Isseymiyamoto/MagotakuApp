@@ -250,15 +250,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             button.setTitle("その他", for: .normal)
         }
     }
-    
-//    override func touchesShouldCancel(in view: UIView) -> Bool {
-//        if view is UIButton {
-//            return true
-//        }
-//        return super.touchesShouldCancel(in: view)
-//    }
-        
-    
+
     
     // collectionViewについての実装
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -278,20 +270,24 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
 //        cell.seniorImage.layer.cornerRadius = cell.bounds.size.width / 6
         
         //日付用の位置設定、文字フォント設定
-        cell.dateLabel.frame = CGRect(x: 0, y: cell.bounds.size.width, width: cell.bounds.size.width / 2, height: 16)
+        cell.dateLabel.frame = CGRect(x: 0, y: cell.bounds.size.width + 8, width: cell.bounds.size.width / 2, height: 16)
         cell.dateLabel.textAlignment = .left
         cell.dateLabel.text = "\(StudentReservationCollection.shared.getReservation(at: indexPath.row).visitDate)"
         cell.dateLabel.font = .systemFont(ofSize: 12)
         cell.dateLabel.textColor = .darkGray
         
         //時間用の位置設定、文字フォント設定
-        cell.timeLabel.frame = CGRect(x: 0, y: cell.bounds.size.width + 16, width: cell.bounds.size.width / 2, height: 16)
+        cell.timeLabel.frame = CGRect(x: 0, y: cell.bounds.size.width + 24, width: cell.bounds.size.width / 2, height: 16)
         cell.timeLabel.textAlignment = .left
-//        cell.timeLabel.text = ""
+        cell.timeLabel.text = "14:00 - 18:00"
         cell.timeLabel.font = .systemFont(ofSize: 12)
         cell.timeLabel.textColor = .darkGray
         
-//        cell.backgroundColor = UIColor(red: 240/255, green: 161/255, blue: 65/255, alpha: 1)
+        //予想請求金額についての位置設定、文字フォント設定
+        cell.expectedPrice.frame = CGRect(x: cell.bounds.size.width / 2, y: cell.bounds.size.width + 16, width: cell.bounds.size.width / 2, height: 24)
+        cell.expectedPrice.textAlignment = .right
+        cell.expectedPrice.text = "¥\(StudentReservationCollection.shared.getReservation(at: indexPath.row).ExpectedPrice)"
+        cell.expectedPrice.font = .boldSystemFont(ofSize: 16)
         
         //cellのUIImageViewに対して、seniorImageを配置する
         if let imageName: String = StudentReservationCollection.shared.getReservation(at: indexPath.row).seniorImage, let ref = StudentReservationCollection.shared.getImageRef(uid: StudentReservationCollection.shared.getReservation(at: indexPath.row).seUid, imageName: imageName){
