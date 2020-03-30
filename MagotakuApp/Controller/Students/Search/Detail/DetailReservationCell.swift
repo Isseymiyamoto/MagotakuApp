@@ -9,6 +9,12 @@
 import UIKit
 
 class DetailReservationCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -106,7 +106,6 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
         return CGFloat(76)
     }
     
-    
     //セルを構築する際に呼ばれるメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0{
@@ -147,12 +146,12 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             datePicker2 = cell2.datePicker2
             cell2.customTF2.inputView = datePicker2
             // 決定バーの生成
-                      let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
-                      let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-                      let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setDate2))
-                      toolbar.setItems([spacelItem, doneItem], animated: true)
-            cell2.customTF2.inputAccessoryView = toolbar
-            return cell2
+              let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+              let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+              let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setDate2))
+              toolbar.setItems([spacelItem, doneItem], animated: true)
+                cell2.customTF2.inputAccessoryView = toolbar
+                return cell2
         }
     }
     

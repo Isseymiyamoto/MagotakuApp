@@ -32,42 +32,90 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             reservationInfo = StudentReservationCollection.shared.getReservation(at: detailNum)
         }
         
+        
+        //使用するcustomCellの設定
+        let nib = UINib(nibName: "DetailReservationCell", bundle: nil)
+        tableView.register( nib, forCellReuseIdentifier: "DetailReservationCell")
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return 2
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 192
+        default:
+            return 120
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
-            cell.textLabel?.text = "テストタイトル"
+        
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailReservationCell") as! DetailReservationCell
+            
+            //タイトルに関する設定
+            cell.titleLabel.frame = CGRect(x: 16, y: 32, width: UIScreen.main.bounds.width - 32, height: 22)
+            
+            //日程部分のアイコン設定
+            let dateIcon = UIImageView(image: UIImage(systemName: "calendar.circle"))
+            dateIcon.frame = CGRect(x: 16, y: 86, width: 22, height: 22)
+            cell.addSubview(dateIcon)
+            //日程部分に関する設定
+            cell.dateLabel.text = "2020年4月22日(火)"
+            cell.dateLabel.frame = CGRect(x: 60, y: 86, width: UIScreen.main.bounds.width - 40, height: 22)
+            
+            //時間部分のアイコン設定
+            let timeIcon = UIImageView(image: UIImage(systemName: "timer"))
+//            timeIcon.frame = CGRect(x: 16, y: 140, width: 22, height: 22)
+            timeIcon.frame = CGRect(x: 16, y: 112, width: 22, height: 22)
+            cell.addSubview(timeIcon)
+            
+            //時間部分に関する設定
+            cell.timeLabel.text = "14:00 - 18:00"
+            cell.timeLabel.frame = CGRect(x: 60, y: 112, width: UIScreen.main.bounds.width - 40, height: 22)
+            
+            //位置のアイコン設定
+            let locationIcon = UIImageView(image: UIImage(systemName: "location"))
+//            locationIcon.frame = CGRect(x: 16, y: 194, width: 22, height: 22)
+            locationIcon.frame = CGRect(x: 16, y: 138, width: 22, height: 22)
+            cell.addSubview(locationIcon)
+            
+            //位置部分に関する設定
+            cell.locationLabel.text = "都営地下鉄銀座線 表参道駅 徒歩12分"
+            cell.locationLabel.frame = CGRect(x: 60, y: 138, width: UIScreen.main.bounds.width - 40, height: 22)
+            
             return cell
-        }else{
+        }else if indexPath.section == 1{
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
             
-            switch indexPath.section {
-            case 0:
-                cell.textLabel?.text = "0"
-            case 1:
-                cell.textLabel?.text = "0"
-            case 2:
-                cell.textLabel?.text = "0"
-            case 3:
-                cell.textLabel?.text = "0"
-            case 4:
-                cell.textLabel?.text = "0"
-            case 5:
-                cell.textLabel?.text = "0"
-            default:
-                cell.textLabel?.text = "0"
+            //titleLabelの設定
+            let titleLabel = UILabel()
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            titleLabel.text = "お手伝い内容について"
+            titleLabel.frame = CGRect(x: 16, y: 32, width: UIScreen.main.bounds.width - 32, height: 22)
+            cell.addSubview(titleLabel)
+            
+            //お手伝い内容についてを複数作成していく
+            let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
+            let helpIcons = ["pencil", "pencil.circle", "pencil", "pencil.circle", "pencil", "pencil.circle"]
+            
+            for i in reservationInfo?.helpContents.count as! Int{
+                
             }
             
+            
+        }else{
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+            cell.textLabel?.text = "テストタイトル"
             return cell
         }
 
@@ -83,9 +131,9 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 64
-    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 64
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
