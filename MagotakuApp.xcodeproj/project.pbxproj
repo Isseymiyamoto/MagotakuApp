@@ -64,6 +64,8 @@
 		85A506BA2404C89900A2F582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506B82404C89900A2F582 /* Main.storyboard */; };
 		85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BB2404C89C00A2F582 /* Assets.xcassets */; };
 		85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A506BD2404C89C00A2F582 /* LaunchScreen.storyboard */; };
+		85BB35DF2431D197001255FC /* DetailReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BB35DD2431D197001255FC /* DetailReservationCell.swift */; };
+		85BB35E02431D197001255FC /* DetailReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BB35DE2431D197001255FC /* DetailReservationCell.xib */; };
 		85BD3D92242E55B3002E44AE /* DetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD3D90242E55B3002E44AE /* DetailSearchViewController.swift */; };
 		85BD3D93242E55B3002E44AE /* DetailSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BD3D91242E55B3002E44AE /* DetailSearchViewController.xib */; };
 		85CA687D24260F7000062D82 /* StudentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA687C24260F7000062D82 /* StudentCollection.swift */; };
@@ -167,6 +169,8 @@
 		85A506BB2404C89C00A2F582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A506BE2404C89C00A2F582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A506C02404C89C00A2F582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85BB35DD2431D197001255FC /* DetailReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReservationCell.swift; sourceTree = "<group>"; };
+		85BB35DE2431D197001255FC /* DetailReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailReservationCell.xib; sourceTree = "<group>"; };
 		85BD3D90242E55B3002E44AE /* DetailSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchViewController.swift; sourceTree = "<group>"; };
 		85BD3D91242E55B3002E44AE /* DetailSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSearchViewController.xib; sourceTree = "<group>"; };
 		85CA687C24260F7000062D82 /* StudentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollection.swift; sourceTree = "<group>"; };
@@ -549,6 +553,8 @@
 			children = (
 				85BD3D90242E55B3002E44AE /* DetailSearchViewController.swift */,
 				85BD3D91242E55B3002E44AE /* DetailSearchViewController.xib */,
+				85BB35DD2431D197001255FC /* DetailReservationCell.swift */,
+				85BB35DE2431D197001255FC /* DetailReservationCell.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -799,6 +805,7 @@
 				85E81254242345C5004ECB87 /* ReservationDetailViewController.xib in Resources */,
 				85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */,
 				850B93E424092EF10010CE87 /* SignUp0ViewController.xib in Resources */,
+				85BB35E02431D197001255FC /* DetailReservationCell.xib in Resources */,
 				850B93B624068E4F0010CE87 /* SignUp2ViewController.xib in Resources */,
 				8560DD522413A936000BF5BF /* Reservation00ViewController.xib in Resources */,
 				85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */,
@@ -921,6 +928,7 @@
 				85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */,
 				85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */,
 				85FE10B7241E1916005B33BE /* SearchViewController.swift in Sources */,
+				85BB35DF2431D197001255FC /* DetailReservationCell.swift in Sources */,
 				8505BEC9241B7E4100E46191 /* Reservation03ViewController.swift in Sources */,
 				85E8124924220F0F004ECB87 /* StudentUser.swift in Sources */,
 				850B93E72409456F0010CE87 /* SignUp8ViewController.swift in Sources */,

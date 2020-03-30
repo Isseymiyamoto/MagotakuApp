@@ -91,7 +91,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         
         //プロフィール写真用のUIImageView
         let profileImage = UIImageView()
-        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
+        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 72) / 2, y: 32, width: 72, height: 72)
         profileImage.layer.cornerRadius = 30.0
         profileImage.image = seniorImage
 
@@ -99,13 +99,13 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         let detailBtn = UIButton(type: .system)
         detailBtn.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
         detailBtn.titleLabel?.textAlignment = .center
-        detailBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        detailBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         detailBtn.setTitle("詳細プロフィール", for: .normal)
         detailBtn.addTarget(self, action: #selector(tapDetailProfile), for: .touchUpInside)
 
         //各パーツを載せるためのUIView
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
         view.addSubview(profileImage)
         view.addSubview(detailBtn)
         

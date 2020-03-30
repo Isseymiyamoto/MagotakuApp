@@ -46,7 +46,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             gradient.frame = bounds
             gradient.colors = [UIColor(red: 41/255, green: 162/255, blue: 226/255, alpha: 1).cgColor, UIColor(red: 65/255, green: 132/255, blue: 190/255, alpha: 1).cgColor]
             gradient.startPoint = CGPoint(x: 0, y: 0)
-            gradient.endPoint = CGPoint(x: 1, y: 1)
+            gradient.endPoint = CGPoint(x: 0, y: 1)
 
             if let image = getImageFrom(gradientLayer: gradient) {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
