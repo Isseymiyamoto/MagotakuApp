@@ -77,7 +77,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 120
+            return 160
         default:
             return 0
         }
@@ -94,21 +94,18 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
 //        a.frame = CGRect(x: 12, y: 12, width: 12, height: 12)
 //        view.addSubview(a)
 //        
-//        //プロフィール写真用のUIImageView
-//        let profileImage = UIImageView()
-//        //storageからimageを引っ張ってきてセットする
-//        if let imageName: String? = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
-//            profileImage.sd_setImage(with: ref)
-//        }
-//        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
-//        profileImage.layer.cornerRadius = 30.0
-//
-//        //サービス利用者氏名を表示
-//        let nameLabel = UILabel()
-//        nameLabel.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
-//        nameLabel.textAlignment = .center
-//        nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
-//        nameLabel.text = "\(seniorProfile.sName) さん"
+        //プロフィール写真用のUIImageView
+        let profileImage = UIImageView()
+        profileImage.image = seniorImage
+        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
+        profileImage.layer.cornerRadius = 30.0
+
+        //サービス利用者詳細情報に飛ばすbtn設置
+        let detailBtn = UIButton(type: .system)
+        detailBtn.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
+        detailBtn.titleLabel?.textAlignment = .center
+        detailBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        detailBtn.titleLabel?.text = "\(seniorProfile.sName) さん"
 //
 //        //上記2個をセットするUIViewを定義
 //        let headerView = UIView()
