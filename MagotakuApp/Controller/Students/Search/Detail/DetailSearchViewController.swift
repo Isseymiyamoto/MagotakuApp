@@ -53,7 +53,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         case 0:
             return 192
         default:
-            return 120
+            return 240
         }
     }
     
@@ -107,10 +107,33 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             //お手伝い内容についてを複数作成していく
             let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
             let helpIcons = ["pencil", "pencil.circle", "pencil", "pencil.circle", "pencil", "pencil.circle"]
+            let background: [UIColor] = [.red, .blue, .brown, .clear, .cyan, .darkGray]
             
-            for i in reservationInfo?.helpContents.count as! Int{
+            for i in 0..<(reservationInfo?.helpContents!.count)!{
+                //iconとlabelを配置するためのviewを生成する
+                let view1 = UIView()
+                view1.frame = CGRect(x: (16 + ((UIScreen.main.bounds.width - 32) / 3) * CGFloat(i)), y: 86, width: (UIScreen.main.bounds.width - 32) / 3, height: (UIScreen.main.bounds.width - 32) / 3)
+                cell.addSubview(view1)
                 
+                //viewに載せるiconについて
+                let iconView = UIImageView(image: UIImage(systemName: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
+                iconView.frame = CGRect(x: view1.bounds.width / 6, y: 0, width: (view1.bounds.width / 3)*2, height: (view1.bounds.width / 3)*2)
+                iconView.layer.cornerRadius = iconView.bounds.width / 2
+                iconView.backgroundColor = background[(reservationInfo?.helpContents![i])!]
+                view1.addSubview(iconView)
+                
+                //viewに載せるlabel
+                let contentLabel = UILabel()
+                contentLabel.text = helpContents[(reservationInfo?.helpContents![i])!]
+                contentLabel.font = UIFont.boldSystemFont(ofSize: 12)
+                contentLabel.textAlignment = .center
+                contentLabel.adjustsFontSizeToFitWidth = true
+                contentLabel.frame = CGRect(x: 0, y: (view1.bounds.width / 3) * 2 + 4, width: view1.bounds.width, height: 22)
+                view1.addSubview(contentLabel)
             }
+            
+            
+            return cell
             
             
         }else{
