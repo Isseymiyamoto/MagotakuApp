@@ -88,34 +88,39 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-//        let a = UIButton(type: .system)
-//        a.setTitle("俺は俺", for: .normal)
-//        a.frame = CGRect(x: 12, y: 12, width: 12, height: 12)
-//        view.addSubview(a)
-//        
+        
         //プロフィール写真用のUIImageView
         let profileImage = UIImageView()
-        profileImage.image = seniorImage
         profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
         profileImage.layer.cornerRadius = 30.0
+        profileImage.image = seniorImage
 
         //サービス利用者詳細情報に飛ばすbtn設置
         let detailBtn = UIButton(type: .system)
         detailBtn.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
         detailBtn.titleLabel?.textAlignment = .center
-        detailBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        detailBtn.titleLabel?.text = "\(seniorProfile.sName) さん"
-//
-//        //上記2個をセットするUIViewを定義
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
-//        headerView.addSubview(profileImage)
-//        headerView.addSubview(nameLabel)
-//
-//        return headerView
+        detailBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        detailBtn.setTitle("詳細プロフィール", for: .normal)
+        detailBtn.addTarget(self, action: #selector(tapDetailProfile), for: .touchUpInside)
+
+        //各パーツを載せるためのUIView
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.addSubview(profileImage)
+        view.addSubview(detailBtn)
+        
+        
         return view
     }
+    
+    //detailBtn用のメソッド
+    @objc func tapDetailProfile(){
+        let vc = ProfileViewController()
+        let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
         
 
