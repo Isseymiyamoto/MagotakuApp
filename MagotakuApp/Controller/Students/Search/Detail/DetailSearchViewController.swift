@@ -107,7 +107,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             //お手伝い内容についてを複数作成していく
             let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
             let helpIcons = ["pencil", "pencil.circle", "pencil", "pencil.circle", "pencil", "pencil.circle"]
-            let background: [UIColor] = [.red, .blue, .brown, .clear, .cyan, .darkGray]
+            let background: [UIColor] = [.red, .blue, .brown, .systemPink, .cyan, .darkGray]
             
             for i in 0..<(reservationInfo?.helpContents!.count)!{
                 //iconとlabelを配置するためのviewを生成する
@@ -116,11 +116,15 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
                 cell.addSubview(view1)
                 
                 //viewに載せるiconについて
-                let iconView = UIImageView(image: UIImage(systemName: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
+                let iconView = UIView()
+                iconView.backgroundColor = background[(reservationInfo?.helpContents![i])!]
                 iconView.frame = CGRect(x: view1.bounds.width / 6, y: 0, width: (view1.bounds.width / 3)*2, height: (view1.bounds.width / 3)*2)
                 iconView.layer.cornerRadius = iconView.bounds.width / 2
-                iconView.backgroundColor = background[(reservationInfo?.helpContents![i])!]
                 view1.addSubview(iconView)
+                
+                let iconImageView = UIImageView(image: UIImage(systemName: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
+                iconImageView.frame = CGRect(x: iconView.bounds.width / 4, y: iconView.bounds.height / 4, width: iconView.bounds.width / 2, height: iconView.bounds.width / 2)
+                iconView.addSubview(iconImageView)
                 
                 //viewに載せるlabel
                 let contentLabel = UILabel()
