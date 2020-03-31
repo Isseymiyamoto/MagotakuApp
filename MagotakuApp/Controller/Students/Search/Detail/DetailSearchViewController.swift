@@ -40,7 +40,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     
@@ -59,9 +59,10 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0{
+        switch indexPath.section {
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailReservationCell") as! DetailReservationCell
-            
+                        
             //タイトルに関する設定
             cell.titleLabel.frame = CGRect(x: 16, y: 32, width: UIScreen.main.bounds.width - 32, height: 22)
             
@@ -94,9 +95,11 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             cell.locationLabel.frame = CGRect(x: 60, y: 138, width: UIScreen.main.bounds.width - 40, height: 22)
             
             return cell
-        }else if indexPath.section == 1{
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
             
+        case 1:
+            
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+                        
             //titleLabelの設定
             let titleLabel = UILabel()
             titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -117,9 +120,11 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
                 
                 //viewに載せるiconについて
                 let iconView = UIView()
-                iconView.backgroundColor = background[(reservationInfo?.helpContents![i])!]
+//                iconView.backgroundColor = background[(reservationInfo?.helpContents![i])!]
+                iconView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
                 iconView.frame = CGRect(x: view1.bounds.width / 6, y: 0, width: (view1.bounds.width / 3)*2, height: (view1.bounds.width / 3)*2)
-                iconView.layer.cornerRadius = iconView.bounds.width / 2
+//                iconView.layer.cornerRadius = iconView.bounds.width / 2
+                iconView.layer.cornerRadius = 6.0
                 view1.addSubview(iconView)
                 
                 let iconImageView = UIImageView(image: UIImage(systemName: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
@@ -138,14 +143,22 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             
             
             return cell
+                        
+        case 2:
             
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+            cell.textLabel?.text = "テストタイトル"
+            return cell
             
-        }else{
+        default:
+            
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
             cell.textLabel?.text = "テストタイトル"
             return cell
         }
-
+        
+        
+        
         
     }
     
@@ -175,7 +188,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         detailBtn.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
         detailBtn.titleLabel?.textAlignment = .center
         detailBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        detailBtn.setTitle("詳細プロフィール", for: .normal)
+        detailBtn.setTitle("詳細プロフィールを閲覧する", for: .normal)
         detailBtn.addTarget(self, action: #selector(tapDetailProfile), for: .touchUpInside)
 
         //各パーツを載せるためのUIView
