@@ -285,6 +285,24 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         return false
     }
 
+    
+    //訪問を希望するボタンを押した際の挙動を設定
+    @IBAction func tapRequestBtn(_ sender: Any) {
+        // 1. 学生側にprofileImageがない場合
+        // rofileImageを登録するように促す
+        if studentProfile.imageName == nil{
+            showErrorAlert2(title: "プロフィール未完成" ,text: "ご自身の顔写真が未登録です。訪問のリクエストには、ご自身の顔写真登録は必須となります。マイアカウントのプロフィールから登録できます。")
+            
+        }
+        // 2. profileImageがある場合
+        // reservationに、stUidを追加
+        
+        // reservationの、reservationNumを1に変更する
+        
+        
+        
+    }
+    
    
 
 }

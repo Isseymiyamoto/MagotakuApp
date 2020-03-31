@@ -44,6 +44,14 @@ class StudentUseCase{
                 studentProfile.address = document!.data()!["address"]! as! String
                 studentProfile.school = document!.data()!["school"]! as! String
                 studentProfile.hobby = document!.data()!["hobby"]! as! String
+                //学生側のイメージが格納されているかを確認する
+                if !(document!.data()!["imageName"]! as! String).isEmpty{
+                    print("空じゃないよ")
+                    studentProfile.imageName = document!.data()!["imageName"]! as! String
+                }else{
+                    print("空だねえ")
+//                    print(studentProfile.imageName)
+                }
                 
                 //test的においてみる
                 StudentReservationCollection.shared.allFetch()

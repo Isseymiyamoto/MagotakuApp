@@ -94,7 +94,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             view.addSubview(imageView)
             let button = UIButton(type: .system)
             button.frame = CGRect(x: UIScreen.main.bounds.width / 4, y:  (UIScreen.main.bounds.width / 4) + (248 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 2, height: 12)
-            button.setTitle("プロフィール写真を変更", for: .normal)
+            button.setTitle("プロフィール写真を登録・変更", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.titleLabel?.textAlignment = .center
             button.addTarget(self, action: #selector(tapBtn), for: .touchUpInside)
