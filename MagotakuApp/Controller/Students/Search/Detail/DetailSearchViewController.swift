@@ -10,6 +10,7 @@ import UIKit
 
 class DetailSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    let test = UILabel()
     
     //前のVCから値わたしされるようの変数
     var detailNum:Int!
@@ -38,17 +39,24 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register( nib, forCellReuseIdentifier: "DetailReservationCell")
         
         
-    }
-    
-    
-    //tabbarの高さが取れるか
-    override func viewDidLayoutSubviews() {
-        let tabbarHeight = tabBarController?.tabBar.bounds.height
-        tabbarHeight += 
         
+        
+//        test.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 22, width: 100, height: 22)
+        test.backgroundColor = UIColor.black
+        view.addSubview(test)
+        view.bringSubviewToFront(test)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //tabbarの高さをsafeareaの高さを含めて取得する
+        var tabbarHeight = tabBarController?.tabBar.bounds.size.height
+        tabbarHeight! += additionalSafeAreaInsets.bottom
+        test.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 22, width: 100, height: 22)
+    }
     
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
