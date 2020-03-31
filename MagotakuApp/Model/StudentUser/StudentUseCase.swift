@@ -47,7 +47,7 @@ class StudentUseCase{
                 //学生側のイメージが格納されているかを確認する
                 if !(document!.data()!["imageName"]! as! String).isEmpty{
                     print("空じゃないよ")
-                    studentProfile.imageName = document!.data()!["imageName"]! as! String
+                    studentProfile.imageName = document!.data()!["imageName"]! as? String
                 }else{
                     print("空だねえ")
 //                    print(studentProfile.imageName)
@@ -62,6 +62,45 @@ class StudentUseCase{
             }
         }
         
+    }
+    
+    //学生側写真登録用function
+    func getStorageReference() -> StorageReference? {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return nil
+        }
+        return storage.reference().child("studentUsers").child(uid)
+    }
+
+    func getImageRef(imageName: String) -> StorageReference? {
+        return getStorageReference()?.child(imageName)
+    }
+
+    func saveImage(image: UIImage?, callback: @escaping ((String?) -> Void)) {
+        // オプショナルを外したり、 iamgeData を作成
+        guard let image = image,
+            let imageData = image.jpegData(compressionQuality: 0.1),
+            let imageRef = getStorageReference() else {
+            callback(nil)
+            return
+        }
+
+        // 保存に必要なものを作成
+        let imageName = NSUUID().uuidString
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+
+        // 保存する
+        let ref = imageRef.child(imageName)
+        ref.putData(imageData, metadata: metaData) { (metaData, error) in
+            guard let _ = metaData else {
+                print("画像の保存に失敗しました。。。😭")
+                callback(nil)
+                return
+            }
+            print("画像の保存が成功した！！！！！！")
+            callback(imageName)
+        }
     }
     
     

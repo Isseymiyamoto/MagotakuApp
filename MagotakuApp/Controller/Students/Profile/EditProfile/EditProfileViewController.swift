@@ -15,6 +15,8 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     let imageLists:[String] = ["person.fill", "calendar.circle.fill", "person.crop.rectangle.fill", "house.fill", "phone.fill", "bookmark", "square.grid.2x2.fill"]
     let profileInfo: [String] = [studentProfile.name, studentProfile.age, studentProfile.sex, studentProfile.school, studentProfile.phoneNum, studentProfile.hobby, studentProfile.address]
     
+    var imageView = UIImageView()
+    
     @IBOutlet weak var tableView: UITableView!
     
 
@@ -87,10 +89,12 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             let view = UIView()
             view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
             view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 240)
-            let imageView = UIImageView(image: UIImage(systemName: "person.fill"))
+            imageView = UIImageView(image: UIImage(systemName: "person.fill"))
             imageView.backgroundColor = UIColor(red: 99/255, green: 101/255, blue: 105/255, alpha: 1)
             imageView.frame = CGRect(x: UIScreen.main.bounds.width / 8 * 3, y: (240 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
             imageView.layer.cornerRadius = UIScreen.main.bounds.width / 8
+            //タップイベントがブロックされないようにする
+            imageView.isUserInteractionEnabled = true
             view.addSubview(imageView)
             let button = UIButton(type: .system)
             button.frame = CGRect(x: UIScreen.main.bounds.width / 4, y:  (UIScreen.main.bounds.width / 4) + (248 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 2, height: 12)
@@ -173,7 +177,8 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         //撮影が完了した時に呼ばれる(アルバムから写真が選択された時に呼ばれる場所)
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.editedImage] as? UIImage{
-//                profileImage.image = pickedImage
+                imageView.image = pickedImage
+                
                 //写真の保存
                 UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
                 picker.dismiss(animated: true, completion: nil)

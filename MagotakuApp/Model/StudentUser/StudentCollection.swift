@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import FirebaseStorage
 
 class StudentUserCollection{
     //初回アクセスのタイミングでインスタンス作成
@@ -31,6 +33,22 @@ class StudentUserCollection{
     func fetchProfile() -> Void{
         studentUseCase.fetchStudentUser()
     }
+    
+    //写真を保存する
+    func saveImage(image:UIImage?, callback: @escaping ((String?) -> Void)) {
+        studentUseCase.saveImage(image: image) { (imageName) in
+            guard let imageName = imageName else {
+                callback(nil)
+                return
+            }
+            callback(imageName)
+        }
+    }
+    
+    func getImageRef(imageName: String) -> StorageReference? {
+        return studentUseCase.getImageRef(imageName: imageName)
+    }
+    
     
     
     //学生側に表示するよう

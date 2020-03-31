@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseStorage
+import UIKit
 
 class SeniorUserCollection{
     //初回アクセスのタイミングでインスタンスを生成
