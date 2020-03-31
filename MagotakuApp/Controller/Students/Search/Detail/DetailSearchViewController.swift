@@ -10,7 +10,11 @@ import UIKit
 
 class DetailSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let test = UILabel()
+//    let test = UILabel()
+    //承認用のviewとbtn
+    @IBOutlet weak var viewForBtn: UIView!
+    @IBOutlet weak var requestBtn: UIButton!
+    
     
     //前のVCから値わたしされるようの変数
     var detailNum:Int!
@@ -39,12 +43,20 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register( nib, forCellReuseIdentifier: "DetailReservationCell")
         
         
+        //承認用btnを載せるview
+        viewForBtn.layer.shadowOffset = CGSize.zero
+        viewForBtn.layer.shadowColor = UIColor.black.cgColor
+        viewForBtn.layer.shadowOpacity = 0.6
+        viewForBtn.layer.shadowRadius = 4
+        
         
         
 //        test.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 22, width: 100, height: 22)
-        test.backgroundColor = UIColor.black
-        view.addSubview(test)
-        view.bringSubviewToFront(test)
+//        test.backgroundColor = UIColor.black
+//        view.addSubview(test)
+//        view.bringSubviewToFront(test)
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,7 +65,15 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         //tabbarの高さをsafeareaの高さを含めて取得する
         var tabbarHeight = tabBarController?.tabBar.bounds.size.height
         tabbarHeight! += additionalSafeAreaInsets.bottom
-        test.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 22, width: 100, height: 22)
+//        tableViewのframe設定
+        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.bounds.height - tabbarHeight! - 72)
+
+        //承認用のviewとbtnのframeをここで確定
+        viewForBtn.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 72, width: UIScreen.main.bounds.width, height: 72)
+        requestBtn.frame = CGRect(x: 32, y: 12, width: UIScreen.main.bounds.width - 64, height: 48)
+        requestBtn.layer.cornerRadius = 24
+        
+//        test.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 22, width: 100, height: 22)
     }
     
 
