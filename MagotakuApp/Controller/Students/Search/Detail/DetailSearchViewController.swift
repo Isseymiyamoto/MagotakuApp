@@ -37,7 +37,17 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         let nib = UINib(nibName: "DetailReservationCell", bundle: nil)
         tableView.register( nib, forCellReuseIdentifier: "DetailReservationCell")
         
+        
     }
+    
+    
+    //tabbarの高さが取れるか
+    override func viewDidLayoutSubviews() {
+        let tabbarHeight = tabBarController?.tabBar.bounds.height
+        tabbarHeight += 
+        
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -187,7 +197,8 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 160
+//            return 160
+            return  (UIScreen.main.bounds.width / 3) * 2
         default:
             return 0
         }
@@ -204,7 +215,8 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
 //        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 72) / 2, y: 32, width: 72, height: 72)
 //        profileImage.layer.cornerRadius = 30.0
         //test的に
-        profileImage.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160)
+//        profileImage.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160)
+        profileImage.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width / 3) * 2)
         profileImage.contentMode = .scaleToFill
         //imageの挿入
         profileImage.image = seniorImage
@@ -212,7 +224,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
 
         //サービス利用者詳細情報に飛ばすbtn設置
         let detailBtn = UIButton(type: .system)
-        detailBtn.frame = CGRect(x: UIScreen.main.bounds.width - 248, y: 120, width: 240, height: 32)
+        detailBtn.frame = CGRect(x: UIScreen.main.bounds.width - 248, y: ((UIScreen.main.bounds.width / 3) * 2) - 40, width: 240, height: 32)
         detailBtn.backgroundColor = .white
         detailBtn.layer.cornerRadius = 4.0
         detailBtn.titleLabel?.textAlignment = .center
