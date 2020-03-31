@@ -52,8 +52,10 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         switch indexPath.section {
         case 0:
             return 192
-        default:
+        case 1:
             return 240
+        default:
+            return 360
         }
     }
     
@@ -147,7 +149,27 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         case 2:
             
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
-            cell.textLabel?.text = "テストタイトル"
+            //titleLabelの設定
+            let titleLabel = UILabel()
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            titleLabel.text = "注意事項について"
+            titleLabel.frame = CGRect(x: 16, y: 32, width: UIScreen.main.bounds.width - 32, height: 22)
+            cell.addSubview(titleLabel)
+            
+            //背景がgrayのViewを用意してその上に記載する
+            let view = UIView()
+            view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+            view.frame = CGRect(x: 16, y: 86, width: UIScreen.main.bounds.width - 32, height: 160)
+            cell.addSubview(view)
+            
+            //viewに載せるtextViewを生成する
+            let textView = UITextView()
+            textView.frame = CGRect(x: 4, y: 2, width: view.bounds.size.width - 8, height: 156)
+            textView.text = "特筆事項なし"
+            textView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+            textView.isEditable = false
+            view.addSubview(textView)
+            
             return cell
             
         default:
@@ -179,15 +201,22 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         
         //プロフィール写真用のUIImageView
         let profileImage = UIImageView()
-        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 72) / 2, y: 32, width: 72, height: 72)
-        profileImage.layer.cornerRadius = 30.0
+//        profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 72) / 2, y: 32, width: 72, height: 72)
+//        profileImage.layer.cornerRadius = 30.0
+        //test的に
+        profileImage.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 160)
+        profileImage.contentMode = .scaleToFill
+        //imageの挿入
         profileImage.image = seniorImage
+        
 
         //サービス利用者詳細情報に飛ばすbtn設置
         let detailBtn = UIButton(type: .system)
-        detailBtn.frame = CGRect(x: 32, y: 108, width: UIScreen.main.bounds.width - 64, height: 22)
+        detailBtn.frame = CGRect(x: UIScreen.main.bounds.width - 248, y: 120, width: 240, height: 32)
+        detailBtn.backgroundColor = .white
+        detailBtn.layer.cornerRadius = 4.0
         detailBtn.titleLabel?.textAlignment = .center
-        detailBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        detailBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         detailBtn.setTitle("詳細プロフィールを閲覧する", for: .normal)
         detailBtn.addTarget(self, action: #selector(tapDetailProfile), for: .touchUpInside)
 
