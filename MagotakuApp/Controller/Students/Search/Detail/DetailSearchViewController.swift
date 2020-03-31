@@ -211,6 +211,10 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     
     
         
+    //セルタップ時にハイライトしないようにする
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 
    
 
