@@ -45,6 +45,13 @@ open class PagingViewController:
     get { return options.menuHorizontalAlignment }
     set { options.menuHorizontalAlignment = newValue }
   }
+    
+  /// Determine the position of the menu relative to the content.
+  /// _Default: .top_
+  public var menuPosition: PagingMenuPosition {
+    get { return options.menuPosition }
+    set { options.menuPosition = newValue }
+  }
   
   /// Determine the transition behaviour of menu items while scrolling
   /// the content. _Default: .scrollAlongside_
@@ -261,6 +268,7 @@ open class PagingViewController:
       }
       
       pagingController.options = options
+      pagingView.options = options
     }
   }
   
@@ -587,6 +595,8 @@ open class PagingViewController:
   // MARK: UICollectionViewDelegate
   
   open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let pagingItem = pagingController.visibleItems.pagingItem(for: indexPath)
+    delegate?.pagingViewController(self, didSelectItem: pagingItem)
     pagingController.select(indexPath: indexPath, animated: true)
   }
   
