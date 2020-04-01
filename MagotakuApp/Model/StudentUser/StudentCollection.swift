@@ -49,6 +49,10 @@ class StudentUserCollection{
         return studentUseCase.getImageRef(imageName: imageName)
     }
     
+    func editProfile(_ studentUser: StudentUser) {
+        studentUseCase.editProfile(studentUser)
+    }
+    
     
     
     //学生側に表示するよう

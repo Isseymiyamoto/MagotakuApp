@@ -103,6 +103,19 @@ class StudentUseCase{
         }
     }
     
+    //プロフィール編集時に使用するメソッド
+    func editProfile(_ studentUser: StudentUser){
+        let documentRef = getCollectionRef().document(studentUser.uid)
+        let encodeTask = try! Firestore.Encoder().encode(studentUser)
+        documentRef.setData(encodeTask){ (err) in
+            if let err = err{
+                print("編集データ追加失敗", err)
+            } else{
+                print("編集データ追加成功")
+            }
+        }
+    }
+    
     
 }
 

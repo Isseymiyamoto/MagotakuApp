@@ -27,9 +27,10 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         self.title = "基本情報"
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [
-        // 文字の色
             .foregroundColor: UIColor.white
         ]
+        let saveButtonItem = UIBarButtonItem(title: "保存", style: .done, target: nil, action: #selector(saveProfile))
+        navigationItem.rightBarButtonItem = saveButtonItem
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -185,6 +186,20 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
        
+    @objc func saveProfile(){
+        print("saveProfileが押されたよ")
+        //写真が挿入されている場合
+        if imageView.image != nil{
+            StudentUserCollection.shared.saveImage(image: imageView.image) { (imageName) in
+                guard let imageName = imageName else{
+                    return
+                }
+                studentProfile.imageName = imageName
+                StudentUserCollection.shared.editProfile(studentProfile)
+            }
+            navigationController?.popViewController(animated: true)
+        }
+    }
 
 
 }

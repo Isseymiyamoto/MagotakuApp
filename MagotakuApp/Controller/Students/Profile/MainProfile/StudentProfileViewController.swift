@@ -139,7 +139,8 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
                 }
             }
         }
-
+    
+    
 
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 160
