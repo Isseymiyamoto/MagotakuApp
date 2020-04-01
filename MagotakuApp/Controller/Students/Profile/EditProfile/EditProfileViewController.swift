@@ -75,6 +75,12 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         default:
             let cell1 = UITableViewCell(style: .value1, reuseIdentifier: "cell1")
             cell1.textLabel?.text = profileInfo[indexPath.section]
+            //セルの右端にタッチ利用可能の補助イメージ
+            let touchImage = UIImageView()
+            touchImage.image = UIImage(systemName: "chevron.right")
+            touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: (cell1.bounds.height / 5) * 2 , width: 8, height: cell1.bounds.height / 5)
+            cell1.contentView.addSubview(touchImage)
+            
             return cell1
         }
     }
