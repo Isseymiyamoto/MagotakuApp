@@ -15,5 +15,6 @@ pod 'FirebaseUI/Storage'
 pod 'Parchment'
 pod 'FSCalendar'
 pod 'IQKeyboardManagerSwift'
+pod 'PKHUD'
 
 end

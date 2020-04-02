@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class DetailSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -293,11 +295,21 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         if studentProfile.imageName == nil{
             showErrorAlert2(title: "プロフィール未完成" ,text: "ご自身の顔写真が未登録です。訪問のリクエストには、ご自身の顔写真登録は必須となります。マイアカウントのプロフィールから登録できます。")
             
+        }else{
+            // 2. profileImageがある場合
+            // reservationに、stUidを追加
+            reservationInfo?.stUid = Auth.auth().currentUser!.uid
+            // reservationの、reservationNumを1に変更する
+            reservationInfo?.reservationNum = 1
+            
+            //データベース上に保存する
+            
+            //reservationが格納されている配列からそデータを取り除く
+            
+            //searchViewControllerに戻る
+            
         }
-        // 2. profileImageがある場合
-        // reservationに、stUidを追加
         
-        // reservationの、reservationNumを1に変更する
         
         
         
