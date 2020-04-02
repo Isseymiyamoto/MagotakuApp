@@ -16,6 +16,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     let profileInfo: [String] = [studentProfile.name, studentProfile.age, studentProfile.sex, studentProfile.school, studentProfile.phoneNum, studentProfile.hobby, studentProfile.address]
     
     var imageView = UIImageView()
+    var studentImage: UIImage?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,7 +30,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        let saveButtonItem = UIBarButtonItem(title: "保存", style: .done, target: nil, action: #selector(saveProfile))
+        let saveButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(saveProfile))
         navigationItem.rightBarButtonItem = saveButtonItem
         
         tableView.delegate = self
@@ -50,6 +51,14 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
                        print(Error.self)
                    }
                }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //tableView再描画
+        tableView.reloadData()
+        
     }
     
     
@@ -96,9 +105,16 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             let view = UIView()
             view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
             view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 240)
-            imageView = UIImageView(image: UIImage(systemName: "person.fill"))
+            //もし学生側に情報としてimageNameが入っていたらそれを取得して表示させる
+            if let imageName: String? = studentProfile.imageName,
+                let ref = StudentUserCollection.shared.getImageRef(imageName: imageName!){
+                imageView.sd_setImage(with: ref)
+            }else{
+                imageView = UIImageView(image: UIImage(systemName: "person.fill"))
+            }
+            
             imageView.backgroundColor = UIColor(red: 99/255, green: 101/255, blue: 105/255, alpha: 1)
-            imageView.frame = CGRect(x: UIScreen.main.bounds.width / 8 * 3, y: (240 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
+            imageView.frame = CGRect(x: (UIScreen.main.bounds.width / 8) * 3, y: (240 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
             imageView.layer.cornerRadius = UIScreen.main.bounds.width / 8
             //タップイベントがブロックされないようにする
             imageView.isUserInteractionEnabled = true
@@ -185,6 +201,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let pickedImage = info[.editedImage] as? UIImage{
                 imageView.image = pickedImage
+                studentImage = pickedImage
                 
                 //写真の保存
                 UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
@@ -195,8 +212,8 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @objc func saveProfile(){
         print("saveProfileが押されたよ")
         //写真が挿入されている場合
-        if imageView.image != nil{
-            StudentUserCollection.shared.saveImage(image: imageView.image) { (imageName) in
+        if studentImage != nil{
+            StudentUserCollection.shared.saveImage(image: studentImage) { (imageName) in
                 guard let imageName = imageName else{
                     return
                 }
@@ -204,6 +221,8 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
                 StudentUserCollection.shared.editProfile(studentProfile)
             }
             navigationController?.popViewController(animated: true)
+        }else{
+            print("変更内容はありません")
         }
     }
 

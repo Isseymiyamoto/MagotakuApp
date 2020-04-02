@@ -46,6 +46,7 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
                 }
             }
         }
+    
 
         func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
             var gradientImage:UIImage?
@@ -58,6 +59,13 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
             return gradientImage
         }
 
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 
         
         
@@ -87,11 +95,14 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             //プロフィール写真用のUIImageView
             let profileImage = UIImageView()
-            //storageからimageを引っ張ってきてセットする
-//            if let imageName: String? = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
-//                profileImage.sd_setImage(with: ref)
-//            }
-            profileImage.image = UIImage(systemName: "house")
+            //もし学生側に情報としてimageNameが入っていたらそれを取得して表示させる
+            if let imageName: String? = studentProfile.imageName,
+                let ref = StudentUserCollection.shared.getImageRef(imageName: imageName!){
+                profileImage.sd_setImage(with: ref)
+            }else{
+                profileImage.image = UIImage(systemName: "house")
+            }
+            
             profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
             profileImage.layer.cornerRadius = 30.0
             

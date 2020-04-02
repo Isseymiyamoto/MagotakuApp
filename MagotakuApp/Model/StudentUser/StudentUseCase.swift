@@ -72,6 +72,7 @@ class StudentUseCase{
         return storage.reference().child("studentUsers").child(uid)
     }
 
+    //profile写真を取得する
     func getImageRef(imageName: String) -> StorageReference? {
         return getStorageReference()?.child(imageName)
     }
@@ -115,6 +116,9 @@ class StudentUseCase{
             }
         }
     }
+    
+    
+    
     
     
 }
