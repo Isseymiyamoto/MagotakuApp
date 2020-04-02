@@ -37,20 +37,20 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.dataSource = self
         
         //photoライブラリの使用許可
-               PHPhotoLibrary.requestAuthorization{(status) in
-                   switch status {
-                   case .authorized:
-                       print("許可されています")
-                   case .denied:
-                       print("拒否されました")
-                   case .notDetermined:
-                       print("notDetermined")
-                   case .restricted:
-                       print("制限されています")
-                   @unknown default:
-                       print(Error.self)
-                   }
+           PHPhotoLibrary.requestAuthorization{(status) in
+               switch status {
+               case .authorized:
+                   print("許可されています")
+               case .denied:
+                   print("拒否されました")
+               case .notDetermined:
+                   print("notDetermined")
+               case .restricted:
+                   print("制限されています")
+               @unknown default:
+                   print(Error.self)
                }
+           }
     }
     
     override func viewWillAppear(_ animated: Bool) {

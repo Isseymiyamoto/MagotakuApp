@@ -274,7 +274,8 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
     
     //detailBtn用のメソッド
     @objc func tapDetailProfile(){
-        let vc = ProfileViewController()
+        let vc = PartSeniorProfileViewController()
+        vc.imageView.image = seniorImage
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
