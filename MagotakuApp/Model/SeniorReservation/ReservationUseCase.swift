@@ -101,6 +101,17 @@ class ReservationUseCase {
         }
     }
     
+    //学生側にて個別のプロフィールを取得する
+//    func fetchPersonalSenior(uid: String, callback: @escaping([SeniorUser]?) -> Void ){
+//
+//        let collectionRef = db.collection("seniorUsers")
+//        collectionRef.document(uid).getDocument { (document, err) in
+//            if document?.data() != nil{
+//                let userInfo = try? Firestore.Decoder.decode(SeniorUser.self, from: document!.data()!)
+//            }
+//        }
+//    }
+    
     
     
 }
