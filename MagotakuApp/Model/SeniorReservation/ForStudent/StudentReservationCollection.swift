@@ -73,5 +73,9 @@ class StudentReservationCollection{
     func getImageRef(uid: String, imageName: String) -> StorageReference? {
         return reservationUseCase.getImageRef(uid: uid, imageName: imageName)
     }
-
+    
+    //訪問を希望するreservationをupdateする
+    func finishReservation(_ reservation: Reservation){
+        reservationUseCase.finishReservation(reservation)
+    }
 }

@@ -87,6 +87,19 @@ class ReservationUseCase {
         return storage.reference().child("seniorUsers").child(uid).child(imageName)
     }
     
+    //学生側にて、予約を完了させる処理をする
+    func finishReservation(_ reservation: Reservation){
+        let documentRef = getCollectionRef().document(reservation.id)
+        let encodeTask = try! Firestore.Encoder().encode(reservation)
+        documentRef.setData(encodeTask) { (err) in
+            if let _err = err {
+                print("データ追加失敗",_err)
+            } else {
+                print("データ追加成功")
+                
+            }
+        }
+    }
     
     
     
