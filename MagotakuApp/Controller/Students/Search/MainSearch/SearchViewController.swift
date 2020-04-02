@@ -34,6 +34,7 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     
     //スクロールビュー
     @IBOutlet weak var scrollView: UIScrollView!
+    var posY: CGFloat!
     //スクロールビューに載せるUIView
     var view1 = UIView()
     
@@ -49,6 +50,11 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         // 文字の色
             .foregroundColor: UIColor.white
         ]
+        
+        //scrollViewの線を削除
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        
         
        
         
@@ -326,3 +332,13 @@ class SearchViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
 }
 
 
+//scrollViewいについて縦方向のスクロールを禁止する
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        posY = scrollView.contentOffset.y
+    }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollView.contentOffset.y = posY
+    }
+}

@@ -100,6 +100,8 @@
 		85EC4E06240E4CE200FCDCD2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */; };
 		85EC4E09240E4E7600FCDCD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */; };
 		85EC4E0B240E4EC000FCDCD2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */; };
+		85F244B2243640CE00FCBE4F /* PartSeniorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F244B0243640CE00FCBE4F /* PartSeniorProfileViewController.swift */; };
+		85F244B3243640CE00FCBE4F /* PartSeniorProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85F244B1243640CE00FCBE4F /* PartSeniorProfileViewController.xib */; };
 		85FE10A6241DFFF1005B33BE /* StudentTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */; };
 		85FE10AD241E18B7005B33BE /* StudentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE10AB241E18B7005B33BE /* StudentProfileViewController.swift */; };
 		85FE10AE241E18B8005B33BE /* StudentProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85FE10AC241E18B7005B33BE /* StudentProfileViewController.xib */; };
@@ -205,6 +207,8 @@
 		85EC4E04240E4CE200FCDCD2 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		85EC4E08240E4E7600FCDCD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		85F244B0243640CE00FCBE4F /* PartSeniorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSeniorProfileViewController.swift; sourceTree = "<group>"; };
+		85F244B1243640CE00FCBE4F /* PartSeniorProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartSeniorProfileViewController.xib; sourceTree = "<group>"; };
 		85FE10A5241DFFF1005B33BE /* StudentTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabBarController.swift; sourceTree = "<group>"; };
 		85FE10AB241E18B7005B33BE /* StudentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewController.swift; sourceTree = "<group>"; };
 		85FE10AC241E18B7005B33BE /* StudentProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentProfileViewController.xib; sourceTree = "<group>"; };
@@ -551,6 +555,7 @@
 		85BD3D8F242E5587002E44AE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				85F244AE2436408D00FCBE4F /* SeniorProfile */,
 				85BD3D90242E55B3002E44AE /* DetailSearchViewController.swift */,
 				85BD3D91242E55B3002E44AE /* DetailSearchViewController.xib */,
 				85BB35DD2431D197001255FC /* DetailReservationCell.swift */,
@@ -646,6 +651,15 @@
 				85EC4E0A240E4EC000FCDCD2 /* MainNavigationController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		85F244AE2436408D00FCBE4F /* SeniorProfile */ = {
+			isa = PBXGroup;
+			children = (
+				85F244B0243640CE00FCBE4F /* PartSeniorProfileViewController.swift */,
+				85F244B1243640CE00FCBE4F /* PartSeniorProfileViewController.xib */,
+			);
+			path = SeniorProfile;
 			sourceTree = "<group>";
 		};
 		85FE10A4241DFFA0005B33BE /* Settings */ = {
@@ -799,6 +813,7 @@
 				8514A463242AFD4400FC0BCF /* EditProfileViewController.xib in Resources */,
 				850B93BB2406AE440010CE87 /* SignUp3ViewController.xib in Resources */,
 				8505BED0241C7AAB00E46191 /* LoginStudentViewController.xib in Resources */,
+				85F244B3243640CE00FCBE4F /* PartSeniorProfileViewController.xib in Resources */,
 				8560DD3A241107F9000BF5BF /* MessageListViewController.xib in Resources */,
 				85BD3D93242E55B3002E44AE /* DetailSearchViewController.xib in Resources */,
 				85A506BC2404C89C00A2F582 /* Assets.xcassets in Resources */,
@@ -921,6 +936,7 @@
 				85BD3D92242E55B3002E44AE /* DetailSearchViewController.swift in Sources */,
 				85EC4DFF240E4C7A00FCDCD2 /* ReservationViewController.swift in Sources */,
 				85DB99FA2417ADA30092935B /* CustomCell2.swift in Sources */,
+				85F244B2243640CE00FCBE4F /* PartSeniorProfileViewController.swift in Sources */,
 				85CA68842429E98C00062D82 /* StudentReservationCollection.swift in Sources */,
 				8560DD512413A936000BF5BF /* Reservation00ViewController.swift in Sources */,
 				850B93A0240560530010CE87 /* SeniorUser.swift in Sources */,
