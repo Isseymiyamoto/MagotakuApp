@@ -82,6 +82,8 @@
 		85DB99FE241A05670092935B /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB99FC241A05670092935B /* CustomCollectionCell.swift */; };
 		85DB99FF241A05670092935B /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DB99FD241A05670092935B /* CustomCollectionCell.xib */; };
 		85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */; };
+		85E6D66F2436D754001F49CE /* SeniorDetailProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E6D66D2436D754001F49CE /* SeniorDetailProfileViewController.swift */; };
+		85E6D6702436D754001F49CE /* SeniorDetailProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E6D66E2436D754001F49CE /* SeniorDetailProfileViewController.xib */; };
 		85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8123E2420BD2C004ECB87 /* CustomCell3.swift */; };
 		85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8123F2420BD2C004ECB87 /* CustomCell3.xib */; };
 		85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124324220913004ECB87 /* SignUpStudentViewController.swift */; };
@@ -189,6 +191,8 @@
 		85DB99FC241A05670092935B /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		85DB99FD241A05670092935B /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		85E6D66D2436D754001F49CE /* SeniorDetailProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorDetailProfileViewController.swift; sourceTree = "<group>"; };
+		85E6D66E2436D754001F49CE /* SeniorDetailProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeniorDetailProfileViewController.xib; sourceTree = "<group>"; };
 		85E8123E2420BD2C004ECB87 /* CustomCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell3.swift; sourceTree = "<group>"; };
 		85E8123F2420BD2C004ECB87 /* CustomCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell3.xib; sourceTree = "<group>"; };
 		85E8124324220913004ECB87 /* SignUpStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStudentViewController.swift; sourceTree = "<group>"; };
@@ -588,6 +592,15 @@
 			path = MessageList;
 			sourceTree = "<group>";
 		};
+		85E6D66C2436D735001F49CE /* DetailProfile */ = {
+			isa = PBXGroup;
+			children = (
+				85E6D66D2436D754001F49CE /* SeniorDetailProfileViewController.swift */,
+				85E6D66E2436D754001F49CE /* SeniorDetailProfileViewController.xib */,
+			);
+			path = DetailProfile;
+			sourceTree = "<group>";
+		};
 		85E81242242208F5004ECB87 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +643,7 @@
 		85EC4E01240E4C8F00FCDCD2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				85E6D66C2436D735001F49CE /* DetailProfile */,
 				85EC4E02240E4CBA00FCDCD2 /* Profile0 */,
 			);
 			path = Profile;
@@ -805,6 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				858EC4032404F324008A93EC /* LoginViewController.xib in Resources */,
+				85E6D6702436D754001F49CE /* SeniorDetailProfileViewController.xib in Resources */,
 				85A506BF2404C89C00A2F582 /* LaunchScreen.storyboard in Resources */,
 				85FE10AE241E18B8005B33BE /* StudentProfileViewController.xib in Resources */,
 				850B93ED2409C0390010CE87 /* HomeViewController.xib in Resources */,
@@ -951,6 +966,7 @@
 				85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */,
 				850B93BA2406AE440010CE87 /* SignUp3ViewController.swift in Sources */,
 				85CA688C242A522200062D82 /* StudentReservationListViewController.swift in Sources */,
+				85E6D66F2436D754001F49CE /* SeniorDetailProfileViewController.swift in Sources */,
 				85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */,
 				850B93CB24078C9B0010CE87 /* SignUp6ViewController.swift in Sources */,
 				85FE10AD241E18B7005B33BE /* StudentProfileViewController.swift in Sources */,

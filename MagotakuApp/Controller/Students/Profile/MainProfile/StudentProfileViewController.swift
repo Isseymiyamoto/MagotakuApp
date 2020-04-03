@@ -12,11 +12,14 @@ import FirebaseAuth
 
 class StudentProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-     @IBOutlet weak var tableView: UITableView!
-        
+         @IBOutlet weak var tableView: UITableView!
+            
         let cellText = ["プロフィール", "過去の業務と報酬", "レビュー", "設定", "ログアウト"]
         let detailText = ["プロフィールを閲覧・編集できます", "過去の業務と報酬について閲覧できます", "レビューの閲覧・投稿できます", "各種設定を行えます", "ログアウトできます"]
         let cellicon = ["person", "dollarsign.circle", "square.and.pencil", "gear", "lock"]
+        
+        //プロフィール写真用のUIImageView
+        let profileImage = UIImageView()
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -94,13 +97,13 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
         
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             //プロフィール写真用のUIImageView
-            let profileImage = UIImageView()
+//            let profileImage = UIImageView()
             //もし学生側に情報としてimageNameが入っていたらそれを取得して表示させる
             if let imageName: String? = studentProfile.imageName,
                 let ref = StudentUserCollection.shared.getImageRef(imageName: imageName!){
                 profileImage.sd_setImage(with: ref)
             }else{
-                profileImage.image = UIImage(systemName: "house")
+                profileImage.image = UIImage(systemName: "person.fill")
             }
             
             profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
@@ -127,6 +130,7 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
             case 0:
                 //プロフィールを押した際の挙動
                 let vc = EditProfileViewController()
+                vc.imageView.image = profileImage.image
                 let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
                 navigationItem.backBarButtonItem = backButtonItem
                 navigationController?.pushViewController(vc, animated: true)
@@ -142,7 +146,6 @@ class StudentProfileViewController: UIViewController, UITableViewDelegate, UITab
                         // 強制的に現在の表示している vc を変更する
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateInitialViewController()
-
                     let sceneDelegate = view.window?.windowScene?.delegate as! SceneDelegate
                     sceneDelegate.window?.rootViewController = vc
                 } catch {

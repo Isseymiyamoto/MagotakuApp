@@ -20,6 +20,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let detailText = ["プロフィールを閲覧・編集できます", "お支払い情報をか閲覧・編集できます", "レビューの閲覧・投稿できます", "各種設定を行えます", "ログアウトできます"]
     let cellicon = ["person", "creditcard", "square.and.pencil", "gear", "lock"]
     
+    //プロフィール画像表示用のimageView
+    let profileImage = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -93,10 +96,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //プロフィール写真用のUIImageView
-        let profileImage = UIImageView()
+//        let profileImage = UIImageView()
         //storageからimageを引っ張ってきてセットする
         if let imageName: String? = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
             profileImage.sd_setImage(with: ref)
+        }else{
+            profileImage.image = UIImage(systemName: "person.fill")
         }
         profileImage.frame = CGRect(x: (UIScreen.main.bounds.width - 60) / 2, y: 32, width: 60, height: 60)
         profileImage.layer.cornerRadius = 30.0
@@ -120,7 +125,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            return
+            let vc = SeniorDetailProfileViewController()
+            vc.imageView.image = profileImage.image
+            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+            navigationItem.backBarButtonItem = backButtonItem
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
             return
         case 2:

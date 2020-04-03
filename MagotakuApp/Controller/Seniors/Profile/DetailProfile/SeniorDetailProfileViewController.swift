@@ -1,19 +1,19 @@
 //
-//  EditProfileViewController.swift
+//  SeniorDetailProfileViewController.swift
 //  MagotakuApp
 //
-//  Created by 宮本一成 on 2020/03/25.
+//  Created by 宮本一成 on 2020/04/03.
 //  Copyright © 2020 ISSEY MIYAMOTO. All rights reserved.
 //
 
 import UIKit
 import Photos
 
-class EditProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SeniorDetailProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let titleLabels:[String] = ["あなたの名前", "あなたの年齢", "あなたの性別", "あなたの在籍校", "あなたの電話番号", "あなたの趣味", "あなたの関心ある区域"]
-    let imageLists:[String] = ["person.fill", "calendar.circle.fill", "person.crop.rectangle.fill", "house.fill", "phone.fill", "bookmark", "square.grid.2x2.fill"]
-    let profileInfo: [String] = [studentProfile.name, studentProfile.age, studentProfile.sex, studentProfile.school, studentProfile.phoneNum, studentProfile.hobby, studentProfile.address]
+    let titleLabels:[String] = ["あなたの名前", "あなたの生年月日", "あなたの性別", "あなたの電話番号", "あなたの趣味", "あなたの住所"]
+    let imageLists:[String] = ["person.fill", "calendar.circle.fill", "person.crop.rectangle.fill", "phone.fill", "bookmark", "house.fill"]
+    let profileInfo: [String] = [seniorProfile.sName, seniorProfile.bornDate, seniorProfile.sex, seniorProfile.phoneNumber, seniorProfile.CharaHob, studentProfile.address]
     
     var imageView = UIImageView()
     var studentImage: UIImage?
@@ -36,8 +36,6 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
         //photoライブラリの使用許可
            PHPhotoLibrary.requestAuthorization{(status) in
                switch status {
@@ -58,15 +56,11 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (tabBarController?.tabBar.bounds.height)!)
+        
         //tableView再描画
         tableView.reloadData()
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (tabBarController?.tabBar.bounds.height)!)
     }
     
     
@@ -113,14 +107,6 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             let view = UIView()
             view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
             view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 240)
-            //もし学生側に情報としてimageNameが入っていたらそれを取得して表示させる
-            //前の画面で取得できている場合、値わたしするように変更
-//            if let imageName: String? = studentProfile.imageName,
-//                let ref = StudentUserCollection.shared.getImageRef(imageName: imageName!){
-//                imageView.sd_setImage(with: ref)
-//            }else{
-//                imageView = UIImageView(image: UIImage(systemName: "person.fill"))
-//            }
             
             imageView.backgroundColor = UIColor(red: 99/255, green: 101/255, blue: 105/255, alpha: 1)
             imageView.frame = CGRect(x: (UIScreen.main.bounds.width / 8) * 3, y: (240 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
@@ -130,7 +116,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
             view.addSubview(imageView)
             let button = UIButton(type: .system)
             button.frame = CGRect(x: UIScreen.main.bounds.width / 4, y:  (UIScreen.main.bounds.width / 4) + (248 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 2, height: 12)
-            button.setTitle("プロフィール写真を登録・変更", for: .normal)
+            button.setTitle("プロフィール写真を変更", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
             button.titleLabel?.textAlignment = .center
             button.addTarget(self, action: #selector(tapBtn), for: .touchUpInside)
