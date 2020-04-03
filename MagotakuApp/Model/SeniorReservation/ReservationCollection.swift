@@ -26,7 +26,7 @@ class ReservationCollection{
         load()
     }
     
-    //seniro個人向けのreservations
+    //senior個人向けのreservations
     private var personalReservations: [Reservation] = []
     
     //全体でのreservations

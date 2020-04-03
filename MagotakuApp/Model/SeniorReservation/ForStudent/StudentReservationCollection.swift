@@ -86,6 +86,7 @@ class StudentReservationCollection{
                 HUD.flash(.error, delay: 1)
                 
             }else if number == 1{
+                self.personalReservation.append(self.allReservations[deleteNum])
                 self.allReservations.remove(at: deleteNum)
                 //成功
                 HUD.flash(.success, delay: 1) { (_) in

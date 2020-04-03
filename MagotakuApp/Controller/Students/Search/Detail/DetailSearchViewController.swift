@@ -303,11 +303,12 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             reservationInfo?.stUid = Auth.auth().currentUser!.uid
             // reservationの、reservationNumを1に変更する
             reservationInfo?.reservationNum = 1
+            //reservationのstudentImageを追加する
+            reservationInfo?.studentImage = studentProfile.imageName!
             //actionsheetにて最終確認
-            finalVertification(reservation: reservationInfo!)
             //reservationが格納されている配列からそデータを取り除く
-            
             //searchViewControllerに戻る
+            finalVertification(reservation: reservationInfo!)
             
         }
         
