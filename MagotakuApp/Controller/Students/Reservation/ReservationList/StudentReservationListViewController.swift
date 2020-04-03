@@ -80,19 +80,24 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        //デフォルトのtableViewCellを使用
        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-//       //内容
-//       cell.textLabel!.text =
-//       //左端のイメージアイコン設置
-//       cell.imageView!.image = UIImage(systemName: cellicon[indexPath.row])
-//       //内容詳細
-//       cell.detailTextLabel!.text = detailText[indexPath.row]
-//       cell.detailTextLabel!.tintColor = UIColor.darkGray
-//       //セルの右端にタッチ利用可能の補助イメージ
-//       let touchImage = UIImageView()
-//       touchImage.image = UIImage(systemName: "chevron.right")
-//       touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 26, width: 8, height: 12)
-//
-//       cell.contentView.addSubview(touchImage)
+       //日付
+        cell.textLabel!.text = "\(StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).visitDate) \(StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).visitTime)"
+       //左端のシニア画像配置
+    if let imageName: String = StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).seniorImage, let ref = StudentReservationCollection.shared.getImageRef(uid: StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).seUid, imageName: imageName){
+        cell.imageView!.sd_setImage(with: ref)
+        cell.imageView!.frame = CGRect(x: 16, y: 18, width: 60, height: 60)
+       }else{
+        cell.imageView!.image = UIImage(systemName: "person.circle")
+       }
+       //シニア側の名前
+    cell.detailTextLabel!.text = "訪問相手： \(StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).seUid)"
+       cell.detailTextLabel!.tintColor = UIColor.darkGray
+       //セルの右端にタッチ利用可能の補助イメージ
+       let touchImage = UIImageView()
+       touchImage.image = UIImage(systemName: "chevron.right")
+    touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 42, width: 8, height: 12)
+
+       cell.contentView.addSubview(touchImage)
        return cell
    }
     
@@ -106,14 +111,7 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
-            let vc = ReservationDetailViewController()
-            let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
-            navigationItem.backBarButtonItem = backButtonItem
-            navigationController?.pushViewController(vc, animated: true)
-        }else{
-            notDoneAlert(text: "まだパートナーが未定です。お決まりまでお待ちください")
-        }
+        
         
     }
     

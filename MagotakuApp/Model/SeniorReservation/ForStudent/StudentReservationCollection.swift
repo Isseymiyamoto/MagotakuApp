@@ -76,8 +76,14 @@ class StudentReservationCollection{
         return reservations.sorted(by: {$0.updatedAt.dateValue() > $1.updatedAt.dateValue()})
     }
     
+    //すべての予約にアクセスする際に用いる
     func getReservation (at: Int) -> Reservation{
         return allReservations[at]
+    }
+    
+    //個別の決定された予約にアクセスする際に用いる
+    func getPersonalReservation(at: Int) -> Reservation{
+        return personalReservation[at]
     }
     
     //学生側にてシニア側の画像を取得する
