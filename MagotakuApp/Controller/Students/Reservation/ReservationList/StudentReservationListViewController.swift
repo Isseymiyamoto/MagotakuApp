@@ -74,28 +74,25 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
 
     //1セクション内のrowの数を決める
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ReservationCollection.shared.reservationCount()
+        return StudentReservationCollection.shared.getPersonalReservationCount()
     }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // 登録したセルを使う。 as! CustomCell としないと、UITableViewCell のままでしか使えない。
-       let cell = tableView.dequeueReusableCell(withIdentifier: "ReservationCell", for: indexPath) as! ReservationCell
-    
-            //日付用のUILabelに代入
-            cell.dateLabel.text = "\(ReservationCollection.shared.getReservation(at: indexPath.row).visitDate) \(ReservationCollection.shared.getReservation(at: indexPath.row).visitTime)"
-            //もし承認判定用の番号が1になっていたらテキストカラーと文言を変更
-            if ReservationCollection.shared.getReservation(at: indexPath.row).reservationNum == 1{
-                cell.decideLabel.text = " 承認済み "
-                cell.decideLabel.textColor = .red
-                cell.decideLabel.layer.borderColor = UIColor.red.cgColor
-                cell.partnerImage.image = UIImage(named: "setting")
-            }else{
-                //承認されていない場合、imageViewにひとまずログインユーザーの顔写真を挿入する
-                if let imageName: String = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName){
-                    cell.partnerImage.sd_setImage(with: ref)
-                }
-                cell.partnerLabel.text = "パートナー：未定"
-            }
+       //デフォルトのtableViewCellを使用
+       let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//       //内容
+//       cell.textLabel!.text =
+//       //左端のイメージアイコン設置
+//       cell.imageView!.image = UIImage(systemName: cellicon[indexPath.row])
+//       //内容詳細
+//       cell.detailTextLabel!.text = detailText[indexPath.row]
+//       cell.detailTextLabel!.tintColor = UIColor.darkGray
+//       //セルの右端にタッチ利用可能の補助イメージ
+//       let touchImage = UIImageView()
+//       touchImage.image = UIImage(systemName: "chevron.right")
+//       touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 26, width: 8, height: 12)
+//
+//       cell.contentView.addSubview(touchImage)
        return cell
    }
     
