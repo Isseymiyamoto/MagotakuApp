@@ -67,7 +67,7 @@ class ReservationUseCase {
     //すべての予約を取得する
     func fetchAllReservation(callback: @escaping ([Reservation]?) -> Void){
         let collectionRef = getCollectionRef()
-        collectionRef.getDocuments(source: .default, completion: { (snapshot, err) in
+        collectionRef.whereField("reservationNum", isEqualTo: 0).getDocuments(source: .default, completion: { (snapshot, err) in
             guard let snapshot = snapshot, err == nil, !snapshot.isEmpty else{
                 print("データ取得失敗(reservationUseCase/fetchAllReservation)", err.debugDescription)
                 callback(nil)
@@ -111,6 +111,25 @@ class ReservationUseCase {
 //            }
 //        }
 //    }
+    
+    //学生側において、自分の予約を取得する
+    func studentPersonalReservation(callback: @escaping ([Reservation]?) -> Void){
+        let collectionRef = getCollectionRef()
+        collectionRef.whereField("reservationNum", isEqualTo: 1).whereField("stUid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(source: .default) { (snapshot, err) in
+            guard err == nil, let snapshot = snapshot,!snapshot.isEmpty else {
+                print("データ取得失敗or0",err.debugDescription)
+                callback(nil)
+                return
+            }
+            
+            print("データ取得成功")
+            let reservations = snapshot.documents.compactMap { snapshot in
+                return try? Firestore.Decoder().decode(Reservation.self, from: snapshot.data())
+            }
+            print(reservations)
+            callback(reservations)
+        }
+    }
     
     
     

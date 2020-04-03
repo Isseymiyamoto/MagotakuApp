@@ -1,14 +1,14 @@
 //
-//  MessageListViewController.swift
+//  StudentMessageListViewController.swift
 //  MagotakuApp
 //
-//  Created by 宮本一成 on 2020/03/05.
+//  Created by 宮本一成 on 2020/04/03.
 //  Copyright © 2020 ISSEY MIYAMOTO. All rights reserved.
 //
 
 import UIKit
 
-class MessageListViewController: UIViewController {
+class StudentMessageListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class MessageListViewController: UIViewController {
         setZeroReservation()
     }
 
+    
     func setZeroReservation(){
         let view = UIView(frame: self.view.bounds)
         view.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
@@ -52,7 +53,14 @@ class MessageListViewController: UIViewController {
     }
 
 
-   
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

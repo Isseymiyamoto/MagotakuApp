@@ -84,6 +84,8 @@
 		85DB9A03241A0E4B0092935B /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */; };
 		85E6D66F2436D754001F49CE /* SeniorDetailProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E6D66D2436D754001F49CE /* SeniorDetailProfileViewController.swift */; };
 		85E6D6702436D754001F49CE /* SeniorDetailProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E6D66E2436D754001F49CE /* SeniorDetailProfileViewController.xib */; };
+		85E6D673243727BA001F49CE /* StudentMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E6D671243727BA001F49CE /* StudentMessageListViewController.swift */; };
+		85E6D674243727BA001F49CE /* StudentMessageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E6D672243727BA001F49CE /* StudentMessageListViewController.xib */; };
 		85E812402420BD2C004ECB87 /* CustomCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8123E2420BD2C004ECB87 /* CustomCell3.swift */; };
 		85E812412420BD2C004ECB87 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85E8123F2420BD2C004ECB87 /* CustomCell3.xib */; };
 		85E8124524220913004ECB87 /* SignUpStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8124324220913004ECB87 /* SignUpStudentViewController.swift */; };
@@ -193,6 +195,8 @@
 		85DB9A02241A0E4B0092935B /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		85E6D66D2436D754001F49CE /* SeniorDetailProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorDetailProfileViewController.swift; sourceTree = "<group>"; };
 		85E6D66E2436D754001F49CE /* SeniorDetailProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeniorDetailProfileViewController.xib; sourceTree = "<group>"; };
+		85E6D671243727BA001F49CE /* StudentMessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMessageListViewController.swift; sourceTree = "<group>"; };
+		85E6D672243727BA001F49CE /* StudentMessageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentMessageListViewController.xib; sourceTree = "<group>"; };
 		85E8123E2420BD2C004ECB87 /* CustomCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell3.swift; sourceTree = "<group>"; };
 		85E8123F2420BD2C004ECB87 /* CustomCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell3.xib; sourceTree = "<group>"; };
 		85E8124324220913004ECB87 /* SignUpStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStudentViewController.swift; sourceTree = "<group>"; };
@@ -588,6 +592,8 @@
 		85CA688E242A522B00062D82 /* MessageList */ = {
 			isa = PBXGroup;
 			children = (
+				85E6D671243727BA001F49CE /* StudentMessageListViewController.swift */,
+				85E6D672243727BA001F49CE /* StudentMessageListViewController.xib */,
 			);
 			path = MessageList;
 			sourceTree = "<group>";
@@ -848,6 +854,7 @@
 				850B93D6240823930010CE87 /* SignUp7ViewController.xib in Resources */,
 				850B93A624057F1B0010CE87 /* SignUp1ViewController.xib in Resources */,
 				850B93CC24078C9B0010CE87 /* SignUp6ViewController.xib in Resources */,
+				85E6D674243727BA001F49CE /* StudentMessageListViewController.xib in Resources */,
 				85E8124F242276B2004ECB87 /* CustomCell4.xib in Resources */,
 				850B93C02406F1A90010CE87 /* SignUp4ViewController.xib in Resources */,
 				85DB99F524178E750092935B /* CustomCell.xib in Resources */,
@@ -946,6 +953,7 @@
 				850B93BF2406F1A90010CE87 /* SignUp4ViewController.swift in Sources */,
 				850B93E324092EF10010CE87 /* SignUp0ViewController.swift in Sources */,
 				85E8124B24225ECC004ECB87 /* StudentUseCase.swift in Sources */,
+				85E6D673243727BA001F49CE /* StudentMessageListViewController.swift in Sources */,
 				85CA6887242A01BD00062D82 /* CustomReservationCell.swift in Sources */,
 				85FE10B2241E18EA005B33BE /* StudentReservationViewController.swift in Sources */,
 				85BD3D92242E55B3002E44AE /* DetailSearchViewController.swift in Sources */,

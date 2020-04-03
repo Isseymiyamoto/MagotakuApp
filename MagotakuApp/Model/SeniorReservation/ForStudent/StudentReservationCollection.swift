@@ -24,6 +24,9 @@ class StudentReservationCollection{
     //全体でのreservations
     private var allReservations: [Reservation] = []
     
+    //ユーザーの訪問が決定した予約を入れるための配列
+    private var personalReservation: [Reservation] = []
+    
     //学生側に表示するよう
     //すべてのデータを引っ張ってくる
     func allFetch(){
@@ -78,4 +81,22 @@ class StudentReservationCollection{
     func finishReservation(_ reservation: Reservation){
         reservationUseCase.finishReservation(reservation)
     }
+    
+    //成立しているを予約を取得する
+    func fetchPersonalReservation(){
+        reservationUseCase.studentPersonalReservation { (fetchReservations) in
+            guard let fetchReservations = fetchReservations else{
+                return
+            }
+            self.personalReservation = self.sortReservationByUpdatedAt(reservations: fetchReservations)
+        }
+    }
+    
+    //成立している予約の件数を取得する
+    func getPersonalReservationCount() -> Int{
+        return personalReservation.count
+    }
+   
+    
+    
 }

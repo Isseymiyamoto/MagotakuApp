@@ -30,10 +30,10 @@ class ReservationCollection{
     private var personalReservations: [Reservation] = []
     
     //全体でのreservations
-//    private var allReservations: [Reservation] = []
+    //    private var allReservations: [Reservation] = []
     
     weak var delegate: ReservationCollectionDelegate? = nil
-
+    
     func createReservation() ->  Reservation {
         let id = reservationUseCase.createReservationId()
         return Reservation(id: id)

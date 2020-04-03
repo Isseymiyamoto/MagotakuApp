@@ -53,8 +53,9 @@ class StudentUseCase{
 //                    print(studentProfile.imageName)
                 }
                 
-                //test的においてみる
-                StudentReservationCollection.shared.allFetch()
+            //test的においてみる
+            StudentReservationCollection.shared.allFetch()
+            StudentReservationCollection.shared.fetchPersonalReservation()
                                
                 print("これにてfetchStudentUser終了ですよ")
             }else{
