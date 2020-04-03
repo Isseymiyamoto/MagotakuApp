@@ -107,7 +107,7 @@ class SignUp1ViewController: UIViewController, UITextFieldDelegate {
             let vc = SignUp2ViewController()
             
             seniorProfile.sName = serviceLastName.text! + " " + serviceFirstName.text!
-            seniorProfile.aName = appLastName.text! + " " + appLastName.text!
+            seniorProfile.aName = appLastName.text! + " " + appFirstName.text!
 //            SeniorUser.shared.sName = serviceLastName.text! + " " + serviceFirstName.text!
 //            SeniorUser.shared.aName = appLastName.text! + " " + appLastName.text!
 //            let lastVC = SignUp8ViewController()

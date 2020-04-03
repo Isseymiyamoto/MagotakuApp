@@ -13,7 +13,7 @@ class SeniorDetailProfileViewController: UIViewController, UITableViewDataSource
     
     let titleLabels:[String] = ["あなたの名前", "あなたの生年月日", "あなたの性別", "あなたの電話番号", "あなたの趣味", "あなたの住所"]
     let imageLists:[String] = ["person.fill", "calendar.circle.fill", "person.crop.rectangle.fill", "phone.fill", "bookmark", "house.fill"]
-    let profileInfo: [String] = [seniorProfile.sName, seniorProfile.bornDate, seniorProfile.sex, seniorProfile.phoneNumber, seniorProfile.CharaHob, studentProfile.address]
+    let profileInfo: [String] = [seniorProfile.sName, seniorProfile.bornDate, seniorProfile.sex, seniorProfile.phoneNumber, seniorProfile.CharaHob, seniorProfile.address]
     
     var imageView = UIImageView()
     var studentImage: UIImage?
