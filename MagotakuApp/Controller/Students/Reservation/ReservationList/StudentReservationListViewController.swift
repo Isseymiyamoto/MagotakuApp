@@ -26,7 +26,7 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
         // tableView に使う xib ファイルを登録している。
         tableView.register( nib, forCellReuseIdentifier: "ReservationCell")
         
-        ReservationCollection.shared.delegate = self as? ReservationCollectionDelegate
+        StudentReservationCollection.shared.delegate = self as? StudentReservationCollectionDelegate 
         
         
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
@@ -122,7 +122,7 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
 }
 
 // extension で分けた方が見やすくなる
-extension StudentReservationListViewController: ReservationCollectionDelegate {
+extension StudentReservationListViewController: StudentReservationCollectionDelegate {
     // デリゲートのメソッド
     func saved() {
         // tableView をリロードして、画面を更新する。

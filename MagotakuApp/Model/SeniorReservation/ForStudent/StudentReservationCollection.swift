@@ -10,6 +10,11 @@ import Foundation
 import FirebaseStorage
 import PKHUD
 
+protocol StudentReservationCollectionDelegate: class {
+    func saved()
+    func loaded()
+}
+
 class StudentReservationCollection{
     
     //初回アクセスのタイミングでインスタンスを生成
@@ -21,6 +26,8 @@ class StudentReservationCollection{
     private init(){
         reservationUseCase = ReservationUseCase()
     }
+    
+    weak var delegate: StudentReservationCollectionDelegate? = nil
     
     //全体でのreservations
     private var allReservations: [Reservation] = []
@@ -102,6 +109,11 @@ class StudentReservationCollection{
         }
     }
     
+    private func save() {
+        personalReservation = sortReservationByUpdatedAt(reservations: personalReservation)
+        delegate?.saved()
+    }
+    
     //成立しているを予約を取得する
     func fetchPersonalReservation(){
         reservationUseCase.studentPersonalReservation { (fetchReservations) in
@@ -109,6 +121,7 @@ class StudentReservationCollection{
                 return
             }
             self.personalReservation = self.sortReservationByUpdatedAt(reservations: fetchReservations)
+            self.delegate?.loaded()
         }
     }
     
