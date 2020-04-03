@@ -9,7 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUp8ViewController" customModule="MagotakuApp" customModuleProvider="target">
             <connections>
+                <outlet property="registerBtn" destination="b1Z-i4-SS9" id="Y2E-3n-1i2"/>
+                <outlet property="tableView" destination="dLB-ml-qFc" id="0JT-cx-kcp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewForBtn" destination="FkA-BS-3nK" id="oZb-Rx-eo1"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
