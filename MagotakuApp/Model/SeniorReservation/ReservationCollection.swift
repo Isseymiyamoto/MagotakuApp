@@ -45,9 +45,17 @@ class ReservationCollection{
     }
     
     func addReservation(_ reservation: Reservation){
-        reservationUseCase.addReservation(reservation)
         personalReservations.append(reservation)
-        save()
+        print(self.personalReservations)
+        reservationUseCase.addReservation(reservation) { (number) in
+            if number == 0{
+                print("データ追加失敗")
+            }else if number == 1{
+                self.save()
+            }
+        }
+        
+        
     }
     
     func getReservation (at: Int) -> Reservation{

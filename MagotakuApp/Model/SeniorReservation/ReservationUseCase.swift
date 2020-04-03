@@ -33,13 +33,15 @@ class ReservationUseCase {
 
 
     //FirestoreにSeniorUserのProfile登録 (新規登録時に利用)
-    func addReservation(_ reservation: Reservation){
+    func addReservation(_ reservation: Reservation, callback: @escaping (Int) -> Void){
         let documentRef = getCollectionRef().document(reservation.id)
         let encodeTask = try! Firestore.Encoder().encode(reservation)
         documentRef.setData(encodeTask) { (err) in
             if let _err = err {
+                callback(0)
                 print("データ追加失敗",_err)
             } else {
+                callback(1)
                 print("データ追加成功")
                 
             }

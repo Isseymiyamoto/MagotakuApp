@@ -39,7 +39,12 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        
+//        tableView.reloadData()
+        
+        if StudentReservationCollection.shared.getPersonalReservationCount() == 0{
+            setZeroReservation()
+        }
     }
 
     //予約0件の時のみ表示するメソッド
@@ -86,6 +91,8 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
     if let imageName: String = StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).seniorImage, let ref = StudentReservationCollection.shared.getImageRef(uid: StudentReservationCollection.shared.getPersonalReservation(at: indexPath.row).seUid, imageName: imageName){
         cell.imageView!.sd_setImage(with: ref)
         cell.imageView!.frame = CGRect(x: 16, y: 18, width: 60, height: 60)
+        cell.imageView!.contentMode = .scaleToFill
+        cell.imageView!.layer.cornerRadius = 30.0
        }else{
         cell.imageView!.image = UIImage(systemName: "person.circle")
        }
@@ -95,7 +102,7 @@ class StudentReservationListViewController: UIViewController, UITableViewDelegat
        //セルの右端にタッチ利用可能の補助イメージ
        let touchImage = UIImageView()
        touchImage.image = UIImage(systemName: "chevron.right")
-    touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 42, width: 8, height: 12)
+       touchImage.frame = CGRect(x: UIScreen.main.bounds.width - 32, y: 42, width: 8, height: 12)
 
        cell.contentView.addSubview(touchImage)
        return cell

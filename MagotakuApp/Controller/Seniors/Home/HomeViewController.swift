@@ -13,6 +13,8 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var reservationBtn: UIButton!
+    @IBOutlet weak var viewForBtn: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,8 @@ class HomeViewController: UIViewController {
         ]
 
      
-        reservationBtn.layer.cornerRadius = 30.0
-        reservationBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
+        
+//        reservationBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
         // ログインユーザーのプロフィール取得
         
@@ -62,6 +64,20 @@ class HomeViewController: UIViewController {
         }
         UIGraphicsEndImageContext()
         return gradientImage
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //tabbarの高さをsafeareaの高さを含めて取得する
+        var tabbarHeight = tabBarController?.tabBar.bounds.size.height
+        tabbarHeight! += additionalSafeAreaInsets.bottom
+        
+        //承認用のviewとbtnのframeをここで確定
+        viewForBtn.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 72, width: UIScreen.main.bounds.width, height: 72)
+        viewForBtn.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+        reservationBtn.frame = CGRect(x: 32, y: 12, width: UIScreen.main.bounds.width - 64, height: 48)
+        reservationBtn.layer.cornerRadius = 24
     }
 
     

@@ -56,15 +56,18 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
 
     
     @IBAction func tapToRegister(_ sender: Any) {
+        reservation.ExpectedPrice = "2000"
         //Firestoreに予約情報送信
         ReservationCollection.shared.addReservation(reservation)
-        //AddReservationした後にreservationを新しく生成する
-        reservation = ReservationCollection.shared.createReservation()
+        
     
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
             let sceneDelegate = windowScene.delegate as? SceneDelegate else{
                 return
         }
+        //AddReservationした後にreservationを新しく生成する
+        reservation = ReservationCollection.shared.createReservation()
+        
         let vc = MainTabBarController()
         sceneDelegate.window?.rootViewController = vc
     }

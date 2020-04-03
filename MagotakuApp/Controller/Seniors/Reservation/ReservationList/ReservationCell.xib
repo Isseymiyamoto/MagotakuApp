@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-2S-mNj">
-                        <rect key="frame" x="32" y="24" width="48" height="48"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-2S-mNj">
+                        <rect key="frame" x="32" y="23" width="48" height="49"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="l1L-rj-ApM"/>
                             <constraint firstAttribute="height" constant="48" id="ran-8b-82S"/>
@@ -66,6 +66,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="setting" width="128" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
