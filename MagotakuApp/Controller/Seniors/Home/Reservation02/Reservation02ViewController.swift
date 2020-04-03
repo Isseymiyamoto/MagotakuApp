@@ -11,12 +11,12 @@ import UIKit
 class Reservation02ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     //タップされた箇所一時的に保存する
-    var selectBool : [Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    var selectBool : [Bool] = [false, false, false, false, false, false]
     //最終的にtrueだったindex番号のみを格納するための配列
     var finalResults = [Int]()
     
     //cellに入れる写真名の配列
-    let cellImages:[String] = ["folder.fill.badge.minus", "paperplane", "tray.fill"]
+    let cellImages:[String] = ["listen", "ITLesson", "houseWork", "walking", "talking", "others"]
     
     @IBOutlet weak var nextBtn: UIButton!
     
@@ -46,23 +46,29 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         
         //レイアウト設定
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: x.width / 4, height: x.width / 4)
+        layout.itemSize = CGSize(width: (x.width / 5) * 2, height: self.view.bounds.height / 5)
         layout.minimumLineSpacing = x.width / 10
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: x.width / 20, left: x.width / 20, bottom: x.width / 20, right: x.width / 20)
         collectionView.collectionViewLayout = layout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 6
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionCell", for: indexPath) as! CustomCollectionCell
-        cell.backgroundColor = .lightGray
+        let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
+        cell.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        cell.layer.cornerRadius = 6.0
         cell.imageView.frame = CGRect(x: cell.frame.width / 4, y: cell.frame.width / 4, width: cell.frame.width / 2 , height: cell.frame.width / 2)
-        cell.imageView.image = UIImage(systemName: cellImages[indexPath.item % 3])
+        cell.imageView.image = UIImage(named: cellImages[indexPath.item])
+        cell.serviceName.text = helpContents[indexPath.item]
+        cell.serviceName.font = UIFont.boldSystemFont(ofSize: 16)
+        cell.serviceName.textAlignment = .center
+        cell.serviceName.frame = CGRect(x: 0, y: cell.bounds.height - 32, width: cell.bounds.width, height: 22)
         
         return cell
         
@@ -74,12 +80,12 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         let cell  = collectionView.cellForItem(at: indexPath) as! CustomCollectionCell
         
         if selectBool[indexPath.item]{
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
             selectBool[indexPath.item] = false
         }else{
             cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            cell.backgroundColor = .systemPink
+            cell.backgroundColor = .lightGray
             selectBool[indexPath.item] = true
         }
         

@@ -70,6 +70,10 @@ class ReservationCollection{
         }
     }
     
+    func login(){
+        print("ログインとともにfetch開始")
+    }
+    
     private func sortReservationByUpdatedAt(reservations: [Reservation]) -> [Reservation]{
         return reservations.sorted(by: {$0.updatedAt.dateValue() > $1.updatedAt.dateValue()})
     }

@@ -36,16 +36,20 @@ class ReservationListViewController: UIViewController, UITableViewDelegate, UITa
         
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
         
-        if ReservationCollection.shared.reservationCount() == 0{
-            //予約0件の場合のみ表示する
-            setZeroReservation()
-        }
+//        if ReservationCollection.shared.reservationCount() == 0{
+//            //予約0件の場合のみ表示する
+//            setZeroReservation()
+//        }
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         tableView.reloadData()
     }
+    
     
     
     //予約0件の時のみ表示するメソッド

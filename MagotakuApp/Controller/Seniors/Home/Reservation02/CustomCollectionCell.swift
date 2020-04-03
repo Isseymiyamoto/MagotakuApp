@@ -12,6 +12,8 @@ class CustomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var checkBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var serviceName: UILabel!
+    
     
     //選択されているか否か
     var checkd = false

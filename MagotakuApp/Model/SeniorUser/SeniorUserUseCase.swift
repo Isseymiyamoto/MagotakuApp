@@ -93,11 +93,15 @@ class SeniorUserUseCase {
             print("userInfo: \(userInfo!)")
             seniorProfile = userInfo!
                 
+            //seniorの予約も取得
+                ReservationCollection.shared.login()
+                
             //ログイン遷移
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                 let sceneDelegate = windowScene.delegate as? SceneDelegate else{
                     return
             }
+                
             let vc = MainTabBarController()
             sceneDelegate.window?.rootViewController = vc
                 
@@ -125,9 +129,6 @@ class SeniorUserUseCase {
         }
     }
 
-    
-    
-    
     
 }
 
