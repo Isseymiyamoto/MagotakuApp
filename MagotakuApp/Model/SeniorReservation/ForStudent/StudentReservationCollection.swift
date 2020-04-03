@@ -88,7 +88,7 @@ class StudentReservationCollection{
     
     //学生側にてシニア側の画像を取得する
     func getImageRef(uid: String, imageName: String) -> StorageReference? {
-        return reservationUseCase.getImageRef(uid: uid, imageName: imageName)
+        return reservationUseCase.getSeniorImageRef(uid: uid, imageName: imageName)
     }
     
     //訪問を希望するreservationをupdateする

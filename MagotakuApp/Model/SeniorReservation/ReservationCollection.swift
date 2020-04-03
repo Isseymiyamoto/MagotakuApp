@@ -82,7 +82,10 @@ class ReservationCollection{
         personalReservations = []
     }
     
-    
+    //シニア側にて学生側の画像を取得する
+    func getImageRef(uid: String, imageName: String) -> StorageReference? {
+        return reservationUseCase.getStudentImageRef(uid: uid, imageName: imageName)
+    }
     
     
 }

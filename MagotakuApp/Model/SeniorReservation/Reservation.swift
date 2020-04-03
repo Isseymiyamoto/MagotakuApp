@@ -31,7 +31,7 @@ class Reservation: Codable{
     //希望時間数
     var vistHour : String = ""
     //お手伝い内容
-    var helpContents: [Int]!
+    var helpContents: [Int]?
     //予想金額
     var ExpectedPrice: String = ""
     //確定金額

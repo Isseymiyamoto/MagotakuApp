@@ -20,6 +20,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     
     //tableViewに設置する値
     let setLabels: [String] = ["希望日時", "希望時間", "サービス提供時間", "希望するお手伝い内容"]
+    let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +97,10 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
                 case 2:
                     cell.resultLabel.text = reservation.vistHour
             default:
-                cell.resultLabel.text = "おしゃべり"
+                cell.resultLabel.text = ""
+                for i in 0..<reservation.helpContents!.count{
+                    cell.resultLabel.text! += "\(helpContents[reservation.helpContents![i]])    "
+                }
             }
             return cell
         default:

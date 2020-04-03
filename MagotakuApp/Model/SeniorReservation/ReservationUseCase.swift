@@ -84,8 +84,13 @@ class ReservationUseCase {
     }
     
     //学生側にてシニア側の画像を取得する
-    func getImageRef(uid: String, imageName: String) -> StorageReference? {
+    func getSeniorImageRef(uid: String, imageName: String) -> StorageReference? {
         return storage.reference().child("seniorUsers").child(uid).child(imageName)
+    }
+    
+    //シニア側にて学生側の画像を取得する
+    func getStudentImageRef(uid: String, imageName: String) -> StorageReference? {
+        return storage.reference().child("studentUsers").child(uid).child(imageName)
     }
     
     //学生側にて、予約を完了させる処理をする
