@@ -14,6 +14,7 @@ import FirebaseCore
 import FirebaseFirestore
 
 var seniorProfile = SeniorUserCollection.shared.createSeniorUser()
+//プロフィール画像が渡ってくる
 var seniorImage: UIImage?
 
 class SignUp8ViewController: UIViewController {
