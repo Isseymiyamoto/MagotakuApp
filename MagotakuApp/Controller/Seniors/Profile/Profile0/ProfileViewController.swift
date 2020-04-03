@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        logoutBtn.layer.cornerRadius = logoutBtn.frame.height / 2
 //        logoutBtn.backgroundColor = UIColor(red: 244/255, green: 176/255, blue: 131/255, alpha: 1)
         
+        
         tableView.dataSource = self
         tableView.delegate = self
         

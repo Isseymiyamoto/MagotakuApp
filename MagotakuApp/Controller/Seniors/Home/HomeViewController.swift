@@ -16,6 +16,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var viewForBtn: UIView!
     
     
+    //上の方のview
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    //二個目のview
+//    @IBOutlet weak var secondView: UIView!
+//    @IBOutlet weak var systemImageView: UIImageView!
+//    @IBOutlet weak var firstLabel: UILabel!
+//    @IBOutlet weak var secondLabel: UILabel!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,6 +93,39 @@ class HomeViewController: UIViewController {
         viewForBtn.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         reservationBtn.frame = CGRect(x: 32, y: 12, width: UIScreen.main.bounds.width - 64, height: 48)
         reservationBtn.layer.cornerRadius = 24
+        
+        
+//        //上の方のview
+//        @IBOutlet weak var profileImageView: UIImageView!
+//        @IBOutlet weak var nameLabel: UILabel!
+//        @IBOutlet weak var dateLabel: UILabel!
+//
+//        //二個目のview
+//        @IBOutlet weak var secondView: UIView!
+//        @IBOutlet weak var systemImageView: UIImageView!
+//        @IBOutlet weak var firstLabel: UILabel!
+//        @IBOutlet weak var secondLabel: UILabel!
+        
+        if let imageName: String? = seniorProfile.imageName, let ref = SeniorUserCollection.shared.getImageRef(imageName: imageName!){
+            profileImageView.sd_setImage(with: ref)
+        }else{
+            profileImageView.image = UIImage(systemName: "person.fill")
+        }
+        profileImageView.frame = CGRect(x: (UIScreen.main.bounds.width - 72)/2, y: 64, width: 72, height: 132)
+        profileImageView.layer.cornerRadius = 36
+        nameLabel.text = "\(seniorProfile.sName)さん、こんにちは"
+        nameLabel.frame = CGRect(x: 32, y: 200, width: UIScreen.main.bounds.width - 64, height: 22)
+        nameLabel.textAlignment = .center
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        let f = DateFormatter()
+        f.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateLabel.text = "今日は\(f.string(from: Date()))です"
+        dateLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        dateLabel.textAlignment = .center
+        dateLabel.frame = CGRect(x: 32, y: 230, width: UIScreen.main.bounds.width - 64, height: 22)
+        
+        
+        
     }
 
     
