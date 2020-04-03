@@ -62,14 +62,11 @@ class SignUp8ViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        //tabbarの高さ取得
-        var tabbarHeight = tabBarController?.tabBar.bounds.size.height
-        tabbarHeight! += additionalSafeAreaInsets.bottom
         //tableViewのframe
-        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.bounds.height - tabbarHeight! - 72)
+        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.bounds.height - 96)
         
         //登録用のviewとbtnのframeを設定する
-        viewForBtn.frame = CGRect(x: 0, y: self.view.bounds.height - tabbarHeight! - 72, width: UIScreen.main.bounds.width, height: 72)
+        viewForBtn.frame = CGRect(x: 0, y: self.view.bounds.height - 72, width: UIScreen.main.bounds.width, height: 96)
         registerBtn.frame = CGRect(x: 32, y: 12, width: UIScreen.main.bounds.width - 64, height: 48)
         registerBtn.layer.cornerRadius = 24
         
@@ -119,6 +116,9 @@ class SignUp8ViewController: UIViewController, UITableViewDataSource, UITableVie
             view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 240)
             
             let imageView = UIImageView()
+            if let seniorImage = seniorImage{
+                imageView.image = seniorImage
+            }
             imageView.backgroundColor = UIColor(red: 99/255, green: 101/255, blue: 105/255, alpha: 1)
             imageView.frame = CGRect(x: (UIScreen.main.bounds.width / 8) * 3, y: (240 - UIScreen.main.bounds.width / 4) / 2, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
             imageView.layer.cornerRadius = UIScreen.main.bounds.width / 8
