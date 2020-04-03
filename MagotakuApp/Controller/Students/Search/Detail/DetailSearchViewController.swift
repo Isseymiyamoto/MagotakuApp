@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PKHUD
 
 
 class DetailSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -302,9 +303,8 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             reservationInfo?.stUid = Auth.auth().currentUser!.uid
             // reservationの、reservationNumを1に変更する
             reservationInfo?.reservationNum = 1
-            
-            //データベース上に保存する
-            
+            //actionsheetにて最終確認
+            finalVertification(reservation: reservationInfo!)
             //reservationが格納されている配列からそデータを取り除く
             
             //searchViewControllerに戻る
@@ -314,6 +314,22 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
         
         
         
+    }
+    
+    
+    func finalVertification(reservation: Reservation){
+        let alert = UIAlertController(title: "確認", message: "訪問を希望でお間違い無いですか？", preferredStyle: .actionSheet)
+        //ボタン1
+        alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { (action) in
+            //予約をupdateする
+            StudentReservationCollection.shared.finishReservation(reservation, deleteNum: self.detailNum)
+        }))
+        //ボタン2
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: {(action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        //アクションシートを表示する
+        self.present(alert, animated: true, completion: nil)
     }
     
    

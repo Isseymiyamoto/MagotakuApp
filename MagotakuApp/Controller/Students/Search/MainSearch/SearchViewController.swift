@@ -338,7 +338,7 @@ extension SearchViewController: UIScrollViewDelegate {
         posY = scrollView.contentOffset.y
     }
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    private func scrollViewDidScroll(scrollView: UIScrollView) {
         scrollView.contentOffset.y = posY
     }
 }

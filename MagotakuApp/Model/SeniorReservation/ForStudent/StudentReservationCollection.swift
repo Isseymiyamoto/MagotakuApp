@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseStorage
+import PKHUD
 
 class StudentReservationCollection{
     
@@ -78,8 +79,26 @@ class StudentReservationCollection{
     }
     
     //訪問を希望するreservationをupdateする
-    func finishReservation(_ reservation: Reservation){
-        reservationUseCase.finishReservation(reservation)
+    func finishReservation(_ reservation: Reservation, deleteNum: Int){
+        reservationUseCase.finishReservation(reservation) { (number) in
+            if number == 0{
+                //エラー
+                HUD.flash(.error, delay: 1)
+                
+            }else if number == 1{
+                self.allReservations.remove(at: deleteNum)
+                //成功
+                HUD.flash(.success, delay: 1) { (_) in
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                        let sceneDelegate = windowScene.delegate as? SceneDelegate else{
+                            return
+                    }
+                    let vc = MainTabBarController()
+                    sceneDelegate.window?.rootViewController = vc
+                }
+                
+            }
+        }
     }
     
     //成立しているを予約を取得する

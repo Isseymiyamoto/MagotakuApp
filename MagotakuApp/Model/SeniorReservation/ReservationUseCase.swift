@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFirestoreSwift
 import FirebaseStorage
+import PKHUD
 
 class ReservationUseCase {
     
@@ -88,15 +89,16 @@ class ReservationUseCase {
     }
     
     //学生側にて、予約を完了させる処理をする
-    func finishReservation(_ reservation: Reservation){
+    func finishReservation(_ reservation: Reservation, callback:@escaping (Int) -> Void){
         let documentRef = getCollectionRef().document(reservation.id)
         let encodeTask = try! Firestore.Encoder().encode(reservation)
         documentRef.setData(encodeTask) { (err) in
             if let _err = err {
                 print("データ追加失敗",_err)
+                callback(0)
             } else {
                 print("データ追加成功")
-                
+                callback(1)
             }
         }
     }
