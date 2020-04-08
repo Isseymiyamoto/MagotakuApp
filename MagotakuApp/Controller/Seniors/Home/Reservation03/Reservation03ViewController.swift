@@ -52,6 +52,10 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         
         //UIViewのbackgroundを設定
         tableView.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        
+        
+        //test
+        moneyExpected()
     }
 
     
@@ -155,7 +159,14 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         //サービス提供時間を取得
         var serviceString = reservation.vistHour
         //サービス提供時間をInt型の時間数に変換する
+        if let range = serviceString.range(of: "時間"){
+            serviceString.replaceSubrange(range, with: "：")
+        }
+        if let range = serviceString.range(of: "分"){
+            serviceString.replaceSubrange(range, with: "")
+        }
         
+        print(serviceString)
         //Int型の時間数 * 1200yen + 交通費 500yen = 予想金額とする
     }
     
