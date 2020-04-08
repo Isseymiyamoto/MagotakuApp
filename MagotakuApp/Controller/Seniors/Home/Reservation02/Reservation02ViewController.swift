@@ -88,31 +88,12 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
             cell.backgroundColor = .lightGray
             selectBool[indexPath.item] = true
         }
-        
-        
-//        if cell.checkd{
-//            //check画像を消す
-//            cell.backgroundColor = .lightGray
-//            cell.checkBtn.setBackgroundImage(UIImage(systemName: "square"), for: .normal)
-//            cell.checkBtn.imageView?.image = UIImage(systemName: "square")
-//            cell.checkd = false
-//
-//        }else{
-//            cell.checkBtn.setBackgroundImage(UIImage(systemName: "checkmark.square"), for: .normal)
-//            cell.checkBtn.imageView?.image = UIImage(systemName: "checkmark.square")
-//            cell.backgroundColor = .systemPink
-//            cell.checkd = true
-//        }
-        
-        
-        
     }
     
     
     
     @IBAction func tapToNext(_ sender: Any) {
-//        print(selectBool)
-        for i in 1 ..< selectBool.count{
+        for i in 0 ..< selectBool.count{
             if selectBool[i]{
                 finalResults.append(i)
             }else{
