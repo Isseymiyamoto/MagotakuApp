@@ -112,7 +112,8 @@ class Reservation00ViewController: UIViewController, UITableViewDelegate, UITabl
             //訪問希望月日
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .value1, reuseIdentifier: "cell")
             cell1.textLabel?.text = sections[indexPath.section][indexPath.row]
-            
+//            cell1.detailTextLabel?.
+//            cell1.toolbarPlaceholder = "タップしてください"
             cell1.detailTextLabel?.text = calendarDate
             cell1.detailTextLabel?.textColor = UIColor.black
             return cell1

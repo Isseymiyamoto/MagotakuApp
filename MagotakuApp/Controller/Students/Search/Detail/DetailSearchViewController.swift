@@ -152,7 +152,8 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
             
             //お手伝い内容についてを複数作成していく
             let helpContents = ["傾聴", "ITレッスン", "家事", "散歩", "おしゃべり", "その他"]
-            let helpIcons = ["pencil", "pencil.circle", "pencil", "pencil.circle", "pencil", "pencil.circle"]
+            let helpIcons = ["listen", "ITLesson", "houseWork", "walking", "talking", "others"]
+//            let cellImages:[String] = ["listen", "ITLesson", "houseWork", "walking", "talking", "others"]
             let background: [UIColor] = [.red, .blue, .brown, .systemPink, .cyan, .darkGray]
             
             for i in 0..<(reservationInfo?.helpContents!.count)!{
@@ -170,7 +171,7 @@ class DetailSearchViewController: UIViewController, UITableViewDelegate, UITable
                 iconView.layer.cornerRadius = 6.0
                 view1.addSubview(iconView)
                 
-                let iconImageView = UIImageView(image: UIImage(systemName: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
+                let iconImageView = UIImageView(image: UIImage(named: "\(helpIcons[(reservationInfo?.helpContents![i])!])"))
                 iconImageView.frame = CGRect(x: iconView.bounds.width / 4, y: iconView.bounds.height / 4, width: iconView.bounds.width / 2, height: iconView.bounds.width / 2)
                 iconView.addSubview(iconImageView)
                 
