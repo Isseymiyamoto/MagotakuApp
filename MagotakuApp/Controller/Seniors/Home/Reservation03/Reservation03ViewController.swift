@@ -62,7 +62,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func tapToRegister(_ sender: Any) {
         //予想時間から予想金額を設定する関数をおく
         
-        reservation.ExpectedPrice = "2000"
+        reservation.ExpectedPrice = String(moneyExpected())
         //Firestoreに予約情報送信
         ReservationCollection.shared.addReservation(reservation)
         
@@ -114,6 +114,13 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell4", for: indexPath) as! CustomCell4
+            // カンマ区切りの文字列に変換
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.locale = Locale(identifier: "ja_JP")
+            let cmNum = NSNumber(value: moneyExpected())
+            let cmNumString = formatter.string(from: cmNum)!
+            cell.priceLabel!.text = "¥ " + cmNumString
             return cell
         }
         
@@ -155,7 +162,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     //予想時間から予想金額を設定する関数
-    func moneyExpected(){
+    func moneyExpected() -> Int{
         //サービス提供時間を取得
         var serviceString = reservation.vistHour
         //サービス提供時間をInt型の時間数に変換する
@@ -167,10 +174,14 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         }
         //時間をString型の配列に置き換える
         let hourMin: [String] = serviceString.components(separatedBy: "：")
-        print(hourMin[0])
-        print(hourMin[1])
+        let serviceTime: Int = Int(hourMin[0])! + Int(hourMin[1])! / 30
         //Int型の時間数 * 1200yen + 交通費 500yen = 予想金額とする
+        let expectedMoney = serviceTime * 1200 + 500
+        return expectedMoney
     }
+    
+    
+    
     
   
 
