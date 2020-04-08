@@ -106,6 +106,8 @@ class Reservation02ViewController: UIViewController, UICollectionViewDelegate, U
         let backButtonItem = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         navigationController?.pushViewController(vc, animated: true)
+        //finalResultsを空にする
+        finalResults.removeAll()
     }
     
     
