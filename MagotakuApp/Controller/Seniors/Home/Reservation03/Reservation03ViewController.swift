@@ -55,7 +55,7 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         
         
         //test
-        moneyExpected()
+    
     }
 
     
@@ -165,8 +165,10 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
         if let range = serviceString.range(of: "分"){
             serviceString.replaceSubrange(range, with: "")
         }
-        
-        print(serviceString)
+        //時間をString型の配列に置き換える
+        let hourMin: [String] = serviceString.components(separatedBy: "：")
+        print(hourMin[0])
+        print(hourMin[1])
         //Int型の時間数 * 1200yen + 交通費 500yen = 予想金額とする
     }
     
