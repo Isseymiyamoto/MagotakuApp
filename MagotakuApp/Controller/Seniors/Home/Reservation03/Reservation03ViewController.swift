@@ -56,6 +56,8 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
 
     
     @IBAction func tapToRegister(_ sender: Any) {
+        //予想時間から予想金額を設定する関数をおく
+        
         reservation.ExpectedPrice = "2000"
         //Firestoreに予約情報送信
         ReservationCollection.shared.addReservation(reservation)
@@ -146,6 +148,15 @@ class Reservation03ViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return  1
+    }
+    
+    //予想時間から予想金額を設定する関数
+    func moneyExpected(){
+        //サービス提供時間を取得
+        var serviceString = reservation.vistHour
+        //サービス提供時間をInt型の時間数に変換する
+        
+        //Int型の時間数 * 1200yen + 交通費 500yen = 予想金額とする
     }
     
   
